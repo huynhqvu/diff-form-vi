@@ -1,0 +1,6608 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass amsbook
+\begin_preamble
+\usepackage[vietnamese]{babel}
+\usepackage[all]{xy}
+
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{tikz}
+
+\usepackage{pgfplots}
+\usetikzlibrary{arrows}
+
+\newcommand{\RR}{\mathbb R} 
+
+\def\firstofone#1{#1}\let\uppercase\firstofone\let\MakeUppercase\firstofone
+
+\swapnumbers
+
+ \theoremstyle{theorem}
+\newtheorem{theorem}[equation]{Định lí}
+ %same counter for equation, theorem
+\makeatletter
+    \let\c@equation\c@figure  %same counter for equation, figure
+\makeatother
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+
+\renewenvironment{thm}{\begin{theorem}}{\end{theorem}}
+\newtheorem*{theorem*}{Định lí}
+\renewenvironment{thm*}{\begin{theorem*}}{\end{theorem*}}
+%\newtheorem*{theorem*}{Định lí}
+%\renewenvironment{thm*}{\begin{theorem*}}{\end{theorem*}}
+%\newtheorem{lemma}[theorem]{Bổ đề}
+%\renewenvironment{lem}{\begin{lemma}}{\end{lemma}}
+%\newtheorem*{lemma*}{Bổ đề}
+%\renewenvironment{lem*}{\begin{lemma*}}{\end{lemma*}}
+
+\newtheorem{proposition}[equation]{Mệnh đề}
+\renewenvironment{prop}{\begin{proposition}}{\end{proposition}}
+%\newtheorem*{proposition*}{Mệnh đề}
+%\renewenvironment{prop*}{\begin{proposition*}}{\end{proposition*}}
+
+\newtheorem{corollary}[equation]{Hệ quả}
+\renewenvironment{cor}{\begin{corollary}}{\end{corollary}}
+%\newtheorem*{corollary*}{Hệ quả}
+%\renewenvironment{cor*}{\begin{corollary*}}{\end{corollary*}}
+
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Định nghĩa}
+\renewenvironment{defn}{\begin{definition}}{\end{definition}}
+%\newtheorem*{definition*}{Định nghĩa}
+%\renewenvironment{defn*}{\begin{definition*}}{\end{definition*}}
+
+\theoremstyle{remark}
+\newtheorem{remark}[equation]{Ghi chú}
+\renewenvironment{rem}{\begin{remark}}{\end{remark}}
+\newtheorem*{remark*}{Ghi chú}
+\renewenvironment{rem*}{\begin{remark*}}{\end{remark*}}
+\newtheorem{ex}[equation]{Ví dụ}
+\renewenvironment{example}{\begin{ex}}{\end{ex}}
+\newtheorem*{ex*}{Ví dụ}
+\renewenvironment{example*}{\begin{ex*}}{\end{ex*}}
+\newtheorem{prob}[equation]{}
+\renewenvironment{problem}{\smaller\begin{prob}}{\end{prob}\normalsize}
+
+\DeclareTextFontCommand{\emph}{\itshape\color{violet}}
+
+
+\renewcommand{\boxed}[1]{  \fcolorbox{gray}{lime}{$\normalcolor\displaystyle #1$}}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+theorems-chap
+\end_modules
+\maintain_unincluded_children false
+\language vietnamese
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math newtxmath
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdftex"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.5cm
+\topmargin 2cm
+\rightmargin 2.5cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Bài giảng Dạng vi phân
+\end_layout
+
+\begin_layout Abstract
+Đây là tập bài giảng cho môn cao học Giải tích trên đa tạp, dựa trên bài
+ giảng của R.
+ Sjamaar 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sjamaar06"
+
+\end_inset
+
+.
+ Tập bài giảng này sẽ được tiếp tục sửa chữa và bổ sung.
+ 
+\end_layout
+
+\begin_layout Abstract
+Biên soạn:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Phan Đình Hiếu.
+ Học viên cao học Toán Giải tích khóa 2014.
+\end_layout
+
+\begin_layout Itemize
+Lê Chiêu Hoàng Nguyên.
+ Sinh viên ngành Toán khóa 2012-2016.
+\end_layout
+
+\begin_layout Itemize
+Phan Văn Phương.
+ Học viên cao học Toán Giải tích khóa 2012.
+\end_layout
+
+\begin_layout Itemize
+Huỳnh Quang Vũ: người biên tập.
+ Khoa Toán-Tin học, Đại học Khoa học Tự nhiên, Đại học Quốc gia Thành phố
+ Hồ Chí Minh, email: 
+\family typewriter
+
+\begin_inset CommandInset href
+LatexCommand href
+target "hqvu@hcmus.edu.vn"
+type "mailto:"
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Abstract
+11/2015 -- 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Mở đầu
+\end_layout
+
+\begin_layout Standard
+Ta nhớ lại trong giải tích cổ điển hàm nhiều biến.
+ Xét tích phân như 
+\begin_inset Formula ${\displaystyle \iint_{D}x^{2}y^{3}dxdy={\displaystyle \iint_{D}x^{2}y^{3}dA}.}$
+\end_inset
+
+ Ở đây 
+\begin_inset Formula $dA$
+\end_inset
+
+ là "phần tử diện tích" được hiểu một cách mơ hồ mà không định nghĩa rõ.
+ Hay 
+\begin_inset Formula ${\displaystyle \int_{\gamma}xdy+ydx.}$
+\end_inset
+
+ Hay 
+\begin_inset Formula ${\displaystyle \int_{\gamma}fds}$
+\end_inset
+
+, với 
+\begin_inset Formula $ds$
+\end_inset
+
+ là phần tử chiều dài.
+ Hay 
+\begin_inset Formula ${\displaystyle \iint_{S}fdS}$
+\end_inset
+
+ với 
+\begin_inset Formula $dS$
+\end_inset
+
+ là phần tử diện tích mặt.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture} 
+\backslash
+small 
+\backslash
+draw   (0,0) to [out=30,in=210] (1,1) to [out=30,in=210] (2,2.5) to [out=30,in=24
+0] (4,3);  
+\backslash
+node [above] at (1,1) {$
+\backslash
+gamma$};   
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Trong chương trình đại học các đại lượng như vậy không được giải thích rõ
+ ràng.
+ Môn học này nghiên cứu đối tượng này một cách có hệ thống.
+ Một mục đích nữa của môn học là phát triển lên đối tượng tổng quát hơn.
+ Cần hiểu rõ hơn đối tượng là cái gì? Nhiều chiều thì 
+\begin_inset Formula $ds$
+\end_inset
+
+, 
+\begin_inset Formula $dS$
+\end_inset
+
+ là cái gì? Các đối tượng trong không gian 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+ sẽ được phát triển lên không gian nhiều chiều.
+\end_layout
+
+\begin_layout Standard
+Chỉ riêng về vi phân hoặc riêng về tích phân đã phát triển trong tổng quát
+ khá xa, tuy nhiên sự kết hợp cả hai thì còn hạn chế.
+ Xét bài toán tích phân đơn giản: 
+\begin_inset Formula 
+\[
+{\displaystyle \int_{0}^{1}xdx=\left.\left({\displaystyle \frac{x^{2}}{2}}\right)\right|_{0}^{1}=\dfrac{1}{2}1^{2}-\dfrac{1}{2}0^{2}}.
+\]
+
+\end_inset
+
+ Nhắc lại công thức Newton-Leibniz: Nếu 
+\begin_inset Formula $F'=f$
+\end_inset
+
+ thì 
+\begin_inset Formula 
+\[
+\int_{a}^{b}fdx=F|_{a}^{b}.
+\]
+
+\end_inset
+
+ Như vậy đạo hàm và tích phân có thể xem là hai phép toán ngược nhau.
+ Tổng quát hóa của công thức Newton-Leibniz là công thức Stokes sẽ có trong
+ môn học này.
+\end_layout
+
+\begin_layout Standard
+Tại sao phải xét không gian nhiều chiều? Vì khái niệm không gian tổng quát
+ không chỉ mô tả không gian ba chiều chúng ta sống mà nó còn mô tả nhiều
+ hệ thống.
+ Số tham số quy định số chiều của hệ thống.
+ Như vậy không gian nhiều chiều phụ thuộc nhiều tham số có thể lên đến vô
+ hạn.
+ Nói cách khác số chiều bằng số bậc tự do của hệ thống, bằng số tham số
+ độc lập miêu tả hệ thống.
+\end_layout
+
+\begin_layout Example*
+Hệ gồm hai quả lắc (pendulum): Với 
+\begin_inset Formula $O$
+\end_inset
+
+ cố định, cái thứ hai gắn vào cái thứ nhất.
+\end_layout
+
+\begin_layout Example*
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-6.46,4.)-- (-4.,4.);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-6.,6.)-- (-6.,3.62);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-8.,3.)-- (-5.68,4.16);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left] at (-5.76,6.18) {$
+\backslash
+mathbb{R}^3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=black] (-4.,5.) circle (2pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [above] at (-4.,5.) {$O$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=lime] (-3.,3.) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [right] at (-3.,3.) {$x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=lime] (-5.,2.) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node [left]  at (-5.,2.) {$y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-4.,5.)-- (-3.,3.);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (-3.,3.)-- (-5.,2.);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bài toán định vị trí cho hệ hai điểm 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ rõ ràng là một hệ thống phụ thuộc vào 
+\begin_inset Formula $4$
+\end_inset
+
+ tham số ( hệ thống 
+\begin_inset Formula $4$
+\end_inset
+
+ chiều).
+ Thật vậy các khả năng vị trí điểm 
+\begin_inset Formula $x$
+\end_inset
+
+ là một mặt cầu 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ tâm 
+\begin_inset Formula $O$
+\end_inset
+
+, ứng với mỗi điểm 
+\begin_inset Formula $x$
+\end_inset
+
+, khả năng vị trí điểm 
+\begin_inset Formula $y$
+\end_inset
+
+ là một mặt cầu 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+ tâm 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ Như vậy hệ trên là một không gian 
+\begin_inset Formula $4$
+\end_inset
+
+ chiều 
+\begin_inset Formula $S^{2}\times S^{2}$
+\end_inset
+
+.
+ Để mô tả hệ thống cần 
+\begin_inset Formula $4$
+\end_inset
+
+ tham số độc lập.
+\end_layout
+
+\begin_layout Standard
+Việc nghiên cứu không gian nhiều chiều tổng quát hơn 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ chính là việc nghiên cứu về đa tạp.
+ Bản thân 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ cũng là một đa tạp.
+ Ví dụ phía trên là một đa tạp 
+\begin_inset Formula $4$
+\end_inset
+
+ chiều.
+\end_layout
+
+\begin_layout Standard
+Trong môn học này ta quy ước 
+\begin_inset Formula $\mathbb{R}^{n}=\{x=(x_{1},x_{2},...,x_{n})\ |\ x_{1},x_{2},...,x_{n}\in\mathbb{R}\}$
+\end_inset
+
+ với các cấu trúc không gian vector quen thuộc, metric Euclid quen thuộc,
+ và chuẩn Euclide: 
+\begin_inset Formula $\left\Vert x\right\Vert =\sqrt{x_{1}^{2}+x_{2}^{2}+...+x_{n}^{2}}$
+\end_inset
+
+.
+ Chúng ta thường viết vectơ 
+\begin_inset Formula $x$
+\end_inset
+
+ ở dạng cột vì thường xuyên nhân ma trận.
+ 
+\end_layout
+
+\begin_layout Chapter
+Dạng vi phân trong không gian Euclid
+\end_layout
+
+\begin_layout Section
+Những tính chất cơ bản
+\end_layout
+
+\begin_layout Standard
+Các đại lượng 
+\begin_inset Formula $dx$
+\end_inset
+
+, 
+\begin_inset Formula $dxdy$
+\end_inset
+
+, 
+\begin_inset Formula $dx_{1}dx_{2}...dx_{n}$
+\end_inset
+
+,...
+ sẽ chưa được định nghĩa mà để lại ở một chương sau.
+ Trước tiên chúng ta hiểu đại khái 
+\begin_inset Formula $dx$
+\end_inset
+
+ như là một vô cùng bé của 
+\begin_inset Formula $x$
+\end_inset
+
+ như ở bậc đại học.
+\end_layout
+
+\begin_layout Example*
+Xét trong 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $(x,y)\in\mathbb{R}^{2}$
+\end_inset
+
+.
+ Ta có tính chất về dạng: 
+\begin_inset Formula 
+\[
+dxdy=-dydx,
+\]
+
+\end_inset
+
+(tính phản đối xứng).
+ Như vậy 
+\begin_inset Formula $dxdx=-dxdx$
+\end_inset
+
+ suy ra 
+\begin_inset Formula $dxdx=0$
+\end_inset
+
+.
+ Ở đây 
+\begin_inset Formula $0$
+\end_inset
+
+ là cái gì? Nó có phải là số 
+\begin_inset Formula $0$
+\end_inset
+
+ đơn thuần không? Ta tạm xem nó như một kí hiệu hình thức.
+\end_layout
+
+\begin_layout Standard
+Trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ với 
+\begin_inset Formula $x=(x_{1},...,x_{n})$
+\end_inset
+
+.
+ Biểu thức 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}},\ 1\leq i_{1}\le i_{2}\le\dotsb\le i_{k}\leq n
+\]
+
+\end_inset
+
+ được gọi là một 
+\emph on
+dạng vi phân
+\emph default
+ bậc 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+dạng vi phân
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dạng vi phân bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ thỏa mãn tính chất 
+\emph on
+phản đối xứng
+\emph default
+ (anticommutative): 
+\begin_inset Formula 
+\[
+\boxed{dxdy=-dydx.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Trong trường hợp tổng quát ta đổi chổ bất kì hai thành phần 
+\begin_inset Formula $dx_{i_{m}},dx_{i_{n}}$
+\end_inset
+
+ công thức vẫn đúng: 
+\begin_inset Formula 
+\[
+dx_{i_{1}}\dotsb dx_{i_{m}}\dotsb dx_{i_{n}}\dotsb dx_{i_{k}}=-dx_{i_{1}}\dotsb dx_{i_{n}}\dotsb dx_{i_{m}}\dotsb dx_{i_{k}}.
+\]
+
+\end_inset
+
+Chứng minh dành cho bạn đọc.
+\end_layout
+
+\begin_layout Example*
+Trong 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+dxdydz=-dxdzdy=dydzdx
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+dxdzdx=-dxdxdz=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Remark
+Trong một dạng nếu có hai thành phần giống nhau thì dạng đó bằng không.
+\end_layout
+
+\begin_layout Remark
+Trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ mọi 
+\begin_inset Formula $k$
+\end_inset
+
+-dạng với 
+\begin_inset Formula $k>n$
+\end_inset
+
+ đều bằng 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+
+\series bold
+Phép nhân của dạng
+\end_layout
+
+\begin_layout Standard
+Trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ nếu 
+\begin_inset Formula $\omega_{1}$
+\end_inset
+
+ và 
+\begin_inset Formula $\omega_{2}$
+\end_inset
+
+ là hai dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ và 
+\begin_inset Formula $l$
+\end_inset
+
+ thì ta có 
+\begin_inset Formula $\omega_{1}\omega_{2}$
+\end_inset
+
+ lại là một dạng bậc 
+\begin_inset Formula $k+l$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example*
+Trong 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\omega_{1}=dx$
+\end_inset
+
+ là một 
+\begin_inset Formula $1$
+\end_inset
+
+-dạng; 
+\begin_inset Formula $\omega_{2}=dydz$
+\end_inset
+
+ là một 
+\begin_inset Formula $2$
+\end_inset
+
+-dạng; 
+\begin_inset Formula $\omega_{1}\omega_{2}=(dx)(dydz)=dxdydz$
+\end_inset
+
+ là một 
+\begin_inset Formula $3$
+\end_inset
+
+-dạng.
+\end_layout
+
+\begin_layout Standard
+Phép nhân này có tính chất kết hợp: 
+\begin_inset Formula 
+\[
+(\omega_{1}\omega_{2})\omega_{3}=\omega_{1}(\omega_{2}\omega_{3})=\omega_{1}\omega_{2}\omega_{3}.
+\]
+
+\end_inset
+
+ Phép nhân có phần tử không: 
+\begin_inset Formula 
+\[
+\omega\cdot0=0\cdot\omega=0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Nếu 
+\begin_inset Formula $\omega_{1}$
+\end_inset
+
+ là một 
+\begin_inset Formula $k$
+\end_inset
+
+-dạng và 
+\begin_inset Formula $\omega_{2}$
+\end_inset
+
+ là một 
+\begin_inset Formula $l$
+\end_inset
+
+-dạng thì
+\begin_inset Formula 
+\[
+\boxed{\omega_{1}\omega_{2}=(-1)^{kl}\omega_{2}\omega_{1}.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+With 
+\begin_inset Formula 
+\[
+\omega_{1}=dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}}
+\]
+
+\end_inset
+
+ and 
+\begin_inset Formula 
+\[
+\omega_{2}=dx_{j_{1}}dx_{j_{2}}\dotsb dx_{j_{l}}
+\]
+
+\end_inset
+
+ we get 
+\begin_inset Formula 
+\begin{align*}
+\omega_{1}\omega_{2} & =(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})(dx_{j_{1}}dx_{j_{2}}\dotsb dx_{j_{l}})\\
+ & =(-1)^{k}dx_{j_{1}}(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})(dx_{j_{2}}\dotsb dx_{j_{l}})\\
+ & =(-1)^{2k}dx_{j_{1}}dx_{j_{2}}(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})(dx_{j_{3}}\dotsb dx_{j_{l}})\\
+ & =(-1)^{kl}(dx_{j_{1}}dx_{j_{2}}\dotsb dx_{j_{l}})(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})=(-1)^{kl}\omega_{2}\omega_{1}.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tổng quát: một dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ trên tập mở 
+\begin_inset Formula $U\subset\mathbb{R}^{n}$
+\end_inset
+
+ là một biểu thức 
+\begin_inset Formula $fdx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}}$
+\end_inset
+
+ trong đó 
+\begin_inset Formula $f:U\rightarrow\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection*
+Dạng vi phân trên 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $U\in\mathbb{R}^{n}$
+\end_inset
+
+, cho 
+\begin_inset Formula $x=(x_{1},...,x_{n})$
+\end_inset
+
+.
+ Dạng bậc không (
+\begin_inset Formula $0$
+\end_inset
+
+-dạng) là một hàm thực 
+\begin_inset Formula $f:U\subset\mathbb{R}^{n}\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ Dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ (
+\begin_inset Formula $k$
+\end_inset
+
+-dạng) là biểu thức 
+\begin_inset Formula ${\displaystyle \sum fdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}}$
+\end_inset
+
+ , 
+\begin_inset Formula $f:U\subset\mathbb{R}^{n}\rightarrow\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $dx_{1},dx_{2},...,dx_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $2dx_{1}+3dx_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $x_{1}^{2}x_{2}dx_{1}+x_{3}dx_{4}$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $1$
+\end_inset
+
+ trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $x_{1}x_{2}dx_{i_{1}}dx_{i_{2}}...dx_{i_{n}}$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $n$
+\end_inset
+
+ trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $xdxdy$
+\end_inset
+
+, 
+\begin_inset Formula $(xy+1)dxdz$
+\end_inset
+
+ là những dạng bậc 
+\begin_inset Formula $2$
+\end_inset
+
+ trong 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Trên 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ một dạng bậc 
+\begin_inset Formula $1$
+\end_inset
+
+ là một biểu thức: 
+\begin_inset Formula $Pdx+Qdy$
+\end_inset
+
+ trong đó 
+\begin_inset Formula $P,Q:U\subset\mathbb{R}^{2}\rightarrow\mathbb{R}$
+\end_inset
+
+.
+ một dạng bậc 
+\begin_inset Formula $2$
+\end_inset
+
+ là một biểu thức: 
+\begin_inset Formula $Pdxdy+Qdydx=(P-Q)dxdy=Rdxdy$
+\end_inset
+
+.
+ Một dạng bậc lớn hơn 
+\begin_inset Formula $2$
+\end_inset
+
+ 
+\begin_inset Formula $=0$
+\end_inset
+
+.
+ Không gian 
+\begin_inset Formula $n$
+\end_inset
+
+ chiều thì mọi dạng bậc lớn hơn 
+\begin_inset Formula $n$
+\end_inset
+
+ đều bằng 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark*
+Không thể cộng trừ hai dạng khác bậc.
+ Chằng hạn như 
+\begin_inset Formula $Pdx+Qdy+Rdxdy$
+\end_inset
+
+ là sai.
+\end_layout
+
+\begin_layout Standard
+Nhân hai dạng: 
+\begin_inset Formula $\alpha={\displaystyle \sum fdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}}$
+\end_inset
+
+ là một 
+\begin_inset Formula $k$
+\end_inset
+
+-dạng.
+ 
+\begin_inset Formula $\beta={\displaystyle \sum gdx_{j_{1}}dx_{j_{2}}...dx_{j_{l}}}$
+\end_inset
+
+ là một 
+\begin_inset Formula $l$
+\end_inset
+
+-dạng.
+ Ta định nghĩa 
+\begin_inset Formula $\alpha\beta={\displaystyle \sum fgdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}dx_{j_{1}}dx_{j_{2}}...dx_{j_{l}}}$
+\end_inset
+
+ là một 
+\begin_inset Formula $k+l$
+\end_inset
+
+-dạng.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+(dx)(dy)=dxdy
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+dx(dy+dz)=dxdy+dzdz
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+Cho 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ và 
+\begin_inset Formula $\beta$
+\end_inset
+
+ là hai dạng, ta có: 
+\begin_inset Formula 
+\[
+\alpha\beta=(-1)^{deg(\alpha).deg(\beta)}\beta\alpha
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Proof
+Bạn đọc tự chứng minh.
+\end_layout
+
+\begin_layout Corollary
+Nhân một dạng bậc lẻ với chính nó thì bằng 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Giả sử 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là một 
+\begin_inset Formula $k$
+\end_inset
+
+-dạng (
+\begin_inset Formula $k$
+\end_inset
+
+ lẻ).
+ Ta có: 
+\begin_inset Formula $\alpha^{2}=\alpha.\alpha=(-1)^{k.k}\alpha.\alpha$
+\end_inset
+
+ suy ra 
+\begin_inset Formula $\alpha^{2}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Đạo hàm của dạng
+\end_layout
+
+\begin_layout Definition
+Cho 
+\begin_inset Formula $f:U\subset\mathbb{R}^{n}\rightarrow\mathbb{R}$
+\end_inset
+
+, 
+\begin_inset Formula $U$
+\end_inset
+
+ mở, 
+\begin_inset Formula $f$
+\end_inset
+
+ trơn mọi cấp ( tức 
+\begin_inset Formula $f\in C^{\infty}(U)$
+\end_inset
+
+).
+ Ta gọi 
+\begin_inset Formula $f$
+\end_inset
+
+ là dạng trơn bậc 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Đạp hàm của dạng bậc 
+\begin_inset Formula $0$
+\end_inset
+
+ được định nghĩa: 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $df=\dfrac{\partial f}{\partial x_{1}}dx_{1}+\dfrac{\partial f}{\partial x_{2}}dx_{2}+....+\dfrac{\partial f}{\partial x_{n}}dx_{n}={\displaystyle \sum_{i=1}^{n}\dfrac{\partial f}{\partial x_{i}}dx_{i}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Như vậy, đạo hàm của dạng bậc 
+\begin_inset Formula $0$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Dạng bậc 
+\begin_inset Formula $0$
+\end_inset
+
+ trên 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+u=f(x)=x^{2}:\mathbb{R}\rightarrow\mathbb{R}
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+du=2xdx
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ hàm trên 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+u=f(x)
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+du=f'(x)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Example
+Với 
+\begin_inset Formula 
+\[
+f:\mathbb{R}^{2}\rightarrow\mathbb{R}
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+(x,y)\mapsto f(x,y)
+\]
+
+\end_inset
+
+ Ta có 
+\begin_inset Formula $df=\dfrac{\partial f}{\partial x}dx+\dfrac{\partial f}{\partial y}dy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Tổng quát:
+\begin_inset Formula 
+\[
+f:\mathbb{R}^{n}\rightarrow\mathbb{R}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+(x_{1},..,x_{n})\mapsto f(x_{1},..,x_{n})
+\]
+
+\end_inset
+
+ Ta có 
+\begin_inset Formula 
+\[
+df=\dfrac{\partial f}{\partial x_{1}}dx_{1}+\dfrac{\partial f}{\partial x_{2}}dx_{2}+....+\dfrac{\partial f}{\partial x_{n}}dx_{n}={\displaystyle \sum_{i=1}^{n}\dfrac{\partial f}{\partial x_{i}}dx_{i}}
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Phía trên đây là đạo hàm của 
+\begin_inset Formula $0$
+\end_inset
+
+-dạng, bây giờ ta nói về đạo hàm của một 
+\begin_inset Formula $k$
+\end_inset
+
+-dạng.
+\end_layout
+
+\begin_layout Definition
+Cho 
+\begin_inset Formula $\alpha={\displaystyle \sum fdx_{i_{1}}...dx_{i_{k}}}$
+\end_inset
+
+ là một 
+\begin_inset Formula $k$
+\end_inset
+
+-dạng.
+ Ta định nghĩa
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+d\alpha={\displaystyle \sum dfdx_{i_{1}}...dx_{i_{k}}}
+\]
+
+\end_inset
+
+ là một 
+\begin_inset Formula $(k+1)$
+\end_inset
+
+-dạng.
+\end_layout
+
+\begin_layout Standard
+Đặt 
+\begin_inset Formula $\Omega^{k}(U)$
+\end_inset
+
+ là tập hợp các dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ trên 
+\begin_inset Formula $U$
+\end_inset
+
+ thì 
+\begin_inset Formula $d:\Omega^{k}(U)\rightarrow\Omega^{k+1}(U)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Trên 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ 
+\begin_inset Formula $\alpha=Pdx+Qdy$
+\end_inset
+
+, ta có 
+\begin_inset Formula 
+\[
+d\alpha=d(Pdx+Qdy)=dPdx+dQdy=(\dfrac{\partial P}{\partial x}dx+\dfrac{\partial P}{\partial y}dy)dx+(\dfrac{\partial Q}{\partial x}dx+\dfrac{\partial Q}{\partial y}dy)dy=\dfrac{\partial P}{\partial y}dydx+\dfrac{\partial Q}{\partial x}dxdy=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nhắc lại định lý Green trong giải tích cổ điển.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,sc
+ale=0.54]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clip(2.92,-5.34) rectangle (17.08,6.32);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (4.,-3.) -- (4.,4.);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (2.,-1.) -- (10.,-1.);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={39.44440375479764:(6.616028203809059,1.3786909668423168)}]
+ (6.616028203809059,1.3786909668423168) ellipse (1.780725937839661cm and 1.014765011
+8872027cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (2.94,4.28) node[anchor=north west] {$
+\backslash
+mathbb{R}^2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (6.923837578369623,0.35378598291576924) -- (7.180569788606215,0.5312680504
+204655);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (6.94,2.48) node[anchor=north west] {$D$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.62,1.12) node[anchor=north west] {$
+\backslash
+partial D$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+{\displaystyle \int_{D}\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)dxdy={\displaystyle \int_{\partial D}Pdx+Qdy}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Công thức Newton-Leibniz: 
+\begin_inset Formula 
+\[
+{\displaystyle \int_{[a,b]}du=u|_{\partial[a,b]}}
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Trên 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+ Cho dạng 
+\begin_inset Formula 
+\[
+\alpha=Pdydz+Qdzdx+Rdxdy
+\]
+
+\end_inset
+
+ Thì 
+\begin_inset Formula 
+\begin{align*}
+d\alpha & =d(Pdydz+Qdzdx+Rdxdy)=dPdydz+dQdzdx+dRdxdy=\\
+= & (\dfrac{\partial P}{\partial x}dx+\dfrac{\partial P}{\partial y}dy+\dfrac{\partial P}{\partial z}dz)dydz+(\dfrac{\partial Q}{\partial x}dx+\dfrac{\partial Q}{\partial y}dy+\dfrac{\partial Q}{\partial z}dz)dzdx+(\dfrac{\partial R}{\partial x}dx+\dfrac{\partial R}{\partial y}dy+\dfrac{\partial R}{\partial z}dz)dxdy\\
+ & =(\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z})dxdydz.
+\end{align*}
+
+\end_inset
+
+Cho dạng 
+\begin_inset Formula $\beta=Pdx+Qdy+Rdz$
+\end_inset
+
+ thì 
+\begin_inset Formula 
+\begin{align*}
+d\beta & =d(Pdx+Qdy+Rdz)=dPdx+dQdy+dRdz=\\
+= & (\dfrac{\partial P}{\partial x}dx+\dfrac{\partial P}{\partial y}dy+\dfrac{\partial P}{\partial z}dz)dx+(\dfrac{\partial Q}{\partial x}dx+\dfrac{\partial Q}{\partial y}dy+\dfrac{\partial Q}{\partial z}dz)dy+\\
++ & (\dfrac{\partial R}{\partial x}dx+\dfrac{\partial R}{\partial y}dy+\dfrac{\partial R}{\partial z}dz)dz=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nhắc lại trong giải tích cổ điển: Định lý Stokes trong 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+{\displaystyle \int_{\partial S}Pdx+Qdy+Rdz={\displaystyle \int_{S}(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx}}.
+\]
+
+\end_inset
+
+ Định lý Gauss - Ostragradski: 
+\begin_inset Formula 
+\[
+{\displaystyle \int_{\partial E}Pdydz+Qdzdx+Rdxdy={\displaystyle \int_{E}(\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z})dxdydz}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ta để ý các công thức Newton-Leibniz, Green, Stokes, Gauss - Ostragradski
+ đều có dạng 
+\begin_inset Formula 
+\[
+{\displaystyle \int_{\partial C}\alpha={\displaystyle \int_{C}d\alpha}}.
+\]
+
+\end_inset
+
+Trong đó 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là một dạng và 
+\begin_inset Formula $d\alpha$
+\end_inset
+
+ là đạo hàm của dạng đó.
+ Ở phần sau ta sẽ tổng quát hóa lên thành định lý Stokes trong không gian
+ nhiều chiều và trên đa tạp.
+\end_layout
+
+\begin_layout Standard
+Trong giải tích cổ điển:
+\end_layout
+
+\begin_layout Standard
+Cho 
+\begin_inset Formula $F=(P,Q,R)$
+\end_inset
+
+, ta có khái niệm: 
+\begin_inset Formula 
+\[
+DivF=\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}.
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+RotF=CurlF=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y},\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z},\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem*
+Đạo hàm của đạo hàm của một dạng bất kì bằng 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ (Ở đây hàm lấy giá trị thực 
+\begin_inset Formula $f$
+\end_inset
+
+ phải trơn.) Tức 
+\begin_inset Formula $\alpha={\displaystyle \sum fdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}}$
+\end_inset
+
+ là một 
+\begin_inset Formula $k$
+\end_inset
+
+-dạng.
+ Ta có: 
+\begin_inset Formula $d(d\alpha)=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Phần chứng minh giành cho bạn đọc.
+\end_layout
+
+\begin_layout Example
+Trong 
+\begin_inset Formula $\mathbb{R}^{3}$
+\end_inset
+
+ cho 
+\begin_inset Formula $\alpha=Pdx+Qdy+Rdz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Như trên 
+\begin_inset Formula $d\alpha=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+Do đó 
+\begin_inset Formula 
+\begin{align*}
+d(d\alpha) & =d\left((\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx\right)=\\
+= & d\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)dxdy+d\left(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z}\right)dydz+d\left(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}\right)dzdx\\
+= & \left(\dfrac{\partial^{2}Q}{\partial x^{2}}dx+\dfrac{\partial^{2}Q}{\partial x\partial y}dy+\dfrac{\partial^{2}Q}{\partial x\partial z}dz-\dfrac{\partial^{2}P}{\partial y\partial x}dx-\dfrac{\partial^{2}P}{\partial y^{2}}dy-\dfrac{\partial^{2}P}{\partial y\partial z}dz\right)dxdy+dydz\\
+ & +\left(\dfrac{\partial^{2}R}{\partial y\partial x}dx+\dfrac{\partial^{2}R}{\partial y^{2}}dy+\dfrac{\partial^{2}R}{\partial y\partial z}dz-\dfrac{\partial^{2}Q}{\partial z\partial x}dx-\dfrac{\partial^{2}Q}{\partial z\partial y}dy-\dfrac{\partial^{2}Q}{\partial z^{2}}dz\right)\\
+ & +\left(\dfrac{\partial^{2}P}{\partial z\partial x}dx+\dfrac{\partial^{2}P}{\partial z\partial y}dy+\dfrac{\partial^{2}P}{\partial z^{2}}dz-\dfrac{\partial^{2}R}{\partial x^{2}}dx-\dfrac{\partial^{2}R}{\partial x\partial y}dy-\dfrac{\partial^{2}R}{\partial x\partial z}dz\right)dzdx.\\
+= & \dfrac{\partial^{2}Q}{\partial x\partial z}dzdxdy-\dfrac{\partial^{2}P}{\partial y\partial z}dzdxdy+\dfrac{\partial^{2}R}{\partial y\partial x}dxdydz-\dfrac{\partial^{2}Q}{\partial z\partial x}dxdydz+\dfrac{\partial^{2}P}{\partial z\partial y}dydzdx-\dfrac{\partial^{2}R}{\partial x\partial y}dydzdx\\
+= & 0.
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dạng khớp và dạng đóng
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $\alpha$
+\end_inset
+
+ được gọi là dạng khớp nếu có dạng 
+\begin_inset Formula $\beta$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $d\beta=\alpha$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Một cách nôm na dạng khớp là đạo hàm của dạng khác, tức dạng có nguyên hàm.
+\end_layout
+
+\begin_layout Standard
+Cho 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc một trên 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ (
+\begin_inset Formula $\alpha\in\Omega^{1}(\mathbb{R}$
+\end_inset
+
+) thì 
+\begin_inset Formula $\alpha=fdx$
+\end_inset
+
+ ; 
+\begin_inset Formula $f\in C^{\infty}(\mathbb{R})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha$
+\end_inset
+
+ khớp 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ có tồn tại hàm 
+\begin_inset Formula $F\in\Omega^{0}(\mathbb{R})=C^{\infty}(\mathbb{R})$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $dF=fdx$
+\end_inset
+
+ tức 
+\begin_inset Formula $F'dx=fdx$
+\end_inset
+
+ tức 
+\begin_inset Formula $F'=f$
+\end_inset
+
+.
+ Nghĩa là 
+\begin_inset Formula $F$
+\end_inset
+
+ là một nguyên hàm của 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Như vậy dạng khớp như là tổng quát hóa của khái niệm có nguyên hàm trong
+ giải tích cổ điển.
+\end_layout
+
+\begin_layout Standard
+Trong 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ cho 
+\begin_inset Formula $\alpha=Pdx+Qdy\in\Omega^{1}(\mathbb{R}^{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là khớp 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ tồn tại 
+\begin_inset Formula $F\in\Omega^{0}(\mathbb{R}^{2})=C^{\infty}(\mathbb{R}^{2})$
+\end_inset
+
+ sao cho 
+\begin_inset Formula 
+\[
+dF=\alpha\Leftrightarrow\dfrac{\partial F}{\partial x}dx+\dfrac{\partial F}{\partial y}dy=Pdx+Qdy\Leftrightarrow\left\{ \begin{array}{lll}
+\dfrac{\partial F}{\partial x}=P\\
+\dfrac{\partial F}{\partial y}=Q
+\end{array}\right.\Leftrightarrow(P,Q)=(\dfrac{\partial F}{\partial x},\dfrac{\partial F}{\partial y})=\nabla F=gradF
+\]
+
+\end_inset
+
+ Trong giải tích hàm nhiều biến, trường 
+\begin_inset Formula $(P,Q)$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $\exists F:\nabla F=(P,Q)$
+\end_inset
+
+ thì 
+\begin_inset Formula $(P,Q)$
+\end_inset
+
+ gọi là bảo toàn.
+ Nếu 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là khớp thì 
+\begin_inset Formula $(P,Q)$
+\end_inset
+
+ là bảo toàn và hàm 
+\begin_inset Formula $F$
+\end_inset
+
+ được gọi là hàm thế.
+ Bài toán quan tâm là một dạng có khớp hay không, nếu khớp tìm nguyên hàm?
+\end_layout
+
+\begin_layout Example
+Trong 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ cho 
+\begin_inset Formula $\alpha=xydx+\dfrac{1}{2}x^{2}dy$
+\end_inset
+
+ là 
+\begin_inset Formula $1$
+\end_inset
+
+-dạng.
+ Hỏi 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ có khớp hay không? (Tức trường 
+\begin_inset Formula $(xy,\dfrac{1}{2}x^{2})$
+\end_inset
+
+ có bảo toàn hay không.)
+\end_layout
+
+\begin_layout Example
+Đây thực ra là bài toán tìm nguyên hàm.
+ Tìm 
+\begin_inset Formula $F$
+\end_inset
+
+ sao cho 
+\begin_inset Formula 
+\[
+\left\{ \begin{array}{lll}
+\dfrac{\partial F}{\partial x}=xy &  & (1)\\
+\dfrac{\partial F}{\partial y}=\dfrac{1}{2}x^{2} &  & (2)
+\end{array}\right.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $(1)\Rightarrow F(x,y)={\displaystyle \int xydx=\dfrac{1}{2}x^{2}y+C(y)}$
+\end_inset
+
+.
+ Thay vào 
+\begin_inset Formula $(2)$
+\end_inset
+
+ ta được:
+\begin_inset Formula 
+\[
+(\dfrac{1}{2}x^{2}y+C(y))'_{y}=\dfrac{1}{2}x^{2}\Leftrightarrow\dfrac{1}{2}x^{2}+C'(y)=\dfrac{1}{2}x^{2}
+\]
+
+\end_inset
+
+ tức 
+\begin_inset Formula $C'(y)=0\Rightarrow C(y)=C$
+\end_inset
+
+.
+ Vậy 
+\begin_inset Formula $F(x,y)=\dfrac{1}{2}x^{2}+C$
+\end_inset
+
+.
+ Vậy trường 
+\begin_inset Formula $(xy,\dfrac{1}{2}x^{2})$
+\end_inset
+
+ là trường bảo toàn hay 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng khớp và hàm thế 
+\begin_inset Formula $F=\dfrac{1}{2}x^{2}+C$
+\end_inset
+
+ (
+\begin_inset Formula $C$
+\end_inset
+
+ là hằng số không phụ thuộc cả 
+\begin_inset Formula $x$
+\end_inset
+
+ lẩn 
+\begin_inset Formula $y$
+\end_inset
+
+).
+ Ví dụ trên là tương đối đơn giản, trong trường hợp tổng quát ta cần phương
+ pháp lý thuyết.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Điều kiện cần để khớp
+\shape default
+: Giả sử 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ khớp thì 
+\begin_inset Formula $\exists\beta:d\beta=\alpha\Rightarrow d(\alpha)=d(d\beta)=0$
+\end_inset
+
+.
+ Như vậy một dạng khớp thì có đạo hàm bằng 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Nhắc lại trong giải tích hàm nhiều biến 
+\begin_inset Formula $\alpha=Pdx+Qdy$
+\end_inset
+
+, 
+\begin_inset Formula $d\alpha=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy$
+\end_inset
+
+.
+ Như vậy 
+\begin_inset Formula $(P,Q)$
+\end_inset
+
+ bào toàn thì 
+\begin_inset Formula $\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Nếu 
+\begin_inset Formula $d\alpha=0$
+\end_inset
+
+ ta nói 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng đóng.
+ Như vậy một dạng khớp thì đóng và không có chiều ngược lại.
+ Trong giải tích hàm nhiều biến ta quan tâm bài toán trường 
+\begin_inset Formula $(P,Q)$
+\end_inset
+
+ có 
+\begin_inset Formula $\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}$
+\end_inset
+
+ mà 
+\begin_inset Formula $(P,Q)$
+\end_inset
+
+ không bảo toàn.
+\end_layout
+
+\begin_layout Standard
+Như vậy mối quan hệ giữa khớp và đóng là phong phú.
+ 
+\end_layout
+
+\begin_layout Subsection*
+Bài tập
+\end_layout
+
+\begin_layout Problem
+Hệ thống Lotka-Volterra là một mô hình con thú săn mồi-con mồi.
+ Nó là một cặp phương trình vi phân 
+\begin_inset Formula 
+\[
+\dfrac{dx}{dt}=-rx+sxy,\dfrac{dy}{dt}=py-qxy
+\]
+
+\end_inset
+
+Ở đây 
+\begin_inset Formula $x(t)$
+\end_inset
+
+ đại diện cho dân số con thú săn mồi, 
+\begin_inset Formula $y(t)$
+\end_inset
+
+ đại diện cho dân số con mồi tại thời điểm 
+\begin_inset Formula $t$
+\end_inset
+
+, trong đó 
+\begin_inset Formula $p,q,s,t$
+\end_inset
+
+ là các hằng số dương.
+ Vấn đề chúng ta quan tâm là việc giải đường cong nghiệm (còn gọi là quỹ
+ đạo) 
+\begin_inset Formula $(x(t),y(t))$
+\end_inset
+
+ của hệ thống này.
+ (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sjamaar06"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Chapter
+Kéo lui của một dạng
+\end_layout
+
+\begin_layout Section
+Công thức đổi biến trong 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nhắc lại trong không gian một chiều 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ ta có công thức đổi biến tích phân như sau: 
+\begin_inset Formula ${\displaystyle \int f(u)u'(x)dx={\displaystyle \int f(u)du}}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ Chẳng hạn 
+\begin_inset Formula ${\displaystyle \int\sin^{2}t\cos tdt}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Đổi biến 
+\begin_inset Formula $u=\sin t\Rightarrow du=\cos tdt$
+\end_inset
+
+ do đó, 
+\begin_inset Formula ${\displaystyle \int\sin^{2}t\cos tdt={\displaystyle \int u^{2}du=\dfrac{u^{3}}{3}+C}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Kéo lui của một dạng
+\end_layout
+
+\begin_layout Standard
+Mục đích chính của chương này là tổng quát hóa công thức trên trong trường
+ hợp 
+\begin_inset Formula $n$
+\end_inset
+
+-chiều.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqqqff}{rgb}{0.,0.,1.}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clip(2.1,-0.4) rectangle (8.44,1.98);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.025585728
+3809675cm and 0.6122304192530148cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.097229604
+9664032cm and 0.6522367714371142cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.88,1.68) node[anchor=north west] {$
+\backslash
+mathbb{R}^n$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.58,1.9) node[anchor=north west] {$
+\backslash
+mathbb{R}^n$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (2.92,0.72) node[anchor=north west] {$x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.26,1.04) node[anchor=north west] {$u$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.34,0.22)-- (7.26,0.44);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (5.020319692762799,0.3143036562264836) -- (5.360371071956821,0.33338817240
+57399);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.22,0.88) node[anchor=north west] {$
+\backslash
+varphi$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (3.34,0.22) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\omega$
+\end_inset
+
+ là dạng theo biến 
+\begin_inset Formula $x$
+\end_inset
+
+ trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+, câu hỏi đặt ra: mối quan hệ vi phân của 
+\begin_inset Formula $\omega$
+\end_inset
+
+ theo 
+\begin_inset Formula $x$
+\end_inset
+
+ và theo 
+\begin_inset Formula $u$
+\end_inset
+
+ như thế nào? Giả sử 
+\begin_inset Formula $\omega$
+\end_inset
+
+ là dạng theo 
+\begin_inset Formula $x$
+\end_inset
+
+, đổi biến 
+\begin_inset Formula $u=\varphi(x)$
+\end_inset
+
+ thì 
+\begin_inset Formula $\omega$
+\end_inset
+
+ trở thành dạng gì?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqqqff}{rgb}{0.,0.,1.}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clip(2.06,-0.56) rectangle (8.4,1.72);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.025585728
+3809675cm and 0.6122304192530148cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.097229604
+9664032cm and 0.6522367714371142cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.88,1.68) node[anchor=north west] {$U$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.58,1.9) node[anchor=north west] {$V$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (2.92,0.72) node[anchor=north west] {$x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.26,1.04) node[anchor=north west] {$y$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.34,0.22)-- (7.26,0.44);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (5.020319692762799,0.3143036562264836) -- (5.360371071956821,0.33338817240
+57399);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.22,0.88) node[anchor=north west] {$
+\backslash
+varphi$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.1,0.52) node[anchor=north west] {$
+\backslash
+omega$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (3.34,0.22) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\omega$
+\end_inset
+
+ là dạng trên tập mở 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Câu hỏi đặt ra trên 
+\begin_inset Formula $U$
+\end_inset
+
+ có dạng gì tương ứng? Dạng tương ứng đó gọi là dạng kéo lui của dạng 
+\begin_inset Formula $\omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+Kéo lui (pull-back) của dạng 
+\begin_inset Formula $\omega$
+\end_inset
+
+ (kí hiệu: 
+\begin_inset Formula $\varphi^{*}\omega$
+\end_inset
+
+) là một dạng trên 
+\begin_inset Formula $U$
+\end_inset
+
+ xác định như sau: Nếu 
+\begin_inset Formula 
+\[
+\omega={\displaystyle \sum fdy_{i_{1}}...dy_{i_{k}}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\varphi:\mathbb{R}^{n}\longrightarrow\mathbb{R}^{n}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+x(x_{1},...,x_{n})\longmapsto\varphi(\varphi_{1},...,\varphi_{n})=y(y_{1},...,y_{n})
+\]
+
+\end_inset
+
+ Thì 
+\begin_inset Formula $\varphi^{*}\omega={\displaystyle \sum f\circ\varphi d\varphi_{i_{1}}...d\varphi_{i_{k}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Trong đó:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\omega$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ theo biến 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f$
+\end_inset
+
+ là hàm theo biến 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\varphi$
+\end_inset
+
+ là ánh xạ đi từ 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ vào 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ biến 
+\begin_inset Formula $x$
+\end_inset
+
+ thành 
+\begin_inset Formula $y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\varphi:\mathbb{R}^{n}\longrightarrow\mathbb{R}^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $x\longmapsto y$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Chúng ta có thể hiểu 
+\begin_inset Formula $\varphi^{*}\omega$
+\end_inset
+
+ nhận được bằng cách thay 
+\begin_inset Formula $y$
+\end_inset
+
+ bởi 
+\begin_inset Formula $\varphi(x)$
+\end_inset
+
+ và thay 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ bởi 
+\begin_inset Formula $\varphi_{i}(x)$
+\end_inset
+
+.
+ 
+\series bold
+ 
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\[
+\varphi:\mathbb{R}\rightarrow\mathbb{R}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+x\mapsto u=\varphi
+\]
+
+\end_inset
+
+ 
+\begin_inset Formula $\omega=f(u)du$
+\end_inset
+
+ thì 
+\begin_inset Formula $\varphi^{*}\omega=f(\varphi(x))d\varphi=f(\varphi(x))\varphi'(x)dx$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Xem trường hợp nhiều chiều hơn: 
+\begin_inset Formula $\varphi:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}(x,y)\longmapsto(u,v)$
+\end_inset
+
+ ở đây 
+\begin_inset Formula $u,v$
+\end_inset
+
+ là hàm theo biến 
+\begin_inset Formula $x,y$
+\end_inset
+
+.
+ Cho 
+\begin_inset Formula $\omega=du$
+\end_inset
+
+ thì 
+\begin_inset Formula $\varphi^{*}\omega=du=\dfrac{\partial u}{\partial x}dx+\dfrac{\partial u}{\partial y}dy$
+\end_inset
+
+ Cho 
+\begin_inset Formula $\beta=dudv$
+\end_inset
+
+ thì 
+\begin_inset Formula 
+\begin{align*}
+\varphi^{*}\beta & =dudv=d\varphi_{1}d\varphi_{2}=(\dfrac{\partial u}{\partial x}dx+\dfrac{\partial u}{\partial y}dy)(\dfrac{\partial v}{\partial x}dx+\dfrac{\partial v}{\partial y}dy)=(\dfrac{\partial u}{\partial x}\dfrac{\partial v}{\partial y}-\dfrac{\partial u}{\partial y}\dfrac{\partial v}{\partial x})dxdy\\
+= & det\left(\begin{array}{ccc}
+\dfrac{\partial u}{\partial x} & \dfrac{\partial u}{\partial y}\\
+\dfrac{\partial v}{\partial x} & \dfrac{\partial v}{\partial y}
+\end{array}\right)dxdy=(detJ\varphi)dxdy=\dfrac{\varphi(u,v)}{\varphi(x,y)}dxdy.
+\end{align*}
+
+\end_inset
+
+ (dấu bằng cuối cùng là cách kí hiệu trong giải tích cổ điển).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqqqff}{rgb}{0.,0.,1.}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clip(1.24,-1.36) rectangle (8.4,1.88);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.025585728
+3809675cm and 0.6122304192530148cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.097229604
+9664032cm and 0.6522367714371142cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.88,1.68) node[anchor=north west] {$
+\backslash
+mathbb{R}^2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.58,1.9) node[anchor=north west] {$
+\backslash
+mathbb{R}^2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (2.76,0.88) node[anchor=north west] {$(x,y)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.2,1.2) node[anchor=north west] {$(u,v)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.38,0.06)-- (7.26,0.44);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (5.043173573448893,0.2228881334821081) -- (5.3797550406103225,0.2558522977
+917327);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.22,0.88) node[anchor=north west] {$
+\backslash
+varphi$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (1.62,-0.1) node[anchor=north west] {$
+\backslash
+varphi^*
+\backslash
+omega=
+\backslash
+dfrac{
+\backslash
+varphi (u,v)}{
+\backslash
+varphi (x,y)}dxdy$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (6.46,-0.24) node[anchor=north west] {$
+\backslash
+omega = dudv$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (3.38,0.06) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Nhớ lại công thức đổi biến trong tích phân hàm hai biến số: 
+\begin_inset Formula 
+\[
+{\displaystyle \int\int f(u,v)dudv={\displaystyle \int\int f(u(x,y),v(x,y))\dfrac{\varphi(u,v)}{\varphi(x,y)}dxdy}}.
+\]
+
+\end_inset
+
+ Ở đây cận (miền) lấy tích phân ở hai vế thuận theo qui tắc đổi cận tích
+ phân khi ta đổi biến.
+ Biểu thức dưới dấu tích phân trong vế phải 
+\begin_inset Formula $(*)$
+\end_inset
+
+ là dạng kéo lui của biểu thức dưới dấu tích phân trong vế trái 
+\begin_inset Formula $(*)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $n$
+\end_inset
+
+-chiều
+\end_layout
+
+\begin_layout Example
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{qqqqff}{rgb}{0.,0.,1.}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+clip(2.1,-0.4) rectangle (8.44,1.98);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.025585728
+3809675cm and 0.6122304192530148cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.097229604
+9664032cm and 0.6522367714371142cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.88,1.68) node[anchor=north west] {$
+\backslash
+mathbb{R}^n$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.58,1.9) node[anchor=north west] {$
+\backslash
+mathbb{R}^n$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (2.92,0.72) node[anchor=north west] {$x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (7.26,1.04) node[anchor=north west] {$u$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (3.34,0.22)-- (7.26,0.44);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [->] (5.020319692762799,0.3143036562264836) -- (5.360371071956821,0.33338817240
+57399);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw (5.22,0.88) node[anchor=north west] {$
+\backslash
+varphi$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (3.34,0.22) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{scriptsize}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\omega=du_{1}du_{2}...du_{n}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\varphi^{*}\omega & =d\varphi_{1}d\varphi_{2}...d\varphi_{n}=du_{1}du_{2}...du_{n}=\left({\displaystyle \sum_{i=1}^{n}\dfrac{\partial u_{1}}{\partial u_{i}}dx_{i}}\right)\left({\displaystyle \sum_{i=1}^{n}\dfrac{\partial u_{2}}{\partial u_{i}}dx_{i}}\right)...\left({\displaystyle \sum_{i=1}^{n}\dfrac{\partial u_{n}}{\partial u_{i}}dx_{i}}\right)\\
+= & det\left(\begin{array}{ccc}
+\dfrac{\partial\varphi_{1}}{\partial x_{1}} & ... & \dfrac{\partial\varphi_{1}}{\partial x_{n}}\\
+\dfrac{\partial\varphi_{2}}{\partial x_{1}} & ... & \dfrac{\partial\varphi_{2}}{\partial x_{n}}\\
+. & ... & .\\
+. & ... & .\\
+. & ... & .\\
+\dfrac{\partial\varphi_{n}}{\partial x_{1}} & ... & \dfrac{\partial\varphi_{n}}{\partial x_{n}}
+\end{array}\right)dx_{1}dx_{2}...dx_{n}=det(J\varphi)dx_{1}dx_{2}...dx_{n}.\\
+\end{align*}
+
+\end_inset
+
+ Tóm lại: 
+\begin_inset Formula $\varphi:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $x\mapsto u$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\varphi^{*}(du_{1}du_{2}...du_{n})=det(J\varphi)dx_{1}dx_{2}...dx_{n}.
+\]
+
+\end_inset
+
+ Ta có công thức đổi biến tích phân: 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula ${\displaystyle \int\int...\int f(u)du_{1}du_{2}...du_{n}={\displaystyle \int\int...\int f(\varphi(x))det(J\varphi)dx_{1}dx_{2}...dx_{n}}}.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Trong đó cận lấy tích phân tương ứng ở hai vế tuân theo qui luật đổi biến.
+\end_layout
+
+\begin_layout Theorem
+Ta có một số tính chất sau đây của dạng kéo lui 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\varphi^{*}(a\omega_{1}+b\omega_{2})=a\varphi^{*}\omega_{1}+b\varphi^{*}\omega_{2}$
+\end_inset
+
+.
+ (Tính tuyến tính) 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\varphi^{*}(\omega_{1}.\omega_{2})=\varphi^{*}\omega_{1}.\varphi^{*}\omega_{2}$
+\end_inset
+
+.
+ (Kéo lui của tích bằng tích kéo lui) 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\psi\circ\varphi)^{*}\omega=\varphi^{*}(\psi^{*}\omega)$
+\end_inset
+
+.
+ (Phép kéo lui thực hiện từng bước một)
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+clip(-0.58,0.88) rectangle (10.3,2.7);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw [rotate around={168.87964676637708:(1.0827950287934676,1.7247826824523533)}]
+ (1.0827950287934676,1.7247826824523533) ellipse (1.2448106666071814cm and
+ 0.4089141478761202cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw [rotate around={169.83333115421928:(5.21115768157666,1.6659689578175532)}]
+ (5.21115768157666,1.6659689578175532) ellipse (1.1403299638718054cm and 0.461524190
+4518754cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw [rotate around={164.6123021629423:(8.964354985554843,1.720615043191245)}]
+ (8.964354985554843,1.720615043191245) ellipse (1.1636884188726422cm and 0.526408293
+0489923cm);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw (2.22,1.68)-- (4.141097415533654,1.6807700328950097);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw (6.257882976398445,1.681592628237431)-- (7.993175754381506,1.6525428478712936);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw [->] (2.9000079073408465,1.680272567363469) -- (3.2599998329090027,1.6804168628
+179232);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw [->] (6.859523242633884,1.671520830662224) -- (7.20043213797054,1.6658138233721
+325);
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw (3.04,2.38) node[anchor=north west] {$
+\backslash
+varphi$};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\backslash
+draw (7.02,2.42) node[anchor=north west] {$
+\backslash
+psi$};
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\varphi^{*}(d\omega)=d(\varphi^{*}\omega)$
+\end_inset
+
+.
+ (Đạo hàm của dạng kéo lui bằng dạng kéo lui của đạo hàm).
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Ta làm rõ tính chất 4: Ta có 
+\begin_inset Formula $\varphi^{*}\omega$
+\end_inset
+
+ và 
+\begin_inset Formula $\omega$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+, còn 
+\begin_inset Formula $\varphi^{*}d\omega$
+\end_inset
+
+ và 
+\begin_inset Formula $d\omega$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k+1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Kí hiệu: 
+\begin_inset Formula $\Omega^{k}(V)$
+\end_inset
+
+ là tập hợp tất cả các dạng (trơn) bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ trên 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi:U\rightarrow V
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\varphi^{*}:\Omega^{k}(V)\rightarrow\Omega^{k}(U)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+d:\Omega^{k}(V)\rightarrow\Omega^{k+1}(V)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Omega^{k}(U)\rightarrow\Omega^{k+1}(U)
+\]
+
+\end_inset
+
+ Ta có sơ đồ giao hoán: 
+\begin_inset Formula 
+\[
+\xymatrix{\Omega^{k}(V)\ar[r]^{d}\ar[d]_{\varphi^{*}} & \Omega^{k+1}(V)\ar[d]^{\varphi^{*}}\\
+\Omega^{k}(U)\ar[r]_{d} & \Omega^{k+1}(U)
+}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+d\circ\varphi^{*}=\varphi^{*}\circ d
+\]
+
+\end_inset
+
+ Phần chứng minh giành cho bạn đọc.
+ 
+\end_layout
+
+\begin_layout Chapter
+Tích phân của dạng
+\end_layout
+
+\begin_layout Standard
+Trong chương này ta xây dựng khái niệm tích phân của dạng trên một tập con
+ (một miền được tham số hóa - parametrized region) của 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+, là sự tổng quát hóa của các khái niệm tích phân đường và tích phân mặt
+ quen thuộc.
+ Từ đó đưa ra phát biểu tổng quát hơn của định lý Stokes.
+\end_layout
+
+\begin_layout Standard
+Dưới đây để đơn giản, ta sẽ xét miền lấy tích phân là những miền đơn giản
+ như hình hộp 
+\begin_inset Formula $R\subset\mathbb{R}^{k}$
+\end_inset
+
+, có dạng 
+\begin_inset Formula $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$
+\end_inset
+
+, rồi đến hình hộp suy biến (singular block, sẽ được định nghĩa sau).
+ Nhắc lại rằng với hàm 
+\begin_inset Formula $f:R\rightarrow\mathbb{R}^{k}$
+\end_inset
+
+ trơn trên 
+\begin_inset Formula $R$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Với 
+\begin_inset Formula $V$
+\end_inset
+
+ là một tập không mở, nếu không nói gì thêm ta hiểu rằng nói 
+\begin_inset Formula $f$
+\end_inset
+
+ trơn trên 
+\begin_inset Formula $V$
+\end_inset
+
+ nghĩa là 
+\begin_inset Formula $f$
+\end_inset
+
+ trơn trên một tập mở chứa 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ thì tích phân của 
+\begin_inset Formula $f$
+\end_inset
+
+ trên 
+\begin_inset Formula $R$
+\end_inset
+
+ tồn tại (theo cả nghĩa Riemann lẫn Lebesgue).
+ Từ định lý Fubini, ta có:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula ${\displaystyle \ensuremath{\int_{R}{f}}=\ensuremath{\int_{{{a}_{k}}}^{{{b}_{k}}}\left({\cdots\left(\int_{{{a}_{2}}}^{{{b}_{2}}}{\left(\int_{{{a}_{1}}}^{{{b}_{1}}}{f\left({{x}_{1}},{{x}_{2}},\ldots,{{x}_{k}}\right)d{{x}_{1}}}\right)}d{{x}_{2}}\right)\cdots}\right)d{{x}_{k}}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Tích phân của dạng
+\end_layout
+
+\begin_layout Definition
+(Tích phân dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ trên hình hộp 
+\begin_inset Formula $R\subset\mathbb{R}^{k}$
+\end_inset
+
+).
+ Cho 
+\begin_inset Formula $\omega$
+\end_inset
+
+ là một dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ xác định trên tập mở 
+\begin_inset Formula $U\subset\mathbb{R}^{k}$
+\end_inset
+
+ và 
+\begin_inset Formula $U\supset R$
+\end_inset
+
+.
+ Do 
+\begin_inset Formula $\omega$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ xác định trên một tập con của 
+\begin_inset Formula $R^{k}$
+\end_inset
+
+ nên 
+\begin_inset Formula $\omega$
+\end_inset
+
+ viết được thành 
+\begin_inset Formula $\omega=fdx_{1}dx_{2}\cdots dx_{k}$
+\end_inset
+
+.
+ Ta định nghĩa 
+\begin_inset Formula 
+\[
+{\displaystyle \ensuremath{\int_{R}{\omega}}}\coloneqq{\displaystyle \ensuremath{\int_{R}{f}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Từ định nghĩa trên ta có
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula ${\displaystyle \ensuremath{\int_{R}{-\omega}}}={\displaystyle \ensuremath{\int_{R}{-f}}}=-{\displaystyle \ensuremath{\int_{R}{f}}}=-{\displaystyle \ensuremath{\int_{R}{\omega}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Remark
+Chú ý rằng trong định nghĩa trên ta phải quy 
+\begin_inset Formula $\omega$
+\end_inset
+
+ về dạng sao cho tích các 
+\begin_inset Formula $dx_{i}$
+\end_inset
+
+ luôn là 
+\begin_inset Formula $dx_{1}dx_{2}\cdots dx_{k}$
+\end_inset
+
+.
+ Xét chẳng hạn tích phân của dạng 
+\begin_inset Formula $\omega=f\left(x,y\right)dxdy$
+\end_inset
+
+ trên 
+\begin_inset Formula $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\subset\mathbb{R}^{2}$
+\end_inset
+
+, với 
+\begin_inset Formula $f$
+\end_inset
+
+ khả tích trên 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ Do 
+\begin_inset Formula $f\left(x,y\right)dxdy=-f\left(x,y\right)dydx$
+\end_inset
+
+, nên theo dịnh nghĩa trên, ta có:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\begin{equation}
+{\displaystyle \ensuremath{\int_{R}{f\left(x,y\right)dxdy}}}={\displaystyle \ensuremath{\int_{R}{-f\left(x,y\right)dydx}}}=-{\displaystyle \ensuremath{\int_{R}{f\left(x,y\right)dydx}}}.
+\end{equation}
+
+\end_inset
+
+Như vậy hai dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ về hình thức có thể có cùng hàm hệ số 
+\begin_inset Formula $f$
+\end_inset
+
+ nhưng nếu thứ tự các 
+\begin_inset Formula $dx_{i}$
+\end_inset
+
+ khác nhau thì tích phân của chúng trên 
+\begin_inset Formula $R\subset\mathbb{R}^{k}$
+\end_inset
+
+ chưa chắc bằng nhau.
+\end_layout
+
+\begin_layout Remark
+Bên cạnh đó ta biết rằng việc thay đổi thứ tự lấy tích phân của 
+\begin_inset Formula $f$
+\end_inset
+
+ trên 
+\begin_inset Formula $R$
+\end_inset
+
+ không ảnh hưởng gì, tức là:
+\end_layout
+
+\begin_layout Remark
+\begin_inset Formula 
+\begin{equation}
+{\displaystyle \ensuremath{\int_{a_{2}}^{b_{2}}\int_{a_{1}}^{b_{1}}{f\left(x,y\right)dxdy}}}={\displaystyle \ensuremath{\int_{a_{1}}^{b_{1}}\int_{a_{2}}^{b_{2}}{f\left(x,y\right)dydx}}}.
+\end{equation}
+
+\end_inset
+
+Điều này không có gì mâu thuẫn với 
+\begin_inset Formula $\left(3.1.1\right)$
+\end_inset
+
+, bạn đọc kiểm tra xem như bài tập (xem ví dụ 3.8).
+\end_layout
+
+\begin_layout Definition
+Cho 
+\begin_inset Formula $U$
+\end_inset
+
+ là tập mở trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ và 
+\begin_inset Formula $\omega$
+\end_inset
+
+ là một dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ xác định trên 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Cho hình hộp 
+\begin_inset Formula $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$
+\end_inset
+
+ trong 
+\begin_inset Formula $\mathbb{R}^{k}$
+\end_inset
+
+ và 
+\begin_inset Formula $\varphi:R\rightarrow\mathbb{R}^{n}$
+\end_inset
+
+ là ánh xạ trơn xác định trên 
+\begin_inset Formula $R\subset\mathbb{R}^{k}$
+\end_inset
+
+ sao cho 
+\begin_inset Formula $\varphi\left(R\right)\subset U$
+\end_inset
+
+.
+ Khi đó nếu 
+\begin_inset Formula $n\geq k$
+\end_inset
+
+ thì dạng kéo lui 
+\begin_inset Formula $\varphi^{*}\omega$
+\end_inset
+
+ là một dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ xác định trên 
+\begin_inset Formula $R$
+\end_inset
+
+, nếu 
+\begin_inset Formula $n<k$
+\end_inset
+
+ thì 
+\begin_inset Formula $\omega$
+\end_inset
+
+ (do đó cả 
+\begin_inset Formula $\varphi^{*}\omega$
+\end_inset
+
+) chỉ có thể bằng 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Ta định nghĩa tích phân của 
+\begin_inset Formula $\omega$
+\end_inset
+
+ trên 
+\begin_inset Formula $\varphi$
+\end_inset
+
+, ký hiệu 
+\begin_inset Formula $\intop_{\varphi}\omega$
+\end_inset
+
+, là
+\begin_inset Formula 
+\[
+{\displaystyle \ensuremath{\int_{\varphi}{\omega}}}\coloneqq{\displaystyle \ensuremath{\int_{R}{\varphi^{*}\omega}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ánh xạ 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ trên đươc gọi là một hình hộp suy biến 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều.
+ Ảnh 
+\begin_inset Formula $\varphi\left(R\right)$
+\end_inset
+
+ của nó có thể rất khác so với 
+\begin_inset Formula $R$
+\end_inset
+
+ (do 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ chỉ yêu cầu trơn), chẳng hạn 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ có thể mang đoạn 
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+ thành một đoạn cong, thậm chí trở thành một điểm.
+ 
+\end_layout
+
+\begin_layout Example
+(Tích phân đường).
+ Cho 
+\begin_inset Formula $c:\left[a,b\right]\rightarrow\mathbb{R}^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $c\left(t\right)=\left(x\left(t\right),y\left(t\right),z\left(t\right)\right)$
+\end_inset
+
+ là một đường trơn và 
+\begin_inset Formula $\alpha=P\left(x,y,z\right)dx+Q\left(x,y,z\right)dy+R\left(x,y,z\right)dz$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $1$
+\end_inset
+
+ xác định trên một tập mở 
+\begin_inset Formula $U$
+\end_inset
+
+ chứa 
+\begin_inset Formula $c\left(\left[a,b\right]\right)$
+\end_inset
+
+.
+ Theo định nghĩa trên, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+{\displaystyle \ensuremath{\int_{c}{\alpha}}} & \coloneqq{\displaystyle \ensuremath{\int_{\left[a,b\right]}{c^{*}\alpha}}}\\
+ & =\int_{\left[a,b\right]}\left(\left(P\circ c\right)dx\left(t\right)+\left(Q\circ c\right)dy\left(t\right)+\left(R\circ c\right)dz\left(t\right)\right)\\
+ & =\int_{a}^{b}\left[\left(\left(P\circ c\right)x'\left(t\right)+\left(Q\circ c\right)y'\left(t\right)+\left(R\circ c\right)z'\left(t\right)\right)\right]dt.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Example
+(Tích phân mặt).
+ Cho 
+\begin_inset Formula $D\subset\mathbb{R}^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi:D\rightarrow\mathbb{R}^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi\left(u,v\right)=\left(x\left(u,v\right),y\left(u,v\right),z\left(u,v\right)\right)$
+\end_inset
+
+ là một mặt trơn và 
+\begin_inset Formula $\alpha=P\left(x,y,z\right)dydz+Q\left(x,y,z\right)dzdx+R\left(x,y,z\right)dxdy$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $2$
+\end_inset
+
+ xác định trên một tập mở 
+\begin_inset Formula $U$
+\end_inset
+
+ chứa 
+\begin_inset Formula $\varphi\left(D\right)$
+\end_inset
+
+.
+ Theo định nghĩa 3.3, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+{\displaystyle \ensuremath{\int_{\varphi}{\alpha}}} & \coloneqq{\displaystyle \ensuremath{\int_{D}{\varphi^{*}\alpha}}}\\
+ & =\int_{D}\left(\left(P\circ\varphi\right)dydz+\left(Q\circ\varphi\right)dzdx+\left(R\circ\varphi\right)dxdy\right)\\
+ & =\int_{D}\left(\left(P,Q,R\right)\circ\varphi\right)\cdot\left(dydz,dzdx,dxdy\right).
+\end{alignat*}
+
+\end_inset
+
+ Ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+dydz & =\left(y_{u}du+y_{v}dv\right)\left(z_{u}du+z_{v}dv\right)\\
+ & =y_{u}z_{v}dudv+y_{v}z_{u}dvdu\\
+ & =\left(y_{u}z_{v}-y_{v}z_{u}\right)dudv,
+\end{alignat*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{alignat*}{1}
+dzdx & =\left(z_{u}du+z_{v}dv\right)\left(x_{u}du+x_{v}dv\right)\\
+ & =z_{u}x_{v}dudv+z_{v}x_{u}dvdu\\
+ & =\left(z_{u}x_{v}-z_{v}x_{u}\right)dudv,
+\end{alignat*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{alignat*}{1}
+dxdy & =\left(x_{u}du+x_{v}dv\right)\left(y_{u}du+y_{v}dv\right)\\
+ & =x_{u}y_{v}dudv+x_{v}y_{u}dvdu\\
+ & =\left(x_{u}y_{v}-x_{v}y_{u}\right)dudv,
+\end{alignat*}
+
+\end_inset
+
+nên:
+\begin_inset Formula 
+\begin{alignat*}{1}
+ & \quad\;\left(dydz,dzdx,dxdy\right)\\
+ & =\left(\left(y_{u}z_{v}-y_{v}z_{u}\right),\left(z_{u}x_{v}-z_{v}x_{u}\right),\left(x_{u}y_{v}-x_{v}y_{u}\right)\right)dudv\\
+ & =\left|\begin{array}{ccc}
+x_{u} & y_{u} & z_{u}\\
+x_{v} & y_{v} & z_{v}
+\end{array}\right|dudv\\
+ & =\left(\varphi_{u}\times\varphi_{v}\right)dudv.
+\end{alignat*}
+
+\end_inset
+
+Vậy
+\begin_inset Formula 
+\begin{alignat*}{1}
+{\displaystyle \ensuremath{\int_{\varphi}{\alpha}}} & ={\displaystyle \ensuremath{\int_{D}{\varphi^{*}\alpha}}}\\
+ & ={\displaystyle \ensuremath{\int_{D}\left(\left(P,Q,R\right)\circ\varphi\right)\cdot\left(\varphi_{u}\times\varphi_{v}\right)dudv,}}
+\end{alignat*}
+
+\end_inset
+
+điều này khớp với khái niệm tích phân mặt đã biết.
+\end_layout
+
+\begin_layout Definition
+Cho hai hình hộp 
+\begin_inset Formula $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$
+\end_inset
+
+ và 
+\begin_inset Formula $R'=\left[a_{1}',b_{1}'\right]\times\left[a_{2}',b_{2}'\right]\cdots\left[a_{k}',b_{k}'\right]$
+\end_inset
+
+ trong 
+\begin_inset Formula $\mathbb{R}^{k}$
+\end_inset
+
+.
+ Ta gọi ánh xạ trơn 
+\begin_inset Formula $p:R'\rightarrow R$
+\end_inset
+
+ là một phép tham số hóa lại (reparametrization) nếu 
+\begin_inset Formula $p$
+\end_inset
+
+ là song ánh và ma trận Jacobi 
+\begin_inset Formula $J_{p}\left(s\right)$
+\end_inset
+
+ của 
+\begin_inset Formula $p$
+\end_inset
+
+ khả nghịch với mọi 
+\begin_inset Formula $s\in R'$
+\end_inset
+
+.
+ Do 
+\begin_inset Formula $J_{p}\left(s\right)$
+\end_inset
+
+ là ma trận vuông nên điều này tương đương với 
+\begin_inset Formula $\text{det}J_{p}\left(s\right)\neq0$
+\end_inset
+
+ với mọi 
+\begin_inset Formula $s\in R'$
+\end_inset
+
+.
+ Do 
+\begin_inset Formula $p$
+\end_inset
+
+ trơn nên 
+\begin_inset Formula $\text{det}J_{p}:R'\rightarrow\mathbb{R}$
+\end_inset
+
+, 
+\begin_inset Formula $S\mapsto\text{det}J_{p}\left(s\right)$
+\end_inset
+
+ là hàm liên tục, do đó hoặc 
+\begin_inset Formula $\text{det}J_{p}\left(s\right)>0$
+\end_inset
+
+, hoặc 
+\begin_inset Formula $\text{det}J_{p}\left(s\right)<0$
+\end_inset
+
+ với mọi 
+\begin_inset Formula $s\in R'$
+\end_inset
+
+.
+ Nếu 
+\begin_inset Formula $\text{det}J_{p}\left(s\right)>0$
+\end_inset
+
+ (tương ứng, 
+\begin_inset Formula $\text{det}J_{p}\left(s\right)<0$
+\end_inset
+
+) ta nói 
+\begin_inset Formula $p$
+\end_inset
+
+ bảo toàn (tương ứng, đảo ngược) định hướng của 
+\begin_inset Formula $\varphi:R\rightarrow U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Do 
+\begin_inset Formula $\text{det}J_{p}\left(s\right)\neq0$
+\end_inset
+
+ với mọi 
+\begin_inset Formula $s\in R'$
+\end_inset
+
+, bằng định lý hàm ngược ta chứng minh được 
+\begin_inset Formula $p$
+\end_inset
+
+ là một phép đổi biến, hay một phép vi đồng phôi (diffeomorphism), tức 
+\begin_inset Formula $p$
+\end_inset
+
+ là một song ánh, khả vi liên tục và ánh xạ ngược 
+\begin_inset Formula $p^{-1}$
+\end_inset
+
+ cũng khả vi liên tục.
+ Từ đó ta có định lý sau: 
+\end_layout
+
+\begin_layout Theorem
+Cho 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ xác định trên tập mở 
+\begin_inset Formula $U$
+\end_inset
+
+ và 
+\begin_inset Formula $\varphi:R\rightarrow U$
+\end_inset
+
+ là hình hộp suy biến, 
+\begin_inset Formula $p:R'\rightarrow R$
+\end_inset
+
+ là một phép tham số hóa lại.
+ Khi đó 
+\begin_inset Formula 
+\[
+{\displaystyle \ensuremath{\int_{\varphi\circ p}{\alpha}}}=\begin{cases}
+\quad\int_{\varphi}\alpha & \text{nếu \ensuremath{p}bảo toàn định hướng,}\\
+-\int_{\varphi}\alpha & \text{nếu \ensuremath{p}đảo ngược định hướng.}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Ta có
+\begin_inset Formula 
+\[
+{\displaystyle \ensuremath{\int_{\varphi\circ p}{\alpha}}}={\displaystyle \ensuremath{\int_{R'}{\left(\varphi\circ p\right)^{*}\alpha}}}={\displaystyle \ensuremath{\int_{R'}{p^{*}\left(\varphi^{*}\alpha\right)}}}.
+\]
+
+\end_inset
+
+Với 
+\begin_inset Formula $\varphi^{*}\alpha=gdx_{1}dx_{2}\cdots dx_{k}$
+\end_inset
+
+ và 
+\begin_inset Formula $x=\left(x_{1},\ldots,x_{k}\right)=p\left(s\right)$
+\end_inset
+
+, 
+\begin_inset Formula $s\in R'$
+\end_inset
+
+, từ ví dụ 2.3, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+p^{*}\left(\varphi^{*}\alpha\right) & =p^{*}\left(gdx_{1}dx_{2}\cdots dx_{k}\right)\\
+ & =g\left(p\left(s\right)\right)\text{det}J_{p}\left(s\right)ds_{1}ds_{2}\cdots ds_{k},
+\end{alignat*}
+
+\end_inset
+
+nên 
+\begin_inset Formula 
+\[
+{\displaystyle \ensuremath{\int_{\varphi\circ p}{\alpha}}}={\displaystyle \ensuremath{\int_{R'}g\left(p\left(s\right)\right)\text{det}J_{p}\left(s\right)ds_{1}ds_{2}\cdots ds_{k}}}.
+\]
+
+\end_inset
+
+Do 
+\begin_inset Formula $p$
+\end_inset
+
+ là một phép đổi biến, nên:
+\begin_inset Formula 
+\begin{alignat*}{1}
+ & \;\quad{\displaystyle \ensuremath{\int_{R'}g\left(p\left(s\right)\right)\text{det}J_{p}\left(s\right)ds_{1}ds_{2}\cdots ds_{k}}}\\
+= & \begin{cases}
+\quad\int_{R}g\left(x\right)dx_{1}dx_{2}\cdots dx_{k} & \text{nếu \ensuremath{\text{det}J_{p}\left(s\right)>0}},\\
+-\int_{R}g\left(x\right)dx_{1}dx_{2}\cdots dx_{k} & \text{nếu \ensuremath{\text{det}J_{p}\left(s\right)<0}}.
+\end{cases}
+\end{alignat*}
+
+\end_inset
+
+Do 
+\begin_inset Formula $\int_{\varphi}\alpha$
+\end_inset
+
+ chính là 
+\begin_inset Formula $\int_{R}g\left(x\right)dx_{1}dx_{2}\cdots dx_{k}$
+\end_inset
+
+ nên ta có đpcm.
+\end_layout
+
+\begin_layout Example
+Trong 
+\begin_inset Formula $\mathbb{R}^{k}$
+\end_inset
+
+ cho khối vuông đơn vị 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều 
+\begin_inset Formula $\left[0,1\right]^{k}$
+\end_inset
+
+ và một hình hộp 
+\begin_inset Formula $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$
+\end_inset
+
+.
+ Xét 
+\begin_inset Formula $p=\left(p_{1},p_{2},\ldots,p_{k}\right):\left[0,1\right]^{k}\rightarrow R$
+\end_inset
+
+ với 
+\begin_inset Formula $p_{i,1\leq i\leq k}$
+\end_inset
+
+ cho bởi 
+\begin_inset Formula $p_{i}\left(s\right)=\left(b_{i}-a_{i}\right)s_{i}+a_{i}$
+\end_inset
+
+.
+ Dễ thấy 
+\begin_inset Formula $p:\left[0,1\right]^{k}\rightarrow R$
+\end_inset
+
+ là song ánh.
+ Ta có:
+\begin_inset Formula 
+\[
+J_{p}\left(s\right)=\left(\begin{array}{c}
+\nabla p_{1}\\
+\nabla p_{2}\\
+\vdots\\
+\nabla p_{k}
+\end{array}\right)=\left(\begin{array}{cccc}
+b_{1}-a_{1} & 0 & \cdots & 0\\
+0 & b_{2}-a_{2} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & b_{k}-a_{k}
+\end{array}\right).
+\]
+
+\end_inset
+
+Do đó 
+\begin_inset Formula $\text{det}J_{p}\left(s\right)=\prod_{i=1}^{k}\left(b_{i}-a_{i}\right)>0$
+\end_inset
+
+, nên 
+\begin_inset Formula $p$
+\end_inset
+
+ bảo toàn định hướng.
+ Vậy với 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ trên 
+\begin_inset Formula $U$
+\end_inset
+
+ và 
+\begin_inset Formula $\varphi:R\rightarrow U$
+\end_inset
+
+ thì 
+\begin_inset Formula $\int_{\varphi\circ p}\alpha=\int_{c}\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Standard
+Ví dụ 3.8 cho thấy rằng tích phân của dạng trên một hình hộp suy biến 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều bất kỳ có thể quy về thành tích phân trên khối vuông (cube) suy biến
+ 
+\begin_inset Formula $\left[0,1\right]^{k}\rightarrow U$
+\end_inset
+
+, ở phần tới ta chỉ xét tích phân trên các khối vuông suy biến như vậy (điều
+ này giúp giảm đi sự rườm rà về ký hiệu).
+\end_layout
+
+\begin_layout Section
+Định lý Stokes
+\end_layout
+
+\begin_layout Standard
+Định lý Stokes đã được giới thiệu trong các bài giảng về giải tích cổ điển,
+ với các trường hợp riêng như định lý Newton - Leibniz, định lý Green...
+ Nó nói rằng tích phân của một đối tượng 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ trên biên 
+\begin_inset Formula $\partial D$
+\end_inset
+
+ của một miền 
+\begin_inset Formula $D$
+\end_inset
+
+ thì bằng tích phân trên 
+\begin_inset Formula $D$
+\end_inset
+
+ của một đối tượng 
+\begin_inset Formula $d\alpha$
+\end_inset
+
+ liên quan tới đạo hàm của 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, tức là:
+\begin_inset Formula 
+\[
+{\displaystyle \int_{\partial D}\alpha=\int_{D}d\alpha.}
+\]
+
+\end_inset
+
+Ở đây ta sẽ phát biểu và chứng minh định lý Stokes ở dạng tổng quát hơn.
+ Ở dạng đã biết, ta thấy 
+\begin_inset Formula $D$
+\end_inset
+
+ và biên 
+\begin_inset Formula $\partial D$
+\end_inset
+
+ không chỉ là tập hợp, mà chúng còn được cho một định hướng, sao cho các
+ định hướng đó tương thích với nhau.
+ Chẳng hạn ở định lý Newton - Leibniz:
+\begin_inset Formula 
+\[
+\int_{a}^{b}f'\left(x\right)dx=f\left(b\right)-f\left(a\right),
+\]
+
+\end_inset
+
+với 
+\begin_inset Formula $\partial D=\left\{ a,b\right\} $
+\end_inset
+
+ thì 
+\begin_inset Formula $\int_{\left\{ a,b\right\} }f=f\left(a\right)+f\left(b\right)$
+\end_inset
+
+.
+ Như vậy với 
+\begin_inset Formula $\partial D$
+\end_inset
+
+ đơn thuần chỉ mang nghĩa tập hợp thì không đủ để phát biểu được định lý.
+ Ở đây ta thấy vai trò của 
+\begin_inset Formula $a$
+\end_inset
+
+ và 
+\begin_inset Formula $b$
+\end_inset
+
+ không như nhau.
+ Có thể nói rằng 
+\begin_inset Formula $a$
+\end_inset
+
+ trước, 
+\begin_inset Formula $b$
+\end_inset
+
+ sau, hoặc 
+\begin_inset Formula $a$
+\end_inset
+
+ ứng với dấu 
+\begin_inset Formula $-$
+\end_inset
+
+, 
+\begin_inset Formula $b$
+\end_inset
+
+ ứng với dấu 
+\begin_inset Formula $+$
+\end_inset
+
+.
+ Với sự phân biệt vai trò 
+\begin_inset Formula $a,b$
+\end_inset
+
+ như vậy, đoạn 
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+ một cách tương ứng cũng được gọi là có định hướng từ 
+\begin_inset Formula $a$
+\end_inset
+
+ đến 
+\begin_inset Formula $b$
+\end_inset
+
+ (tích phân 
+\begin_inset Formula $\int_{a}^{b}f'\left(x\right)dx$
+\end_inset
+
+ thực sự có ngầm ý một định hướng như vậy cho miền 
+\begin_inset Formula $\left[a,b\right]$
+\end_inset
+
+).
+ Vậy tóm lại cần một định hướng cho biên, được cho bằng cách quy ước các
+ dấu 
+\begin_inset Formula $+,-$
+\end_inset
+
+ cho các phần của nó.
+\end_layout
+
+\begin_layout Definition
+(Mặt của khối vuông suy biến).
+ Cho khối vuông suy biến 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều 
+\begin_inset Formula $c:\left[0,1\right]^{k}\rightarrow U$
+\end_inset
+
+, ta định nghĩa các mặt của 
+\begin_inset Formula $c$
+\end_inset
+
+, ký hiệu là 
+\begin_inset Formula $c_{i,0}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{i,1}$
+\end_inset
+
+, như sau.
+ Cho 
+\begin_inset Formula $t=\left(t_{1},t_{2},\ldots,t_{k-1}\right)\in\left[0,1\right]^{k-1}$
+\end_inset
+
+, với mọi 
+\begin_inset Formula $i=1,2,\ldots,k$
+\end_inset
+
+, ta đặt
+\begin_inset Formula 
+\begin{alignat*}{1}
+c_{i,0}\left(t\right) & =c\left(t_{1},t_{2},\ldots,t_{i-1},0,t_{i},\ldots t_{k-1}\right),\\
+c_{i,1}\left(t\right) & =c\left(t_{1},t_{2},\ldots,t_{i-1},1,t_{i},\ldots t_{k-1}\right).
+\end{alignat*}
+
+\end_inset
+
+Chúng chính là giới hạn của 
+\begin_inset Formula $c$
+\end_inset
+
+ lên các mặt của khối vuông đơn vị 
+\begin_inset Formula $\left[0,1\right]^{k}$
+\end_inset
+
+, là các khối vuông suy biến 
+\begin_inset Formula $\left(k-1\right)$
+\end_inset
+
+-chiều.
+\end_layout
+
+\begin_layout Example
+Cho 
+\begin_inset Formula $c:\left[0,1\right]\rightarrow U$
+\end_inset
+
+ (
+\begin_inset Formula $k=1$
+\end_inset
+
+), 
+\begin_inset Formula $i$
+\end_inset
+
+ chỉ bằng 
+\begin_inset Formula $1$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+c_{1,0}\left(t\right) & =c\left(0\right),\\
+c_{1,1}\left(t\right) & =c\left(1\right).
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Cho 
+\begin_inset Formula $c:\left[0,1\right]^{2}\rightarrow U$
+\end_inset
+
+ (
+\begin_inset Formula $k=1$
+\end_inset
+
+), 
+\begin_inset Formula $i=1,2$
+\end_inset
+
+.
+ Với 
+\begin_inset Formula $t\in\left[0,1\right]$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{alignat*}{3}
+c_{1,0}\left(t\right) & =c\left(0,t\right), & \qquad & c_{2,0}\left(t\right) & =c\left(t,0\right),\\
+c_{1,1}\left(t\right) & =c\left(1,t\right), &  & c_{2,1}\left(t\right) & =c\left(t,1\right).
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(Biên của khối vuông suy biến).
+ Cho khối vuông suy biến 
+\begin_inset Formula $c:\left[0,1\right]^{k}\rightarrow U$
+\end_inset
+
+ với các mặt 
+\begin_inset Formula $c_{i,0}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{i,1}$
+\end_inset
+
+, 
+\begin_inset Formula $i=1,2,\ldots,k$
+\end_inset
+
+.
+ Quy ước rằng mặt 
+\begin_inset Formula $c_{i,0}$
+\end_inset
+
+ mang dấu 
+\begin_inset Formula $\left(-1\right)^{i}$
+\end_inset
+
+, mặt 
+\begin_inset Formula $c_{i,1}$
+\end_inset
+
+ mang dấu 
+\begin_inset Formula $\left(-1\right)^{i+1}$
+\end_inset
+
+.
+ Ta định nghĩa biên của 
+\begin_inset Formula $c$
+\end_inset
+
+, ký hiệu 
+\begin_inset Formula $\partial c$
+\end_inset
+
+, là tổng hình thức (formal sum) của các mặt 
+\begin_inset Formula $c_{i,0}$
+\end_inset
+
+, 
+\begin_inset Formula $c_{i,1}$
+\end_inset
+
+ cùng với dấu tương ứng, nghĩa là:
+\begin_inset Formula 
+\[
+\partial c=\sum_{i=1}^{k}\left(\left(-1\right)^{i}c_{i,0}+\left(-1\right)^{i+1}c_{i,1}\right)=\sum_{i=1}^{k}\left(-1\right)^{i}\left(c_{i,0}-c_{i,1}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Cho 
+\begin_inset Formula $c:\left[0,1\right]\rightarrow U$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+\partial c & =\left(-1\right)\left(c_{1,0}-c_{1,1}\right)\\
+ & =c_{1,1}-c_{1,0}.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Cho 
+\begin_inset Formula $c:\left[0,1\right]^{2}\rightarrow U$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+\partial c & =\sum_{i=1}^{2}\left(-1\right)^{i}\left(c_{i,0}-c_{i,1}\right)\\
+ & =c_{1,1}-c_{1,0}+c_{2,0}-c_{2,1}.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Các tổng hình thức trên, chẳng hạn 
+\begin_inset Formula $c_{1,1}-c_{1,0}+c_{2,0}-c_{2,1}$
+\end_inset
+
+, và cả các khối vuông suy biến 
+\begin_inset Formula $c$
+\end_inset
+
+, là trường hợp riêng của khái niệm xích dưới đây.
+ 
+\end_layout
+
+\begin_layout Definition
+(Xích).
+ Cho 
+\begin_inset Formula $c_{1},c_{2},\ldots,c_{m}$
+\end_inset
+
+ là một họ các khối vuông suy biến 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều.
+ Ta định nghĩa xích (chain) 
+\begin_inset Formula $c$
+\end_inset
+
+ 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều là tổ hợp tuyến tính (hình thức) của 
+\begin_inset Formula $c_{1},c_{2},\ldots,c_{m}$
+\end_inset
+
+ với hệ số thực, nghĩa là:
+\begin_inset Formula 
+\[
+c=a_{1}c_{1}+a_{2}b_{2}+\cdots+a_{m}b_{m},
+\]
+
+\end_inset
+
+với 
+\begin_inset Formula $a_{1},a_{2},\ldots,a_{m}\in\mathbb{R}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Như vậy một khối vuông suy biến 
+\begin_inset Formula $c$
+\end_inset
+
+ 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều cũng là một xích 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều, biên 
+\begin_inset Formula $\partial c$
+\end_inset
+
+ của nó là một xích 
+\begin_inset Formula $\left(k-1\right)$
+\end_inset
+
+-chiều.
+\end_layout
+
+\begin_layout Definition
+(Biên của xích).
+ Biên của xích 
+\begin_inset Formula $c=a_{1}c_{1}+a_{2}b_{2}+\cdots+a_{m}b_{m}$
+\end_inset
+
+, ký hiệu 
+\begin_inset Formula $\partial c$
+\end_inset
+
+, được định nghĩa là tổ hợp tuyến tính (hình thức) của các biên 
+\begin_inset Formula $\partial c_{i}$
+\end_inset
+
+ với hệ số 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ tương ứng, nghĩa là:
+\begin_inset Formula 
+\[
+\partial c=a_{1}\partial c_{1}+a_{2}\partial b_{2}+\cdots+a_{m}\partial b_{m}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Với phép lấy tổ hợp (phép cộng) hình thức trên, dễ thấy rằng tập tất cả
+ các xích 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều là một không gian vectơ trên trường 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+, với cơ sở là tập tất cả các khối vuông suy biến 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều.
+ Phép lấy biên của xích như vậy là một ánh xạ (tuyến tính) từ không gian
+ vectơ các xích 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều đến không gian vectơ các xích 
+\begin_inset Formula $\left(k-1\right)$
+\end_inset
+
+-chiều, nó là mở rộng tuyến tính của phép lấy biên các khối vuông suy biến
+ 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều.
+\end_layout
+
+\begin_layout Standard
+Bằng cách mở rộng tuyến tính - tương tự phép lấy biên của xích 
+\begin_inset Formula $c$
+\end_inset
+
+ - khái niệm tích phân của dạng trên khối vuông suy biến lên cho xích, ta
+ định nghĩa khái niệm tích phân của dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ trên xích như sau.
+\end_layout
+
+\begin_layout Definition
+(Tích phân của dạng trên xích).
+ Cho 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ xác định trên tập mở 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Cho 
+\begin_inset Formula $c_{1},c_{2},\ldots,c_{m}$
+\end_inset
+
+ là họ các khối vuông suy biến 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều trong 
+\begin_inset Formula $U$
+\end_inset
+
+ (tức 
+\begin_inset Formula $c_{i}\left(\left[0,1\right]^{k}\right)\subset U,$
+\end_inset
+
+ 
+\begin_inset Formula $\forall i=1,2,\ldots,m$
+\end_inset
+
+), xích 
+\begin_inset Formula $c=a_{1}c_{1}+a_{2}c_{2}+\cdots+a_{m}c_{m}$
+\end_inset
+
+ được gọi là một xích 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều trong 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Tích phân của 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ trên 
+\begin_inset Formula $c$
+\end_inset
+
+, ký hiệu 
+\begin_inset Formula $\int_{c}\alpha$
+\end_inset
+
+, được cho bởi:
+\begin_inset Formula 
+\[
+\int_{c}\alpha=\sum_{i=1}^{m}a_{i}\int_{c_{i}}\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Cho 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $1$
+\end_inset
+
+ xác định trên tập mở 
+\begin_inset Formula $U$
+\end_inset
+
+ và 
+\begin_inset Formula $c:\left[0,1\right]^{2}\rightarrow U$
+\end_inset
+
+.
+ Từ ví dụ 3.13 ta có 
+\begin_inset Formula $\partial c=c_{1,1}-c_{1,0}+c_{2,0}-c_{2,1}$
+\end_inset
+
+ và nó là một xích trong 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Theo định nghĩa trên, ta có:
+\begin_inset Formula 
+\[
+\int_{c}\alpha=\int_{c_{1,1}}\alpha-\int_{c_{1,0}}\alpha+\int_{c_{2,0}}\alpha-\int_{c_{2,1}}\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ta thấy rằng với các khái niệm trên, có thể phát biểu lại các dạng của định
+ lý Stokes đã biết.
+ Chẳng hạn với định lý Newton - Leibniz
+\begin_inset Formula 
+\[
+\int_{a}^{b}f'\left(t\right)dt=f\left(b\right)-f\left(a\right),
+\]
+
+\end_inset
+
+ta có thể viết như sau.
+ Với 
+\begin_inset Formula $\varphi:\left[a,b\right]\rightarrow\mathbb{R}$
+\end_inset
+
+ cho bởi 
+\begin_inset Formula $\varphi\left(t\right)=t$
+\end_inset
+
+, ta có 
+\begin_inset Formula $\int_{a}^{b}f'\left(t\right)dt=\int_{\varphi}f'\left(x\right)dx$
+\end_inset
+
+.
+ Bằng phép tham số hóa lại (ví dụ 3.8) 
+\begin_inset Formula $p:\left[0,1\right]\rightarrow\mathbb{R}$
+\end_inset
+
+ cho bởi 
+\begin_inset Formula $p\left(s\right)=a+s\left(b-a\right)$
+\end_inset
+
+, ta có 
+\begin_inset Formula $\int_{\varphi}f'\left(x\right)dx=\int_{c}f'\left(x\right)dx=\int_{c}df$
+\end_inset
+
+, 
+\begin_inset Formula $c=\varphi\circ p$
+\end_inset
+
+ là một khối vuông suy biến.
+ Mặt khác ta thấy 
+\begin_inset Formula $f\left(b\right)=f\left(c\left(1\right)\right)=\int_{\left\{ c\left(1\right)\right\} }f$
+\end_inset
+
+, tương tự 
+\begin_inset Formula $f\left(a\right)=\int_{\left\{ c\left(0\right)\right\} }f$
+\end_inset
+
+, nên 
+\begin_inset Formula $f\left(b\right)-f\left(a\right)=\int_{\left\{ c\left(1\right)\right\} }f-\int_{\left\{ c\left(0\right)\right\} }f=\int_{\left\{ c\left(1\right)\right\} -\left\{ c\left(0\right)\right\} }f=\int_{\partial c}f$
+\end_inset
+
+.
+ Vậy 
+\begin_inset Formula $\int_{a}^{b}f'\left(t\right)dt=f\left(b\right)-f\left(a\right)$
+\end_inset
+
+ được viết lại dưới dạng
+\begin_inset Formula 
+\[
+\int_{c}df=\int_{\partial c}f.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bây giờ ta phát biểu định lý Stokes.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Định lý Stokes
+\end_layout
+
+\end_inset
+
+ Cho 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k-1$
+\end_inset
+
+ xác định trên tập mở 
+\begin_inset Formula $U$
+\end_inset
+
+ của 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ và 
+\begin_inset Formula $c$
+\end_inset
+
+ là một xích 
+\begin_inset Formula $k$
+\end_inset
+
+-chiều trong 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ Khi đó:
+\begin_inset Formula 
+\[
+\boxed{\int_{c}d\alpha=\int_{\partial c}\alpha.}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Do phép lấy tích phân trên xích 
+\begin_inset Formula $c$
+\end_inset
+
+ là mở rộng tuyến tính của phép lấy tích phân trên khối vuông suy biến,
+ nên ta chỉ cần chứng minh định lý với 
+\begin_inset Formula $c$
+\end_inset
+
+ là một khối vuông suy biến 
+\begin_inset Formula $\left[0,1\right]^{k}\rightarrow U$
+\end_inset
+
+ là đủ.
+\end_layout
+
+\begin_layout Proof
+Xét vế trái.
+ Từ định nghĩa tích phân của dạng và định lý 2.4 (4), ta có:
+\begin_inset Formula 
+\[
+\int_{c}d\alpha=\int_{\left[0,1\right]^{k}}c^{*}d\alpha=\int_{\left[0,1\right]^{k}}d\left(c^{*}\alpha\right).
+\]
+
+\end_inset
+
+Do 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k-1$
+\end_inset
+
+ nên 
+\begin_inset Formula $c^{*}\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k-1$
+\end_inset
+
+ trên 
+\begin_inset Formula $\left[0,1\right]^{k}$
+\end_inset
+
+.
+ Do đó ta có thể viết 
+\begin_inset Formula $c^{*}\alpha$
+\end_inset
+
+ dưới dạng 
+\begin_inset Formula 
+\[
+c^{*}\alpha=\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k},
+\]
+
+\end_inset
+
+với 
+\begin_inset Formula $f_{i}$
+\end_inset
+
+ là các hàm thực trơn xác định trên 
+\begin_inset Formula $\left[0,1\right]^{k}$
+\end_inset
+
+, và 
+\begin_inset Formula $\widehat{dt_{i}}$
+\end_inset
+
+ chỉ sự khuyết đi 
+\begin_inset Formula $dt_{i}$
+\end_inset
+
+.
+ Từ đó ta có: 
+\begin_inset Formula 
+\begin{alignat}{1}
+d\left(c^{*}\alpha\right) & =d\left(\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right)\nonumber \\
+ & =\sum_{i=1}^{k}d\left(f_{i}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\nonumber \\
+ & =\sum_{i=1}^{k}\left(\sum_{j=1}^{k}\frac{\partial f_{i}}{\partial t_{j}}dt_{j}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\end{alignat}
+
+\end_inset
+
+Do với mọi 
+\begin_inset Formula $j\neq i$
+\end_inset
+
+ thì 
+\begin_inset Formula $dt_{j}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}=0$
+\end_inset
+
+ nên số hạng thứ 
+\begin_inset Formula $i$
+\end_inset
+
+ trong 
+\begin_inset Formula $\left(3.2.1\right)$
+\end_inset
+
+ là
+\begin_inset Formula 
+\begin{alignat*}{1}
+\left(\sum_{j=1}^{k}\frac{\partial f_{i}}{\partial t_{j}}dt_{j}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k} & =\frac{\partial f_{i}}{\partial t_{i}}dt_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\\
+ & =\frac{\partial f_{i}}{\partial t_{i}}\left(-1\right)^{i+1}dt_{1}dt_{2}\cdots dt_{i}\cdots dt_{k}.
+\end{alignat*}
+
+\end_inset
+
+Do đó
+\begin_inset Formula 
+\[
+d\left(c^{*}\alpha\right)=\left(\sum_{i=1}^{k}\left(-1\right)^{i+1}\frac{\partial f_{i}}{\partial t_{i}}\right)dt_{1}dt_{2}\cdots dt_{k}.
+\]
+
+\end_inset
+
+Vậy vế trái bằng:
+\begin_inset Formula 
+\begin{alignat}{1}
+\int_{\left[0,1\right]^{k}}d\left(c^{*}\alpha\right) & =\int_{\left[0,1\right]^{k}}\left(\sum_{i=1}^{k}\left(-1\right)^{i+1}\frac{\partial f_{i}}{\partial t_{i}}\right)dt_{1}dt_{2}\cdots dt_{k}\nonumber \\
+ & =\sum_{i=1}^{k}\left(-1\right)^{i+1}\int_{\left[0,1\right]^{k}}\frac{\partial f_{i}}{\partial t_{i}}dt_{1}dt_{2}\cdots dt_{k}.
+\end{alignat}
+
+\end_inset
+
+Lưu ý lại rằng các tích phân ở vế phải của 
+\begin_inset Formula $\left(3.2.2\right)$
+\end_inset
+
+ là tích phân Riemann quen thuộc, nên áp dụng được định lý Fubini, và do
+ 
+\begin_inset Formula $f_{i,1\leq i\leq k}$
+\end_inset
+
+ là các hàm trơn nên bằng định lý Newton - Leibniz, ta có: 
+\begin_inset Formula 
+\begin{alignat*}{1}
+\int_{\left[0,1\right]^{k}}\frac{\partial f_{i}}{\partial t_{i}}dt_{1}dt_{2}\cdots dt_{k} & =\int_{\left[0,1\right]^{k-1}}\left(\int_{0}^{1}\frac{\partial f_{i}}{\partial t_{i}}dt_{i}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\\
+ & =\int_{\left[0,1\right]^{k-1}}\left(f_{i}\left(t_{1},\ldots,t_{i-1},1,t_{i+1},\ldots,t_{k}\right)-f_{i}\left(t_{1},\ldots,t_{i-1},0,t_{i+1},\ldots,t_{k}\right)\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\end{alignat*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Xét vế phải.
+ Với 
+\begin_inset Formula $\partial c=\sum_{i=1}^{k}\left(-1\right)^{i}\left(c_{i,0}-c_{i,1}\right)$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\[
+\int_{\partial c}\alpha=\sum_{i=1}^{k}\left(-1\right)^{i}\left(\int_{c_{i,0}}\alpha-\int_{c_{i,1}}\alpha\right).
+\]
+
+\end_inset
+
+Để so sánh với 
+\begin_inset Formula $\left(3.2.2\right)$
+\end_inset
+
+ ta viết lại thành:
+\begin_inset Formula 
+\[
+\int_{\partial c}\alpha=\sum_{i=1}^{k}\left(-1\right)^{i+1}\left(\int_{c_{i,1}}\alpha-\int_{c_{i,0}}\alpha\right).
+\]
+
+\end_inset
+
+Ta kiểm tra rằng 
+\begin_inset Formula 
+\[
+\int_{c_{i,0}}\alpha=\int_{\left[0,1\right]^{k-1}}\left(f_{i}\left(t_{1},\ldots,t_{i-1},0,t_{i+1},\ldots,t_{k}\right)\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\]
+
+\end_inset
+
+Ta có:
+\begin_inset Formula 
+\[
+\int_{c_{i,0}}\alpha=\int_{\left[0,1\right]^{k-1}}c_{i,0}^{*}\alpha.
+\]
+
+\end_inset
+
+Bằng cách viết 
+\begin_inset Formula $c_{i,0}:\left[0,1\right]^{k-1}\rightarrow U$
+\end_inset
+
+, 
+\begin_inset Formula $\left(s_{1},s_{2},\ldots s_{k-1}\right)\mapsto c\left(s_{1},s_{2},\ldots,s_{i-1},0,s_{i},\ldots s_{k-1}\right)$
+\end_inset
+
+ thành 
+\begin_inset Formula $c_{i,0}=c\circ h$
+\end_inset
+
+, với 
+\begin_inset Formula $h:\left(s_{1},s_{2},\ldots,s_{i},\ldots s_{k-1}\right)\mapsto\left(s_{1},s_{2},\ldots,s_{i-1},0,s_{i},\ldots s_{k-1}\right)$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+c_{i,0}^{*}\alpha & =\left(c\circ h\right)^{*}\alpha\\
+ & =h^{*}\left(c^{*}\alpha\right)\\
+ & =h^{*}\left(\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right).
+\end{alignat*}
+
+\end_inset
+
+Với 
+\begin_inset Formula $j\neq i$
+\end_inset
+
+, không mất tính tổng quát, giả sử 
+\begin_inset Formula $j<i$
+\end_inset
+
+, ta có:
+\begin_inset Formula 
+\begin{alignat*}{1}
+h^{*}\left(f_{j}dt_{1}dt_{2}\cdots\widehat{dt_{j}}\cdots dt_{k}\right) & =\left(f_{j}\circ h\right)ds_{1}ds_{2}\cdots\widehat{ds_{j}}\cdots ds_{i-1}0ds_{i}\cdots ds_{k-1}\\
+ & =0.
+\end{alignat*}
+
+\end_inset
+
+Với 
+\begin_inset Formula $j=i$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{alignat*}{1}
+h^{*}\left(f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right) & =\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{i-1}\widehat{0}ds_{i}\cdots dt_{k-1}\\
+ & =\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{k-1}.
+\end{alignat*}
+
+\end_inset
+
+Vậy nên
+\begin_inset Formula 
+\begin{align*}
+c_{i,0}^{*}\alpha & =h^{*}\left(\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right)\\
+ & =\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{k-1}.
+\end{align*}
+
+\end_inset
+
+Vậy ta có:
+\begin_inset Formula 
+\begin{align*}
+\int_{c_{i,0}}\alpha & =\int_{\left[0,1\right]^{k-1}}c_{i,0}^{*}\alpha\\
+ & =\int_{\left[0,1\right]^{k-1}}\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{k-1}\\
+ & =\int_{\left[0,1\right]^{k-1}}f\left(s_{1},s_{2},\ldots,s_{i-1},0,s_{i},\ldots s_{k-1}\right)ds_{1}ds_{2}\cdots ds_{k-1}\\
+ & =\int_{\left[0,1\right]^{k-1}}f_{i}\left(t_{1},\ldots,t_{i-1},0,t_{i+1},\ldots,t_{k}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\end{align*}
+
+\end_inset
+
+Hoàn toàn tương tự, ta có:
+\begin_inset Formula 
+\[
+\int_{c_{i,1}}\alpha=\int_{\left[0,1\right]^{k-1}}\left(f_{i}\left(t_{1},\ldots,t_{i-1},1,t_{i+1},\ldots,t_{k}\right)\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\]
+
+\end_inset
+
+Vậy định lý đã được chứng minh.
+\end_layout
+
+\begin_layout Chapter
+Tích phân trên đa tạp 
+\end_layout
+
+\begin_layout Subsection*
+Bài tập 
+\end_layout
+
+\begin_layout Problem
+Bài tập 5.6 trang 65 giáo trình.
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Problem
+Cho một 
+\begin_inset Formula $2$
+\end_inset
+
+-hình hộp suy biến 
+\begin_inset Formula 
+\begin{eqnarray*}
+c:[0,1]^{2} & \to & \mathbb{R}^{4}\\
+(t_{1},t_{2}) & \mapsto & (t_{1}^{2},t_{2},t_{1}t_{2},t_{1}+1).
+\end{eqnarray*}
+
+\end_inset
+
+ Cho dạng 
+\begin_inset Formula $\alpha=x_{1}dx_{3}+x_{1}x_{4}dx_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Tính cụ thể để kiểm tra rằng 
+\begin_inset Formula $c^{*}(d\alpha)=d(c^{*}\alpha)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Tính 
+\begin_inset Formula $\int_{c}d\alpha$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Tính 
+\begin_inset Formula $\int_{\partial c}\alpha$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Kiểm tra 
+\begin_inset Formula $c$
+\end_inset
+
+ là đơn ánh.
+\end_layout
+
+\begin_layout Enumerate
+Chứng tỏ 
+\begin_inset Formula $c$
+\end_inset
+
+ mang tập mở thành tập mở.
+ Từ đó suy ra 
+\begin_inset Formula $c$
+\end_inset
+
+ là đồng phôi lên tập ảnh 
+\begin_inset Formula $c([0,1]^{2})$
+\end_inset
+
+ của nó, tức ánh xạ ngược 
+\begin_inset Formula $c^{-1}$
+\end_inset
+
+ là liên tục.
+ (Gợi ý: chú ý 
+\begin_inset Formula $[0,1]^{2}$
+\end_inset
+
+ là compắc và xét tập đóng thay vì tập mở.) 
+\end_layout
+
+\begin_layout Enumerate
+Tính đạo hàm 
+\begin_inset Formula $Dc$
+\end_inset
+
+ và kiểm tra rằng tại mọi điểm 
+\begin_inset Formula $(t_{1},t_{2})\in(0,1)^{2}$
+\end_inset
+
+ thì 
+\begin_inset Formula $Dc(t_{1},t_{2})$
+\end_inset
+
+ là đơn ánh.
+\end_layout
+
+\begin_layout Enumerate
+Chứng tỏ tập ảnh 
+\begin_inset Formula $S=c((0,1)^{2})$
+\end_inset
+
+ là một đa tạp 2 chiều trong 
+\begin_inset Formula $\mathbb{R}^{4}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Gọi 
+\begin_inset Formula $\mu$
+\end_inset
+
+ là dạng thể tích trên 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Tính kéo lui 
+\begin_inset Formula $c^{*}\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Thiết lập công thức tích phân bội để tính diện tích của 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ Hãy ước lượng diện tích này.
+\end_layout
+
+\end_deeper
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Problem
+Cho 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ là một tập con mở bị chặn của không gian Euclid 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+ Chứng tỏ 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ là một đa tạp 
+\begin_inset Formula $n$
+\end_inset
+
+-chiều trong 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Problem
+Giả sử biên tôpô 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+ là một đa tạp 
+\begin_inset Formula $(n-1)$
+\end_inset
+
+-chiều.
+ Chứng tỏ 
+\begin_inset Formula $\overline{\Omega}$
+\end_inset
+
+ là một đa tạp 
+\begin_inset Formula $n$
+\end_inset
+
+-chiều có biên là 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Problem
+Gọi 
+\begin_inset Formula $v$
+\end_inset
+
+ là vectơ pháp tuyến đơn vị ngoài của 
+\begin_inset Formula $\partial\Omega$
+\end_inset
+
+.
+ Giả sử trường vectơ 
+\begin_inset Formula $F$
+\end_inset
+
+ trơn trên 
+\begin_inset Formula $\overline{\Omega}$
+\end_inset
+
+.
+ Viết 
+\begin_inset Formula $dx=\mu_{\Omega}$
+\end_inset
+
+ và 
+\begin_inset Formula $dS=\mu_{\partial\Omega}$
+\end_inset
+
+.
+ Từ công thức Stokes hãy chứng tỏ:
+\begin_inset Formula 
+\begin{equation}
+\int_{\Omega}\text{div}F\ dx=\int_{\partial\Omega}F\cdot v\ dS.\label{thm:StokesPDE}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Problem
+Viết 
+\begin_inset Formula $v=(v_{1},v_{2},\dotsc,v_{n})$
+\end_inset
+
+.
+ Giả sử hàm thực 
+\begin_inset Formula $f$
+\end_inset
+
+ trơn trên 
+\begin_inset Formula $\overline{\Omega}$
+\end_inset
+
+.
+ Từ ( 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:StokesPDE"
+
+\end_inset
+
+) hãy chứng tỏ: 
+\begin_inset Formula 
+\begin{equation}
+\int_{\Omega}\frac{\partial f}{\partial x_{i}}\ dx=\int_{\partial\Omega}fv_{i}\ dS.\label{Stokescomp}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Problem
+Giả sử hàm thực 
+\begin_inset Formula $g$
+\end_inset
+
+ trơn trên 
+\begin_inset Formula $\overline{\Omega}$
+\end_inset
+
+.
+ Từ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Stokescomp"
+
+\end_inset
+
+) hãy chứng minh 
+\emph on
+công thức tích phân từng phần
+\emph default
+: 
+\begin_inset Formula 
+\begin{equation}
+\int_{\Omega}\frac{\partial f}{\partial x_{i}}g\ dx=\int_{\partial\Omega}fgv_{i}\ dS-\int_{\Omega}f\frac{\partial g}{\partial x_{i}}\ dx.\label{eq:Green1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Problem
+Ta viết 
+\begin_inset Formula $\dfrac{\partial f}{\partial v}=\nabla f\cdot v$
+\end_inset
+
+, đạo hàm của 
+\begin_inset Formula $f$
+\end_inset
+
+ theo hướng 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ Nhắc lại toán tử Laplace 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ được cho bởi 
+\begin_inset Formula $\Delta f=\sum_{i=1}^{n}\frac{\partial^{2}f}{\partial x_{i}^{2}}$
+\end_inset
+
+.
+ Từ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Stokescomp"
+
+\end_inset
+
+) hãy chứng minh 
+\emph on
+công thức Green
+\emph default
+:
+\begin_inset Formula 
+\begin{equation}
+\int_{\Omega}\Delta f\ dx=\int_{\partial\Omega}\frac{\partial f}{\partial v}\ dS.\label{eq:Green2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Bổ đề Poincaré 
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+bổ đề Poincaré
+\end_layout
+
+\end_inset
+
+ Mọi dạng trơn đóng trên đa tạp thắt được là khớp.
+\end_layout
+
+\begin_layout Section
+Chứng minh bổ đề Poincaré 
+\end_layout
+
+\begin_layout Standard
+Giả sử 
+\begin_inset Formula $M\subset R^{n}$
+\end_inset
+
+ là đa tạp thắt được.
+ Xét tích 
+\begin_inset Formula $M\times\left[0;1\right]$
+\end_inset
+
+, gọi là mặt trụ với đáy 
+\begin_inset Formula $M$
+\end_inset
+
+.
+ Xét hai đồng luân 
+\begin_inset Formula $i_{0},i_{1}:M\rightarrow M\times\left[0,1\right]$
+\end_inset
+
+ xác định bởi 
+\begin_inset Formula 
+\[
+i_{0}(x)=(x,0),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+i_{1}(x)=(x,1).
+\]
+
+\end_inset
+
+Phép đồng luân tương ứng từ 
+\begin_inset Formula $i_{0}$
+\end_inset
+
+ tới 
+\begin_inset Formula $i_{1}$
+\end_inset
+
+ là
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+i: & \left[0;1\right]\times M & \rightarrow & M\times\left[0;1\right]\\
+ & \left(t,x\right) & \rightarrow & \left(x;t\right).
+\end{array}
+\]
+
+\end_inset
+
+Ta có 
+\begin_inset Formula $i(x;0)=i_{0}(x)$
+\end_inset
+
+; 
+\begin_inset Formula $i(x;1)=i_{1}(x)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Tiếp theo ta xét toán tử:
+\begin_inset Formula 
+\[
+F:\:\Omega^{k+1}\left(M\times\left[0;1\right]\right)\rightarrow\Omega^{k}\left(M\right),\:k\in\left\{ 0;1;2;....;n\right\} ,
+\]
+
+\end_inset
+
+với 
+\begin_inset Formula 
+\[
+\gamma=\underset{I}{\sum}f_{I}(x;t)dx_{I}+\underset{J}{\sum}g_{J}(x;t)dtdx_{J}\in\Omega^{k+1}
+\]
+
+\end_inset
+
+ (
+\begin_inset Formula $\gamma$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k+1$
+\end_inset
+
+ , 
+\begin_inset Formula $I$
+\end_inset
+
+ là bộ 
+\begin_inset Formula $k+1$
+\end_inset
+
+ chỉ số, 
+\begin_inset Formula $J$
+\end_inset
+
+ là bộ 
+\begin_inset Formula $k$
+\end_inset
+
+ chỉ số) thì 
+\begin_inset Formula 
+\[
+F\gamma=\underset{I}{\sum}\left(\intop_{0}^{1}g_{J}(x;t)dt\right)dx_{J}\in\Omega^{k}(M).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bây giờ ta chứng minh bổ đề Poincaré theo các bước sau.
+\end_layout
+
+\begin_layout Subsection*
+Bước 1: 
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Formula $i_{1}^{*}\gamma-i_{0}^{*}\gamma=Fd\gamma+dF\gamma$
+\end_inset
+
+ (hay 
+\begin_inset Formula $i_{1}^{*}-i_{0}^{*}=Fd+dF$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Proof
+Ta xét hai trường hợp.
+\end_layout
+
+\begin_layout Proof
+Trường hợp 
+\begin_inset Formula $\gamma=f(x;t)dx_{I}$
+\end_inset
+
+: Khi đó 
+\begin_inset Formula $F\gamma=0$
+\end_inset
+
+ (do 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ không chứa 
+\begin_inset Formula $dt$
+\end_inset
+
+) 
+\begin_inset Formula $\Rightarrow dF\gamma=0$
+\end_inset
+
+.
+ Trong khi đó
+\begin_inset Formula 
+\[
+d\gamma=\left(\dfrac{\partial f}{\partial t}dt\right)dx_{I}+\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial f}{\partial x_{i}}dx_{i}\right)dx_{I},
+\]
+
+\end_inset
+
+ suy ra 
+\begin_inset Formula 
+\[
+Fd\gamma=\left(\underset{0}{\overset{1}{\intop}}\dfrac{\partial f}{\partial t}\left(x;t\right)dt\right)dx_{I}=\left[f\left(x;1\right)-f\left(x;0\right)\right]dx_{I}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Ta lại có 
+\begin_inset Formula 
+\begin{align*}
+i_{1}^{*}\gamma-i_{0}^{*}\gamma & =i_{1}^{*}fdx_{I}+i_{0}^{*}fdx_{I}=\left[\left(f\circ i_{1}\right)-\left(f\circ i_{0}\right)\right]d\varphi_{I}\\
+ & =\left[f\left(x;1\right)-f\left(x;0\right)\right]d\varphi_{i_{1}}d\varphi_{i_{2}}...d\varphi_{i_{k+1}}.
+\end{align*}
+
+\end_inset
+
+Nhắc lại ở đây 
+\begin_inset Formula $M\overset{i_{1},i_{0}}{\longrightarrow}M\times\left[0;1\right]\overset{f}{\longrightarrow}\mathbb{R}$
+\end_inset
+
+, 
+\begin_inset Formula $x=\left(x_{1},x_{2},...,x_{n}\right)\in M$
+\end_inset
+
+, 
+\begin_inset Formula $\left(x;t\right)=\left(x_{1},x_{2},...,x_{n},t\right)\in M\times\left[0;1\right]$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi_{i}\left(x\right)=x_{i},\:i=1,2,...,n$
+\end_inset
+
+.
+ Đặt 
+\begin_inset Formula $\varphi_{n+1}^{1}\left(x\right)=1,\:\varphi_{n+1}^{0}\left(x\right)=0$
+\end_inset
+
+, ta có: 
+\begin_inset Formula 
+\[
+i_{1}\left(x\right)=\left(x;1\right)=\left(\varphi_{1}\left(x\right),\varphi_{2}\left(x\right),...,\varphi_{n}\left(x\right),\varphi_{n+1}^{1}\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+i_{0}\left(x\right)=\left(x;0\right)=\left(\varphi_{1}\left(x\right),\varphi_{2}\left(x\right),...,\varphi_{n}\left(x\right),\varphi_{n+1}^{0}\left(x\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align*}
+d\varphi_{j_{1}}.d\varphi_{j_{2}}...d\varphi_{j_{k+1}} & =\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial\varphi_{j_{1}}}{\partial x_{i}}dx_{i}\right)\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial\varphi_{j_{2}}}{\partial x_{i}}dx_{i}\right)...\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial\varphi_{j_{k+1}}}{\partial x_{i}}dx_{i}\right)\\
+ & =dx_{j_{1}}.dx_{j_{2}}...dx_{j_{k+1}}=dx_{I}.
+\end{align*}
+
+\end_inset
+
+Suy ra 
+\begin_inset Formula $i_{1}^{*}\gamma-i_{0}^{*}\gamma=\left[f\left(x;1\right)-f\left(x;0\right)\right]dx_{I}$
+\end_inset
+
+.
+ Vậy 
+\begin_inset Formula $i_{1}^{*}\gamma-i_{0}^{*}\gamma=Fd\gamma+dF\gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Proof
+Trường hợp 
+\begin_inset Formula $\gamma=g\left(x;t\right)dtdx_{J}$
+\end_inset
+
+: Ta có 
+\begin_inset Formula $F\gamma=\left(\underset{\mathrm{hàm\ theo\ }x}{\underbrace{\intop_{0}^{1}g(x;t)dt}}\right)dx_{J}$
+\end_inset
+
+, suy ra 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align*}
+dF\gamma & =\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial}{\partial x_{i}}\left(\intop_{0}^{1}g(x;t)dt\right)dx_{i}\right)dx_{J}=\left[\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}\right]dx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}.
+\end{align*}
+
+\end_inset
+
+ Mặt khác:
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align*}
+d\gamma & =d\left(gdtdx_{J}\right)=\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial g}{\partial x_{i}}(x;t)dx_{i}\right)dtdx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial g}{\partial x_{i}}(x;t)dx_{i}dtdx_{J}\\
+ & =-\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial g}{\partial x_{i}}(x;t)dtdx_{i}dx_{J}.
+\end{align*}
+
+\end_inset
+
+ Suy ra 
+\begin_inset Formula 
+\[
+Fd\gamma=-\left[\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}\right]dx_{J}=-\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}.
+\]
+
+\end_inset
+
+ Từ đó ta có 
+\begin_inset Formula $Fd\gamma+dF\gamma=0$
+\end_inset
+
+.
+ Mặt khác 
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\begin{align*}
+i_{1}^{*}\gamma-i_{0}^{*}\gamma & =i_{1}^{*}\left(gdtdx_{J}\right)-i_{0}^{*}\left(gdtdx_{J}\right)=\left(g\circ i_{1}\right)d\varphi_{n+1}^{1}d\varphi_{J}-\left(g\circ i_{0}\right)d\varphi_{n+1}^{0}d\varphi_{J}\\
+ & =g\left(x;1\right)\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial1}{\partial x_{i}}dx_{i}\right)d\varphi_{J}-g\left(x;0\right)\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial0}{\partial x_{i}}dx_{i}\right)d\varphi_{J}=0.
+\end{align*}
+
+\end_inset
+
+ Vậy 
+\begin_inset Formula $i_{1}^{*}\gamma-i_{0}^{*}\gamma=Fd\gamma+dF\gamma$
+\end_inset
+
+ trong trường hợp này.
+\end_layout
+
+\begin_layout Subsection*
+Bước 2:
+\end_layout
+
+\begin_layout Proposition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+công thức đồng luân
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+công thức đồng luân
+\end_layout
+
+\end_inset
+
+ Cho các ánh xạ 
+\begin_inset Formula $\phi_{0},\phi_{1}:\,M\longrightarrow N$
+\end_inset
+
+ (
+\begin_inset Formula $N$
+\end_inset
+
+ là đa tạp) và 
+\begin_inset Formula $\phi:\,M\times\left[0;1\right]\longrightarrow N$
+\end_inset
+
+ là phép đồng luân từ 
+\begin_inset Formula $\phi_{1}$
+\end_inset
+
+ tới 
+\begin_inset Formula $\phi_{0}$
+\end_inset
+
+.
+ Khi đó với 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k+1$
+\end_inset
+
+ trên 
+\begin_inset Formula $N$
+\end_inset
+
+, ta có: 
+\begin_inset Formula 
+\[
+\phi_{0}^{*}\alpha-\phi_{1}^{*}\alpha=F\phi^{*}d\alpha+dF\phi^{*}\alpha.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proof
+Xét sơ đồ 
+\begin_inset Formula $M$
+\end_inset
+
+
+\begin_inset Formula $\overset{i_{0},i_{1}}{\longrightarrow}M\times\left[0;1\right]\overset{\phi}{\longrightarrow}N$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\forall x\in M$
+\end_inset
+
+ ta có:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\phi\circ i_{0}\right)\left(x\right)=\phi\left(i_{0}\left(x\right)\right)=\phi\left(x,0\right)=\phi_{0}\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\phi\circ i_{1}\right)\left(x\right)=\phi\left(i_{1}\left(x\right)\right)=\phi\left(x,1\right)=\phi_{1}\left(x\right).
+\]
+
+\end_inset
+
+Suy ra 
+\begin_inset Formula $\phi_{0}=\phi\circ i_{0},\phi_{0}=\phi\circ i_{0},$
+\end_inset
+
+ và 
+\begin_inset Formula 
+\[
+\begin{cases}
+\phi_{0}*\alpha=\left(\phi\circ i_{0}\right)*\alpha=i_{0}*\phi*\alpha\\
+\phi_{1}*\alpha=\left(\phi\circ i_{1}\right)*\alpha=i_{1}*\phi*\alpha.
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Đặt 
+\begin_inset Formula $\gamma=\phi^{*}\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k+1$
+\end_inset
+
+ trên 
+\begin_inset Formula $M\times\left[0;1\right]$
+\end_inset
+
+.
+ Áp dụng kết quả ở bước 1, ta có:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+\phi_{1}^{*}\alpha-\phi_{0}^{*}\alpha & = & i_{1}^{*}\gamma-i_{0}^{*}\gamma\\
+ & = & Fd\gamma-dF\gamma\\
+ & = & Fd\phi^{*}\alpha-dF\phi^{*}\alpha\\
+ & = & F\phi^{*}d\alpha-dF\phi^{*}\alpha.
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Bước 3:
+\end_layout
+
+\begin_layout Proposition
+Xét 
+\begin_inset Formula $\phi_{0},\phi_{1}:\,M\longrightarrow M$
+\end_inset
+
+ và 
+\begin_inset Formula $\phi:\,M\times\left[0;1\right]\longrightarrow M$
+\end_inset
+
+ là những phép đồng luân từ 
+\begin_inset Formula $\phi_{0}$
+\end_inset
+
+ tới 
+\begin_inset Formula $\phi_{1}$
+\end_inset
+
+.
+ Đồng thời 
+\begin_inset Formula $\phi$
+\end_inset
+
+ là phép co rút vào 
+\begin_inset Formula $x_{0}\in M$
+\end_inset
+
+, nghĩa là 
+\begin_inset Formula $\phi$
+\end_inset
+
+ trơn, 
+\begin_inset Formula $\phi\left(x;0\right)=x_{0},\forall x\in M$
+\end_inset
+
+ .
+ Khi đó, với 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k$
+\end_inset
+
+ đóng trên 
+\begin_inset Formula $M$
+\end_inset
+
+ với 
+\begin_inset Formula $k\geq1$
+\end_inset
+
+ thì 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ khớp trên 
+\begin_inset Formula $M$
+\end_inset
+
+, có 
+\begin_inset Formula $\beta=F\phi^{*}\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k-1$
+\end_inset
+
+ trên 
+\begin_inset Formula $M$
+\end_inset
+
+ thoả mãn 
+\begin_inset Formula $d\beta=\alpha$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Proof
+Giả sử 
+\begin_inset Formula $\alpha=\underset{I}{\sum}f_{I}\left(x\right)d\varphi_{I}$
+\end_inset
+
+, ta có 
+\begin_inset Formula 
+\begin{eqnarray*}
+\phi_{1}^{*}\alpha & = & \left(\phi\circ i_{1}\right)^{*}\alpha\\
+ & = & \underset{I}{\sum}\left[f_{I}\circ\left(\phi\circ i_{1}\right)\right]\left(x\right)d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left[\phi\circ i_{1}\left(x\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left[\phi\left(x;1\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left(x\right)d\varphi_{i_{1}}.d\varphi_{i_{2}}...d\varphi_{i_{k}}\\
+ & = & \underset{I}{\sum}\left[f_{I}\left(x\right)\overset{n}{.\underset{j=1}{\sum}}\dfrac{\partial\varphi_{i_{1}}}{\partial x_{j}}dx_{j}.\dfrac{\partial\varphi_{i_{2}}}{\partial x_{j}}dx_{j}...\dfrac{\partial\varphi_{i_{k}}}{\partial x_{j}}dx_{j}\right]\\
+ & = & \underset{I}{\sum}f_{I}\left(x\right)dx_{i_{1}}.dx_{i_{2}}...dx_{i_{k}}\\
+ & = & \underset{I}{\sum}f_{I}\left(x\right)d\varphi_{I}
+\end{eqnarray*}
+
+\end_inset
+
+Vậy 
+\begin_inset Formula $\phi_{1}^{*}\alpha=\alpha$
+\end_inset
+
+.
+ Tương tự, ta có: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\phi_{0}^{*}\alpha & = & \left(\phi\circ i_{0}\right)^{*}\alpha=\underset{I}{\sum}f_{I}\left[\phi\left(x;0\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}\left[f_{I}\circ\left(\phi\circ i_{0}\right)\right]\left(x\right)d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left[\phi\circ i_{0}\left(x\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left(x_{0}\right)d\varphi_{i_{1}}.d\varphi_{i_{2}}...d\varphi_{i_{k}}\\
+ & = & 0.
+\end{eqnarray*}
+
+\end_inset
+
+Bây giờ, đặt 
+\begin_inset Formula $\beta=F\phi^{*}\alpha$
+\end_inset
+
+ và áp dụng kết quả ở bước 2, ta có:
+\begin_inset Formula 
+\[
+\begin{array}{ccccc}
+ & \phi_{1}^{*}\alpha-\phi_{0}^{*}\alpha & = & F\phi^{*}d\alpha+dF\phi^{*}\alpha\\
+\Leftrightarrow & \alpha-0 & = & 0+d\beta\\
+\Leftrightarrow & \alpha & = & d\beta.
+\end{array}
+\]
+
+\end_inset
+
+Vậy, với 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng bậc 
+\begin_inset Formula $k\geq1$
+\end_inset
+
+, đóng thì 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ khớp.
+ Do đó, nếu 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ là dạng đóng trên đa tạp co rút được thì 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ khớp và bổ đề Poincaré được chứng minh xong.
+\end_layout
+
+\begin_layout Section
+Ví dụ 
+\end_layout
+
+\begin_layout Example
+Trên 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+, cho 
+\begin_inset Formula $\alpha=\underset{i=1}{\overset{n}{\sum}}f_{i}\left(x\right)dx_{i}$
+\end_inset
+
+ là dạng bậc một đóng.
+ Xét toán tử 
+\begin_inset Formula $F:\Omega^{k+1}\left(\mathbb{R}^{n}\times\left[0;1\right]\right)\longrightarrow\Omega^{k}\left(\mathbb{R}^{n}\right)$
+\end_inset
+
+ xác định như sau: Với 
+\begin_inset Formula $\gamma=\underset{I}{\sum}f_{I}\left(x;t\right)dx_{I}+\underset{J}{\sum}g_{I}\left(x;t\right)dtdx_{J}\in\Omega$
+\end_inset
+
+ thì 
+\begin_inset Formula $F\gamma=\underset{J}{\sum}\left[\int_{0}^{1}g_{I}\left(x;t\right)dt\right]dx_{J}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Xét 
+\begin_inset Formula $\phi:R^{n}\times\left[0;1\right]\longrightarrow R^{n}$
+\end_inset
+
+ xác định như sau: 
+\begin_inset Formula $\phi\left(x;t\right)=tx,$
+\end_inset
+
+ ta có 
+\begin_inset Formula $\phi\left(x;0\right)=$
+\end_inset
+
+
+\begin_inset Formula $O_{R^{n}},$
+\end_inset
+
+
+\begin_inset Formula $\phi\left(x;1\right)=x$
+\end_inset
+
+.
+ Đặt 
+\begin_inset Formula $\beta=F\phi*\alpha$
+\end_inset
+
+ thì theo bổ đề Poincare', ta có 
+\begin_inset Formula $\alpha=d\beta$
+\end_inset
+
+ , nghĩa là 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ khớp.
+\end_layout
+
+\begin_layout Example
+Ta tìm hàm 
+\begin_inset Formula $\beta$
+\end_inset
+
+ như sau.
+ Ta có:
+\begin_inset Formula 
+\begin{eqnarray*}
+\phi*\alpha & = & \overset{n}{\underset{i=1}{\sum}}\left(f_{i}\circ\phi\right)d\varphi_{i}\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left[\phi\left(tx\right)\right]d\varphi_{i}\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)d\left(tx_{i}\right)\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)\left(x_{i}dt+tdx_{i}\right)\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)x_{i}dt+\overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)tdx_{i}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula 
+\begin{eqnarray*}
+\beta & = & F\phi*\alpha\\
+ & = & \overset{n}{\underset{i=1}{\sum}}\left[\int_{0}^{1}f_{i}\left(tx\right)x_{i}dt\right]\\
+ & = & \overset{n}{\underset{i=1}{\sum}}x_{i}\int_{0}^{1}f_{i}\left(tx\right)dt
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Bây giờ, áp dụng trên 
+\begin_inset Formula $R^{2}$
+\end_inset
+
+, với 
+\begin_inset Formula $\alpha=ydx+xdy$
+\end_inset
+
+ là dạng bậc một đóng.
+ Khi đó: 
+\begin_inset Formula 
+\begin{eqnarray*}
+\phi\left(x,y,t\right) & = & t\left(x,y\right)=\left(tx,ty\right)\\
+\phi*\alpha & = & \left(ty.xdt+tx.ydt\right)+\left(ty.tdx+tx.tdy\right)\\
+ & = & 2xytdt+t^{2}ydx+t^{2}xdy\\
+\\
+\beta & = & F\phi*\alpha\\
+ & = & \int_{0}^{1}2xytdt\\
+ & = & xy
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+Ta có ngay 
+\begin_inset Formula $d\beta=\alpha$
+\end_inset
+
+ , nghĩa là 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ khớp.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+label "Sja06"
+key "Sjamaar06"
+
+\end_inset
+
+ Reyer Sjamaar, 
+\shape italic
+Manifolds and differential forms
+\shape default
+, 2006, Cornell University.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,1696 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt]{amsbook}
+\usepackage{amstext}
+\usepackage{amsthm}
+\usepackage{mathptmx}
+\usepackage{newtxmath}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2.5cm,rmargin=2.5cm}
+\usepackage[vietnam]{babel}
+\usepackage{mathtools}
+\makeindex
+\usepackage{esint}
+\usepackage[all]{xy}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=section,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdftex}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{section}{chapter}
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+  \theoremstyle{definition}
+  \newtheorem*{example*}{\protect\examplename}
+\theoremstyle{plain}
+\ifx\thechapter\undefined
+\newtheorem{thm}{\protect\theoremname}
+\else
+\newtheorem{thm}{\protect\theoremname}[chapter]
+\fi
+  \theoremstyle{remark}
+  \newtheorem{rem}[thm]{\protect\remarkname}
+  \theoremstyle{plain}
+  \newtheorem{prop}[thm]{\protect\propositionname}
+  \theoremstyle{definition}
+  \newtheorem{example}[thm]{\protect\examplename}
+  \theoremstyle{remark}
+  \newtheorem*{rem*}{\protect\remarkname}
+  \theoremstyle{plain}
+  \newtheorem{cor}[thm]{\protect\corollaryname}
+  \theoremstyle{definition}
+  \newtheorem{defn}[thm]{\protect\definitionname}
+  \theoremstyle{plain}
+  \newtheorem*{thm*}{\protect\theoremname}
+  \theoremstyle{definition}
+  \newtheorem{problem}[thm]{\protect\problemname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage[vietnamese]{babel}
+\usepackage[all]{xy}
+
+\usepackage{graphicx}
+\usepackage{pgf}
+\usepackage{tikz}
+
+\usepackage{pgfplots}
+\usetikzlibrary{arrows}
+
+\newcommand{\RR}{\mathbb R} 
+
+\def\firstofone#1{#1}\let\uppercase\firstofone\let\MakeUppercase\firstofone
+
+\swapnumbers
+
+ \theoremstyle{theorem}
+\newtheorem{theorem}[equation]{Định lí}
+ %same counter for equation, theorem
+\makeatletter
+    \let\c@equation\c@figure  %same counter for equation, figure
+\makeatother
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+
+
+\renewenvironment{thm}{\begin{theorem}}{\end{theorem}}
+\newtheorem*{theorem*}{Định lí}
+\renewenvironment{thm*}{\begin{theorem*}}{\end{theorem*}}
+%\newtheorem*{theorem*}{Định lí}
+%\renewenvironment{thm*}{\begin{theorem*}}{\end{theorem*}}
+%\newtheorem{lemma}[theorem]{Bổ đề}
+%\renewenvironment{lem}{\begin{lemma}}{\end{lemma}}
+%\newtheorem*{lemma*}{Bổ đề}
+%\renewenvironment{lem*}{\begin{lemma*}}{\end{lemma*}}
+
+\newtheorem{proposition}[equation]{Mệnh đề}
+\renewenvironment{prop}{\begin{proposition}}{\end{proposition}}
+%\newtheorem*{proposition*}{Mệnh đề}
+%\renewenvironment{prop*}{\begin{proposition*}}{\end{proposition*}}
+
+\newtheorem{corollary}[equation]{Hệ quả}
+\renewenvironment{cor}{\begin{corollary}}{\end{corollary}}
+%\newtheorem*{corollary*}{Hệ quả}
+%\renewenvironment{cor*}{\begin{corollary*}}{\end{corollary*}}
+
+\theoremstyle{definition}
+\newtheorem{definition}[equation]{Định nghĩa}
+\renewenvironment{defn}{\begin{definition}}{\end{definition}}
+%\newtheorem*{definition*}{Định nghĩa}
+%\renewenvironment{defn*}{\begin{definition*}}{\end{definition*}}
+
+\theoremstyle{remark}
+\newtheorem{remark}[equation]{Ghi chú}
+\renewenvironment{rem}{\begin{remark}}{\end{remark}}
+\newtheorem*{remark*}{Ghi chú}
+\renewenvironment{rem*}{\begin{remark*}}{\end{remark*}}
+\newtheorem{ex}[equation]{Ví dụ}
+\renewenvironment{example}{\begin{ex}}{\end{ex}}
+\newtheorem*{ex*}{Ví dụ}
+\renewenvironment{example*}{\begin{ex*}}{\end{ex*}}
+\newtheorem{prob}[equation]{}
+\renewenvironment{problem}{\smaller\begin{prob}}{\end{prob}\normalsize}
+
+\DeclareTextFontCommand{\emph}{\itshape\color{violet}}
+
+
+\renewcommand{\boxed}[1]{  \fcolorbox{gray}{lime}{$\normalcolor\displaystyle #1$}}
+
+\makeatother
+
+  \providecommand{\corollaryname}{Corollary}
+  \providecommand{\definitionname}{Definition}
+  \providecommand{\examplename}{Example}
+  \providecommand{\problemname}{Problem}
+  \providecommand{\propositionname}{Proposition}
+  \providecommand{\remarkname}{Remark}
+  \providecommand{\theoremname}{Theorem}
+\providecommand{\theoremname}{Theorem}
+
+\begin{document}
+
+\title{Bài giảng Dạng vi phân}
+\begin{abstract}
+Đây là tập bài giảng cho môn cao học Giải tích trên đa tạp, dựa trên
+bài giảng của R. Sjamaar \cite{Sjamaar06}. Tập bài giảng này sẽ được
+tiếp tục sửa chữa và bổ sung. 
+
+Biên soạn:
+\begin{itemize}
+\item Phan Đình Hiếu. Học viên cao học Toán Giải tích khóa 2014.{\small \par}
+\item Lê Chiêu Hoàng Nguyên. Sinh viên ngành Toán khóa 2012-2016.{\small \par}
+\item Phan Văn Phương. Học viên cao học Toán Giải tích khóa 2012.{\small \par}
+\item Huỳnh Quang Vũ: người biên tập. Khoa Toán-Tin học, Đại học Khoa học
+Tự nhiên, Đại học Quốc gia Thành phố Hồ Chí Minh, email: \texttt{\href{mailto:hqvu@hcmus.edu.vn}{hqvu@hcmus.edu.vn}}{\small \par}
+\end{itemize}
+11/2015 -- \today
+\end{abstract}
+
+\maketitle
+\tableofcontents{}
+
+
+\chapter*{Mở đầu}
+
+Ta nhớ lại trong giải tích cổ điển hàm nhiều biến. Xét tích phân như
+${\displaystyle \iint_{D}x^{2}y^{3}dxdy={\displaystyle \iint_{D}x^{2}y^{3}dA}.}$
+Ở đây $dA$ là \textquotedbl{}phần tử diện tích\textquotedbl{} được
+hiểu một cách mơ hồ mà không định nghĩa rõ. Hay ${\displaystyle \int_{\gamma}xdy+ydx.}$
+Hay ${\displaystyle \int_{\gamma}fds}$, với $ds$ là phần tử chiều
+dài. Hay ${\displaystyle \iint_{S}fdS}$ với $dS$ là phần tử diện
+tích mặt. 
+
+\begin{tikzpicture} \small \draw   (0,0) to [out=30,in=210] (1,1) to [out=30,in=210] (2,2.5) to [out=30,in=240] (4,3);  \node [above] at (1,1) {$\gamma$};   \end{tikzpicture} 
+
+Trong chương trình đại học các đại lượng như vậy không được giải thích
+rõ ràng. Môn học này nghiên cứu đối tượng này một cách có hệ thống.
+Một mục đích nữa của môn học là phát triển lên đối tượng tổng quát
+hơn. Cần hiểu rõ hơn đối tượng là cái gì? Nhiều chiều thì $ds$, $dS$
+là cái gì? Các đối tượng trong không gian $\mathbb{R}^{3}$ sẽ được
+phát triển lên không gian nhiều chiều.
+
+Chỉ riêng về vi phân hoặc riêng về tích phân đã phát triển trong tổng
+quát khá xa, tuy nhiên sự kết hợp cả hai thì còn hạn chế. Xét bài
+toán tích phân đơn giản: 
+\[
+{\displaystyle \int_{0}^{1}xdx=\left.\left({\displaystyle \frac{x^{2}}{2}}\right)\right|_{0}^{1}=\dfrac{1}{2}1^{2}-\dfrac{1}{2}0^{2}}.
+\]
+ Nhắc lại công thức Newton-Leibniz: Nếu $F'=f$ thì 
+\[
+\int_{a}^{b}fdx=F|_{a}^{b}.
+\]
+ Như vậy đạo hàm và tích phân có thể xem là hai phép toán ngược nhau.
+Tổng quát hóa của công thức Newton-Leibniz là công thức Stokes sẽ
+có trong môn học này.
+
+Tại sao phải xét không gian nhiều chiều? Vì khái niệm không gian tổng
+quát không chỉ mô tả không gian ba chiều chúng ta sống mà nó còn mô
+tả nhiều hệ thống. Số tham số quy định số chiều của hệ thống. Như
+vậy không gian nhiều chiều phụ thuộc nhiều tham số có thể lên đến
+vô hạn. Nói cách khác số chiều bằng số bậc tự do của hệ thống, bằng
+số tham số độc lập miêu tả hệ thống.
+\begin{example*}
+Hệ gồm hai quả lắc (pendulum): Với $O$ cố định, cái thứ hai gắn vào
+cái thứ nhất.
+
+\begin{tikzpicture}
+\small
+
+\draw (-6.46,4.)-- (-4.,4.);
+\draw (-6.,6.)-- (-6.,3.62);
+\draw (-8.,3.)-- (-5.68,4.16);
+\node [left] at (-5.76,6.18) {$\mathbb{R}^3$};
+
+\draw [fill=black] (-4.,5.) circle (2pt);
+\node [above] at (-4.,5.) {$O$};
+\draw [fill=lime] (-3.,3.) circle (1.5pt);
+\node [right] at (-3.,3.) {$x$};
+\draw [fill=lime] (-5.,2.) circle (1.5pt);
+\node [left]  at (-5.,2.) {$y$};
+\draw (-4.,5.)-- (-3.,3.);
+\draw (-3.,3.)-- (-5.,2.);
+
+\end{tikzpicture}
+\end{example*}
+Bài toán định vị trí cho hệ hai điểm $(x,y)$ rõ ràng là một hệ thống
+phụ thuộc vào $4$ tham số ( hệ thống $4$ chiều). Thật vậy các khả
+năng vị trí điểm $x$ là một mặt cầu $S^{2}$ tâm $O$, ứng với mỗi
+điểm $x$, khả năng vị trí điểm $y$ là một mặt cầu $S^{2}$ tâm $x$.
+Như vậy hệ trên là một không gian $4$ chiều $S^{2}\times S^{2}$.
+Để mô tả hệ thống cần $4$ tham số độc lập.
+
+Việc nghiên cứu không gian nhiều chiều tổng quát hơn $\mathbb{R}^{n}$
+chính là việc nghiên cứu về đa tạp. Bản thân $\mathbb{R}^{n}$ cũng
+là một đa tạp. Ví dụ phía trên là một đa tạp $4$ chiều.
+
+Trong môn học này ta quy ước $\mathbb{R}^{n}=\{x=(x_{1},x_{2},...,x_{n})\ |\ x_{1},x_{2},...,x_{n}\in\mathbb{R}\}$
+với các cấu trúc không gian vector quen thuộc, metric Euclid quen
+thuộc, và chuẩn Euclide: $\left\Vert x\right\Vert =\sqrt{x_{1}^{2}+x_{2}^{2}+...+x_{n}^{2}}$.
+Chúng ta thường viết vectơ $x$ ở dạng cột vì thường xuyên nhân ma
+trận. 
+
+
+\chapter{Dạng vi phân trong không gian Euclid}
+
+
+\section{Những tính chất cơ bản}
+
+Các đại lượng $dx$, $dxdy$, $dx_{1}dx_{2}...dx_{n}$,... sẽ chưa
+được định nghĩa mà để lại ở một chương sau. Trước tiên chúng ta hiểu
+đại khái $dx$ như là một vô cùng bé của $x$ như ở bậc đại học.
+\begin{example*}
+Xét trong $\mathbb{R}^{2}$, $(x,y)\in\mathbb{R}^{2}$. Ta có tính
+chất về dạng: 
+\[
+dxdy=-dydx,
+\]
+(tính phản đối xứng). Như vậy $dxdx=-dxdx$ suy ra $dxdx=0$. Ở đây
+$0$ là cái gì? Nó có phải là số $0$ đơn thuần không? Ta tạm xem
+nó như một kí hiệu hình thức.
+\end{example*}
+Trong $\mathbb{R}^{n}$ với $x=(x_{1},...,x_{n})$. Biểu thức 
+
+\[
+dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}},\ 1\leq i_{1}\le i_{2}\le\dotsb\le i_{k}\leq n
+\]
+ được gọi là một \emph{dạng vi phân} bậc $k$. \index{dạng vi phân}
+
+Dạng vi phân bậc $k$ thỏa mãn tính chất \emph{phản đối xứng} (anticommutative):
+\[
+\boxed{dxdy=-dydx.}
+\]
+
+
+Trong trường hợp tổng quát ta đổi chổ bất kì hai thành phần $dx_{i_{m}},dx_{i_{n}}$
+công thức vẫn đúng: 
+\[
+dx_{i_{1}}\dotsb dx_{i_{m}}\dotsb dx_{i_{n}}\dotsb dx_{i_{k}}=-dx_{i_{1}}\dotsb dx_{i_{n}}\dotsb dx_{i_{m}}\dotsb dx_{i_{k}}.
+\]
+Chứng minh dành cho bạn đọc.
+\begin{example*}
+Trong $\mathbb{R}^{3}$ 
+\[
+dxdydz=-dxdzdy=dydzdx
+\]
+\[
+dxdzdx=-dxdxdz=0.
+\]
+
+\end{example*}
+
+\begin{rem}
+Trong một dạng nếu có hai thành phần giống nhau thì dạng đó bằng không.
+
+Trong $\mathbb{R}^{n}$ mọi $k$-dạng với $k>n$ đều bằng $0$.
+\end{rem}
+
+\subsection*{Phép nhân của dạng}
+
+Trong $\mathbb{R}^{n}$ nếu $\omega_{1}$ và $\omega_{2}$ là hai
+dạng bậc $k$ và $l$ thì ta có $\omega_{1}\omega_{2}$ lại là một
+dạng bậc $k+l$.
+\begin{example*}
+Trong $\mathbb{R}^{3}$, $\omega_{1}=dx$ là một $1$-dạng; $\omega_{2}=dydz$
+là một $2$-dạng; $\omega_{1}\omega_{2}=(dx)(dydz)=dxdydz$ là một
+$3$-dạng.
+\end{example*}
+Phép nhân này có tính chất kết hợp: 
+\[
+(\omega_{1}\omega_{2})\omega_{3}=\omega_{1}(\omega_{2}\omega_{3})=\omega_{1}\omega_{2}\omega_{3}.
+\]
+ Phép nhân có phần tử không: 
+\[
+\omega\cdot0=0\cdot\omega=0.
+\]
+
+\begin{prop}
+Nếu $\omega_{1}$ là một $k$-dạng và $\omega_{2}$ là một $l$-dạng
+thì
+\[
+\boxed{\omega_{1}\omega_{2}=(-1)^{kl}\omega_{2}\omega_{1}.}
+\]
+\end{prop}
+\begin{proof}
+With 
+\[
+\omega_{1}=dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}}
+\]
+ and 
+\[
+\omega_{2}=dx_{j_{1}}dx_{j_{2}}\dotsb dx_{j_{l}}
+\]
+ we get 
+\begin{align*}
+\omega_{1}\omega_{2} & =(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})(dx_{j_{1}}dx_{j_{2}}\dotsb dx_{j_{l}})\\
+ & =(-1)^{k}dx_{j_{1}}(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})(dx_{j_{2}}\dotsb dx_{j_{l}})\\
+ & =(-1)^{2k}dx_{j_{1}}dx_{j_{2}}(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})(dx_{j_{3}}\dotsb dx_{j_{l}})\\
+ & =(-1)^{kl}(dx_{j_{1}}dx_{j_{2}}\dotsb dx_{j_{l}})(dx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}})=(-1)^{kl}\omega_{2}\omega_{1}.
+\end{align*}
+
+\end{proof}
+Tổng quát: một dạng bậc $k$ trên tập mở $U\subset\mathbb{R}^{n}$
+là một biểu thức $fdx_{i_{1}}dx_{i_{2}}\dotsb dx_{i_{k}}$ trong đó
+$f:U\rightarrow\mathbb{R}$.
+
+
+\subsection*{Dạng vi phân trên $\mathbb{R}^{n}$.}
+
+$U\in\mathbb{R}^{n}$, cho $x=(x_{1},...,x_{n})$. Dạng bậc không
+($0$-dạng) là một hàm thực $f:U\subset\mathbb{R}^{n}\rightarrow\mathbb{R}$.
+Dạng bậc $k$ ($k$-dạng) là biểu thức ${\displaystyle \sum fdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}}$
+, $f:U\subset\mathbb{R}^{n}\rightarrow\mathbb{R}$.
+\begin{example}
+$dx_{1},dx_{2},...,dx_{n}$, $2dx_{1}+3dx_{2}$, $x_{1}^{2}x_{2}dx_{1}+x_{3}dx_{4}$
+là dạng bậc $1$ trong $\mathbb{R}^{n}$. $x_{1}x_{2}dx_{i_{1}}dx_{i_{2}}...dx_{i_{n}}$
+là dạng bậc $n$ trong $\mathbb{R}^{n}$. $xdxdy$, $(xy+1)dxdz$
+là những dạng bậc $2$ trong $\mathbb{R}^{3}$.
+\end{example}
+Trên $\mathbb{R}^{2}$ một dạng bậc $1$ là một biểu thức: $Pdx+Qdy$
+trong đó $P,Q:U\subset\mathbb{R}^{2}\rightarrow\mathbb{R}$. một dạng
+bậc $2$ là một biểu thức: $Pdxdy+Qdydx=(P-Q)dxdy=Rdxdy$. Một dạng
+bậc lớn hơn $2$ $=0$. Không gian $n$ chiều thì mọi dạng bậc lớn
+hơn $n$ đều bằng $0$.
+\begin{rem*}
+Không thể cộng trừ hai dạng khác bậc. Chằng hạn như $Pdx+Qdy+Rdxdy$
+là sai.
+\end{rem*}
+Nhân hai dạng: $\alpha={\displaystyle \sum fdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}}$
+là một $k$-dạng. $\beta={\displaystyle \sum gdx_{j_{1}}dx_{j_{2}}...dx_{j_{l}}}$
+là một $l$-dạng. Ta định nghĩa $\alpha\beta={\displaystyle \sum fgdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}dx_{j_{1}}dx_{j_{2}}...dx_{j_{l}}}$
+là một $k+l$-dạng.
+\begin{example}
+\[
+(dx)(dy)=dxdy
+\]
+ 
+\[
+dx(dy+dz)=dxdy+dzdz
+\]
+\end{example}
+\begin{prop}
+Cho $\alpha$ và $\beta$ là hai dạng, ta có: 
+\[
+\alpha\beta=(-1)^{deg(\alpha).deg(\beta)}\beta\alpha
+\]
+ \end{prop}
+\begin{proof}
+Bạn đọc tự chứng minh.\end{proof}
+\begin{cor}
+Nhân một dạng bậc lẻ với chính nó thì bằng $0$.\end{cor}
+\begin{proof}
+Giả sử $\alpha$ là một $k$-dạng ($k$ lẻ). Ta có: $\alpha^{2}=\alpha.\alpha=(-1)^{k.k}\alpha.\alpha$
+suy ra $\alpha^{2}=0$. 
+\end{proof}
+
+\section{Đạo hàm của dạng}
+\begin{defn}
+Cho $f:U\subset\mathbb{R}^{n}\rightarrow\mathbb{R}$, $U$ mở, $f$
+trơn mọi cấp ( tức $f\in C^{\infty}(U)$). Ta gọi $f$ là dạng trơn
+bậc $0$. Đạp hàm của dạng bậc $0$ được định nghĩa: 
+\end{defn}
+\begin{center}
+$df=\dfrac{\partial f}{\partial x_{1}}dx_{1}+\dfrac{\partial f}{\partial x_{2}}dx_{2}+....+\dfrac{\partial f}{\partial x_{n}}dx_{n}={\displaystyle \sum_{i=1}^{n}\dfrac{\partial f}{\partial x_{i}}dx_{i}}$ 
+\par\end{center}
+
+Như vậy, đạo hàm của dạng bậc $0$ là dạng bậc $1$.
+\begin{example}
+Dạng bậc $0$ trên $\mathbb{R}$. 
+\[
+u=f(x)=x^{2}:\mathbb{R}\rightarrow\mathbb{R}
+\]
+ 
+\[
+du=2xdx
+\]
+ $f$ hàm trên $\mathbb{R}$ 
+\[
+u=f(x)
+\]
+ 
+\[
+du=f'(x)dx
+\]
+
+\end{example}
+
+\begin{example}
+Với 
+\[
+f:\mathbb{R}^{2}\rightarrow\mathbb{R}
+\]
+ 
+\[
+(x,y)\mapsto f(x,y)
+\]
+ Ta có $df=\dfrac{\partial f}{\partial x}dx+\dfrac{\partial f}{\partial y}dy$.
+\end{example}
+Tổng quát:
+\[
+f:\mathbb{R}^{n}\rightarrow\mathbb{R}
+\]
+\[
+(x_{1},..,x_{n})\mapsto f(x_{1},..,x_{n})
+\]
+ Ta có 
+\[
+df=\dfrac{\partial f}{\partial x_{1}}dx_{1}+\dfrac{\partial f}{\partial x_{2}}dx_{2}+....+\dfrac{\partial f}{\partial x_{n}}dx_{n}={\displaystyle \sum_{i=1}^{n}\dfrac{\partial f}{\partial x_{i}}dx_{i}}
+\]
+ 
+
+Phía trên đây là đạo hàm của $0$-dạng, bây giờ ta nói về đạo hàm
+của một $k$-dạng.
+\begin{defn}
+Cho $\alpha={\displaystyle \sum fdx_{i_{1}}...dx_{i_{k}}}$ là một
+$k$-dạng. Ta định nghĩa
+\end{defn}
+\[
+d\alpha={\displaystyle \sum dfdx_{i_{1}}...dx_{i_{k}}}
+\]
+ là một $(k+1)$-dạng.
+
+Đặt $\Omega^{k}(U)$ là tập hợp các dạng bậc $k$ trên $U$ thì $d:\Omega^{k}(U)\rightarrow\Omega^{k+1}(U)$.
+\begin{example}
+Trên $\mathbb{R}^{2}$ $\alpha=Pdx+Qdy$, ta có 
+\[
+d\alpha=d(Pdx+Qdy)=dPdx+dQdy=(\dfrac{\partial P}{\partial x}dx+\dfrac{\partial P}{\partial y}dy)dx+(\dfrac{\partial Q}{\partial x}dx+\dfrac{\partial Q}{\partial y}dy)dy=\dfrac{\partial P}{\partial y}dydx+\dfrac{\partial Q}{\partial x}dxdy=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy
+\]
+
+\end{example}
+Nhắc lại định lý Green trong giải tích cổ điển.
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.54]
+\clip(2.92,-5.34) rectangle (17.08,6.32);
+\draw [->] (4.,-3.) -- (4.,4.);
+\draw [->] (2.,-1.) -- (10.,-1.);
+\draw [rotate around={39.44440375479764:(6.616028203809059,1.3786909668423168)}] (6.616028203809059,1.3786909668423168) ellipse (1.780725937839661cm and 1.0147650118872027cm);
+\draw (2.94,4.28) node[anchor=north west] {$\mathbb{R}^2$};
+\draw [->] (6.923837578369623,0.35378598291576924) -- (7.180569788606215,0.5312680504204655);
+\draw (6.94,2.48) node[anchor=north west] {$D$};
+\draw (7.62,1.12) node[anchor=north west] {$\partial D$};
+\end{tikzpicture}
+
+\[
+{\displaystyle \int_{D}\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)dxdy={\displaystyle \int_{\partial D}Pdx+Qdy}}.
+\]
+
+
+Công thức Newton-Leibniz: 
+\[
+{\displaystyle \int_{[a,b]}du=u|_{\partial[a,b]}}
+\]
+.
+\begin{example}
+Trên $\mathbb{R}^{3}$ Cho dạng 
+\[
+\alpha=Pdydz+Qdzdx+Rdxdy
+\]
+ Thì 
+\begin{align*}
+d\alpha & =d(Pdydz+Qdzdx+Rdxdy)=dPdydz+dQdzdx+dRdxdy=\\
+= & (\dfrac{\partial P}{\partial x}dx+\dfrac{\partial P}{\partial y}dy+\dfrac{\partial P}{\partial z}dz)dydz+(\dfrac{\partial Q}{\partial x}dx+\dfrac{\partial Q}{\partial y}dy+\dfrac{\partial Q}{\partial z}dz)dzdx+(\dfrac{\partial R}{\partial x}dx+\dfrac{\partial R}{\partial y}dy+\dfrac{\partial R}{\partial z}dz)dxdy\\
+ & =(\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z})dxdydz.
+\end{align*}
+Cho dạng $\beta=Pdx+Qdy+Rdz$ thì 
+\begin{align*}
+d\beta & =d(Pdx+Qdy+Rdz)=dPdx+dQdy+dRdz=\\
+= & (\dfrac{\partial P}{\partial x}dx+\dfrac{\partial P}{\partial y}dy+\dfrac{\partial P}{\partial z}dz)dx+(\dfrac{\partial Q}{\partial x}dx+\dfrac{\partial Q}{\partial y}dy+\dfrac{\partial Q}{\partial z}dz)dy+\\
++ & (\dfrac{\partial R}{\partial x}dx+\dfrac{\partial R}{\partial y}dy+\dfrac{\partial R}{\partial z}dz)dz=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx.
+\end{align*}
+
+\end{example}
+Nhắc lại trong giải tích cổ điển: Định lý Stokes trong $\mathbb{R}^{3}$
+\[
+{\displaystyle \int_{\partial S}Pdx+Qdy+Rdz={\displaystyle \int_{S}(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx}}.
+\]
+ Định lý Gauss - Ostragradski: 
+\[
+{\displaystyle \int_{\partial E}Pdydz+Qdzdx+Rdxdy={\displaystyle \int_{E}(\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z})dxdydz}}.
+\]
+
+
+Ta để ý các công thức Newton-Leibniz, Green, Stokes, Gauss - Ostragradski
+đều có dạng 
+\[
+{\displaystyle \int_{\partial C}\alpha={\displaystyle \int_{C}d\alpha}}.
+\]
+Trong đó $\alpha$ là một dạng và $d\alpha$ là đạo hàm của dạng đó.
+Ở phần sau ta sẽ tổng quát hóa lên thành định lý Stokes trong không
+gian nhiều chiều và trên đa tạp.
+
+Trong giải tích cổ điển:
+
+Cho $F=(P,Q,R)$, ta có khái niệm: 
+\[
+DivF=\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}.
+\]
+\[
+RotF=CurlF=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y},\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z},\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}).
+\]
+
+\begin{thm*}
+Đạo hàm của đạo hàm của một dạng bất kì bằng $0$. (Ở đây hàm lấy
+giá trị thực $f$ phải trơn.) Tức $\alpha={\displaystyle \sum fdx_{i_{1}}dx_{i_{2}}...dx_{i_{k}}}$
+là một $k$-dạng. Ta có: $d(d\alpha)=0$. \end{thm*}
+\begin{proof}
+Phần chứng minh giành cho bạn đọc.\end{proof}
+\begin{example}
+Trong $\mathbb{R}^{3}$ cho $\alpha=Pdx+Qdy+Rdz$
+
+Như trên $d\alpha=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx$.
+
+Do đó 
+\begin{align*}
+d(d\alpha) & =d\left((\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy+(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z})dydz+(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x})dzdx\right)=\\
+= & d\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)dxdy+d\left(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z}\right)dydz+d\left(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}\right)dzdx\\
+= & \left(\dfrac{\partial^{2}Q}{\partial x^{2}}dx+\dfrac{\partial^{2}Q}{\partial x\partial y}dy+\dfrac{\partial^{2}Q}{\partial x\partial z}dz-\dfrac{\partial^{2}P}{\partial y\partial x}dx-\dfrac{\partial^{2}P}{\partial y^{2}}dy-\dfrac{\partial^{2}P}{\partial y\partial z}dz\right)dxdy+dydz\\
+ & +\left(\dfrac{\partial^{2}R}{\partial y\partial x}dx+\dfrac{\partial^{2}R}{\partial y^{2}}dy+\dfrac{\partial^{2}R}{\partial y\partial z}dz-\dfrac{\partial^{2}Q}{\partial z\partial x}dx-\dfrac{\partial^{2}Q}{\partial z\partial y}dy-\dfrac{\partial^{2}Q}{\partial z^{2}}dz\right)\\
+ & +\left(\dfrac{\partial^{2}P}{\partial z\partial x}dx+\dfrac{\partial^{2}P}{\partial z\partial y}dy+\dfrac{\partial^{2}P}{\partial z^{2}}dz-\dfrac{\partial^{2}R}{\partial x^{2}}dx-\dfrac{\partial^{2}R}{\partial x\partial y}dy-\dfrac{\partial^{2}R}{\partial x\partial z}dz\right)dzdx.\\
+= & \dfrac{\partial^{2}Q}{\partial x\partial z}dzdxdy-\dfrac{\partial^{2}P}{\partial y\partial z}dzdxdy+\dfrac{\partial^{2}R}{\partial y\partial x}dxdydz-\dfrac{\partial^{2}Q}{\partial z\partial x}dxdydz+\dfrac{\partial^{2}P}{\partial z\partial y}dydzdx-\dfrac{\partial^{2}R}{\partial x\partial y}dydzdx\\
+= & 0.
+\end{align*}
+
+\end{example}
+
+\section{Dạng khớp và dạng đóng}
+\begin{defn}
+$\alpha$ được gọi là dạng khớp nếu có dạng $\beta$ sao cho $d\beta=\alpha$. 
+\end{defn}
+Một cách nôm na dạng khớp là đạo hàm của dạng khác, tức dạng có nguyên
+hàm.
+
+Cho $\alpha$ là dạng bậc một trên $\mathbb{R}$ ($\alpha\in\Omega^{1}(\mathbb{R}$)
+thì $\alpha=fdx$ ; $f\in C^{\infty}(\mathbb{R})$.
+
+$\alpha$ khớp $\Leftrightarrow$ có tồn tại hàm $F\in\Omega^{0}(\mathbb{R})=C^{\infty}(\mathbb{R})$
+sao cho $dF=fdx$ tức $F'dx=fdx$ tức $F'=f$. Nghĩa là $F$ là một
+nguyên hàm của $f$.
+
+Như vậy dạng khớp như là tổng quát hóa của khái niệm có nguyên hàm
+trong giải tích cổ điển.
+
+Trong $\mathbb{R}^{2}$ cho $\alpha=Pdx+Qdy\in\Omega^{1}(\mathbb{R}^{2})$
+
+$\alpha$ là khớp $\Leftrightarrow$ tồn tại $F\in\Omega^{0}(\mathbb{R}^{2})=C^{\infty}(\mathbb{R}^{2})$
+sao cho 
+\[
+dF=\alpha\Leftrightarrow\dfrac{\partial F}{\partial x}dx+\dfrac{\partial F}{\partial y}dy=Pdx+Qdy\Leftrightarrow\left\{ \begin{array}{lll}
+\dfrac{\partial F}{\partial x}=P\\
+\dfrac{\partial F}{\partial y}=Q
+\end{array}\right.\Leftrightarrow(P,Q)=(\dfrac{\partial F}{\partial x},\dfrac{\partial F}{\partial y})=\nabla F=gradF
+\]
+ Trong giải tích hàm nhiều biến, trường $(P,Q)$ sao cho $\exists F:\nabla F=(P,Q)$
+thì $(P,Q)$ gọi là bảo toàn. Nếu $\alpha$ là khớp thì $(P,Q)$ là
+bảo toàn và hàm $F$ được gọi là hàm thế. Bài toán quan tâm là một
+dạng có khớp hay không, nếu khớp tìm nguyên hàm?
+\begin{example}
+Trong $\mathbb{R}^{2}$ cho $\alpha=xydx+\dfrac{1}{2}x^{2}dy$ là
+$1$-dạng. Hỏi $\alpha$ có khớp hay không? (Tức trường $(xy,\dfrac{1}{2}x^{2})$
+có bảo toàn hay không.)
+
+Đây thực ra là bài toán tìm nguyên hàm. Tìm $F$ sao cho 
+\[
+\left\{ \begin{array}{lll}
+\dfrac{\partial F}{\partial x}=xy &  & (1)\\
+\dfrac{\partial F}{\partial y}=\dfrac{1}{2}x^{2} &  & (2)
+\end{array}\right.
+\]
+
+
+$(1)\Rightarrow F(x,y)={\displaystyle \int xydx=\dfrac{1}{2}x^{2}y+C(y)}$.
+Thay vào $(2)$ ta được:
+\[
+(\dfrac{1}{2}x^{2}y+C(y))'_{y}=\dfrac{1}{2}x^{2}\Leftrightarrow\dfrac{1}{2}x^{2}+C'(y)=\dfrac{1}{2}x^{2}
+\]
+ tức $C'(y)=0\Rightarrow C(y)=C$. Vậy $F(x,y)=\dfrac{1}{2}x^{2}+C$.
+Vậy trường $(xy,\dfrac{1}{2}x^{2})$ là trường bảo toàn hay $\alpha$
+là dạng khớp và hàm thế $F=\dfrac{1}{2}x^{2}+C$ ($C$ là hằng số
+không phụ thuộc cả $x$ lẩn $y$). Ví dụ trên là tương đối đơn giản,
+trong trường hợp tổng quát ta cần phương pháp lý thuyết.
+\end{example}
+\textit{Điều kiện cần để khớp}: Giả sử $\alpha$ khớp thì $\exists\beta:d\beta=\alpha\Rightarrow d(\alpha)=d(d\beta)=0$.
+Như vậy một dạng khớp thì có đạo hàm bằng $0$. Nhắc lại trong giải
+tích hàm nhiều biến $\alpha=Pdx+Qdy$, $d\alpha=(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y})dxdy$.
+Như vậy $(P,Q)$ bào toàn thì $\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}$.
+\begin{defn}
+Nếu $d\alpha=0$ ta nói $\alpha$ là dạng đóng. Như vậy một dạng khớp
+thì đóng và không có chiều ngược lại. Trong giải tích hàm nhiều biến
+ta quan tâm bài toán trường $(P,Q)$ có $\dfrac{\partial Q}{\partial x}=\dfrac{\partial P}{\partial y}$
+mà $(P,Q)$ không bảo toàn.
+\end{defn}
+Như vậy mối quan hệ giữa khớp và đóng là phong phú. 
+
+
+\subsection*{Bài tập}
+\begin{problem}
+Hệ thống Lotka-Volterra là một mô hình con thú săn mồi-con mồi. Nó
+là một cặp phương trình vi phân 
+\[
+\dfrac{dx}{dt}=-rx+sxy,\dfrac{dy}{dt}=py-qxy
+\]
+Ở đây $x(t)$ đại diện cho dân số con thú săn mồi, $y(t)$ đại diện
+cho dân số con mồi tại thời điểm $t$, trong đó $p,q,s,t$ là các
+hằng số dương. Vấn đề chúng ta quan tâm là việc giải đường cong nghiệm
+(còn gọi là quỹ đạo) $(x(t),y(t))$ của hệ thống này. (\cite{Sjamaar06})
+\end{problem}
+
+\chapter{Kéo lui của một dạng}
+
+
+\section{Công thức đổi biến trong $\mathbb{R}$}
+
+Nhắc lại trong không gian một chiều $\mathbb{R}$ ta có công thức
+đổi biến tích phân như sau: ${\displaystyle \int f(u)u'(x)dx={\displaystyle \int f(u)du}}$\\
+ Chẳng hạn ${\displaystyle \int\sin^{2}t\cos tdt}$\\
+Đổi biến $u=\sin t\Rightarrow du=\cos tdt$ do đó, ${\displaystyle \int\sin^{2}t\cos tdt={\displaystyle \int u^{2}du=\dfrac{u^{3}}{3}+C}}$. 
+
+
+\section{Kéo lui của một dạng}
+
+Mục đích chính của chương này là tổng quát hóa công thức trên trong
+trường hợp $n$-chiều. 
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.} \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(2.1,-0.4) rectangle (8.44,1.98);
+\draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.0255857283809675cm and 0.6122304192530148cm);
+\draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.0972296049664032cm and 0.6522367714371142cm);
+\draw (3.88,1.68) node[anchor=north west] {$\mathbb{R}^n$};
+\draw (7.58,1.9) node[anchor=north west] {$\mathbb{R}^n$};
+\draw (2.92,0.72) node[anchor=north west] {$x$};
+\draw (7.26,1.04) node[anchor=north west] {$u$};
+\draw (3.34,0.22)-- (7.26,0.44);
+\draw [->] (5.020319692762799,0.3143036562264836) -- (5.360371071956821,0.3333881724057399);
+\draw (5.22,0.88) node[anchor=north west] {$\varphi$};
+\begin{scriptsize}
+\draw [fill=qqqqff] (3.34,0.22) circle (1.5pt);
+\draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture} 
+
+$\omega$ là dạng theo biến $x$ trong $\mathbb{R}^{n}$, câu hỏi
+đặt ra: mối quan hệ vi phân của $\omega$ theo $x$ và theo $u$ như
+thế nào? Giả sử $\omega$ là dạng theo $x$, đổi biến $u=\varphi(x)$
+thì $\omega$ trở thành dạng gì?
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.} \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(2.06,-0.56) rectangle (8.4,1.72);
+\draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.0255857283809675cm and 0.6122304192530148cm);
+\draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.0972296049664032cm and 0.6522367714371142cm);
+\draw (3.88,1.68) node[anchor=north west] {$U$};
+\draw (7.58,1.9) node[anchor=north west] {$V$};
+\draw (2.92,0.72) node[anchor=north west] {$x$};
+\draw (7.26,1.04) node[anchor=north west] {$y$};
+\draw (3.34,0.22)-- (7.26,0.44);
+\draw [->] (5.020319692762799,0.3143036562264836) -- (5.360371071956821,0.3333881724057399);
+\draw (5.22,0.88) node[anchor=north west] {$\varphi$};
+\draw (7.1,0.52) node[anchor=north west] {$\omega$};
+\begin{scriptsize}
+\draw [fill=qqqqff] (3.34,0.22) circle (1.5pt);
+\draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture} 
+
+$\omega$ là dạng trên tập mở $V$. Câu hỏi đặt ra trên $U$ có dạng
+gì tương ứng? Dạng tương ứng đó gọi là dạng kéo lui của dạng $\omega$.
+\begin{defn}
+Kéo lui (pull-back) của dạng $\omega$ (kí hiệu: $\varphi^{*}\omega$)
+là một dạng trên $U$ xác định như sau: Nếu 
+\[
+\omega={\displaystyle \sum fdy_{i_{1}}...dy_{i_{k}}}
+\]
+\[
+\varphi:\mathbb{R}^{n}\longrightarrow\mathbb{R}^{n}
+\]
+\[
+x(x_{1},...,x_{n})\longmapsto\varphi(\varphi_{1},...,\varphi_{n})=y(y_{1},...,y_{n})
+\]
+ Thì $\varphi^{*}\omega={\displaystyle \sum f\circ\varphi d\varphi_{i_{1}}...d\varphi_{i_{k}}}$
+\end{defn}
+Trong đó:
+\begin{itemize}
+\item $\omega$ là dạng bậc $k$ theo biến $y$
+\item $f$ là hàm theo biến $y$
+\item $\varphi$ là ánh xạ đi từ $\mathbb{R}^{n}$ vào $\mathbb{R}^{n}$
+biến $x$ thành $y$
+\item $\varphi:\mathbb{R}^{n}\longrightarrow\mathbb{R}^{n}$
+\item $x\longmapsto y$
+\item Chúng ta có thể hiểu $\varphi^{*}\omega$ nhận được bằng cách thay
+$y$ bởi $\varphi(x)$ và thay $u_{i}$ bởi $\varphi_{i}(x)$. \textbf{ }\end{itemize}
+\begin{example}
+\[
+\varphi:\mathbb{R}\rightarrow\mathbb{R}
+\]
+\[
+x\mapsto u=\varphi
+\]
+ $\omega=f(u)du$ thì $\varphi^{*}\omega=f(\varphi(x))d\varphi=f(\varphi(x))\varphi'(x)dx$. 
+\end{example}
+Xem trường hợp nhiều chiều hơn: $\varphi:\mathbb{R}^{2}\rightarrow\mathbb{R}^{2}(x,y)\longmapsto(u,v)$
+ở đây $u,v$ là hàm theo biến $x,y$. Cho $\omega=du$ thì $\varphi^{*}\omega=du=\dfrac{\partial u}{\partial x}dx+\dfrac{\partial u}{\partial y}dy$
+Cho $\beta=dudv$ thì 
+\begin{align*}
+\varphi^{*}\beta & =dudv=d\varphi_{1}d\varphi_{2}=(\dfrac{\partial u}{\partial x}dx+\dfrac{\partial u}{\partial y}dy)(\dfrac{\partial v}{\partial x}dx+\dfrac{\partial v}{\partial y}dy)=(\dfrac{\partial u}{\partial x}\dfrac{\partial v}{\partial y}-\dfrac{\partial u}{\partial y}\dfrac{\partial v}{\partial x})dxdy\\
+= & det\left(\begin{array}{ccc}
+\dfrac{\partial u}{\partial x} & \dfrac{\partial u}{\partial y}\\
+\dfrac{\partial v}{\partial x} & \dfrac{\partial v}{\partial y}
+\end{array}\right)dxdy=(detJ\varphi)dxdy=\dfrac{\varphi(u,v)}{\varphi(x,y)}dxdy.
+\end{align*}
+ (dấu bằng cuối cùng là cách kí hiệu trong giải tích cổ điển).
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.} \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(1.24,-1.36) rectangle (8.4,1.88);
+\draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.0255857283809675cm and 0.6122304192530148cm);
+\draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.0972296049664032cm and 0.6522367714371142cm);
+\draw (3.88,1.68) node[anchor=north west] {$\mathbb{R}^2$};
+\draw (7.58,1.9) node[anchor=north west] {$\mathbb{R}^2$};
+\draw (2.76,0.88) node[anchor=north west] {$(x,y)$};
+\draw (7.2,1.2) node[anchor=north west] {$(u,v)$};
+\draw (3.38,0.06)-- (7.26,0.44);
+\draw [->] (5.043173573448893,0.2228881334821081) -- (5.3797550406103225,0.2558522977917327);
+\draw (5.22,0.88) node[anchor=north west] {$\varphi$};
+\draw (1.62,-0.1) node[anchor=north west] {$\varphi^*\omega=\dfrac{\varphi (u,v)}{\varphi (x,y)}dxdy$};
+\draw (6.46,-0.24) node[anchor=north west] {$\omega = dudv$};
+\begin{scriptsize}
+\draw [fill=qqqqff] (3.38,0.06) circle (1.5pt);
+\draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture} 
+
+Nhớ lại công thức đổi biến trong tích phân hàm hai biến số: 
+\[
+{\displaystyle \int\int f(u,v)dudv={\displaystyle \int\int f(u(x,y),v(x,y))\dfrac{\varphi(u,v)}{\varphi(x,y)}dxdy}}.
+\]
+ Ở đây cận (miền) lấy tích phân ở hai vế thuận theo qui tắc đổi cận
+tích phân khi ta đổi biến. Biểu thức dưới dấu tích phân trong vế phải
+$(*)$ là dạng kéo lui của biểu thức dưới dấu tích phân trong vế trái
+$(*)$.
+\begin{example}
+$n$-chiều
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.} \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(2.1,-0.4) rectangle (8.44,1.98);
+\draw [rotate around={16.232350661156207:(3.23,0.39)}] (3.23,0.39) ellipse (1.0255857283809675cm and 0.6122304192530148cm);
+\draw [rotate around={17.818888914522773:(7.14,0.49)}] (7.14,0.49) ellipse (1.0972296049664032cm and 0.6522367714371142cm);
+\draw (3.88,1.68) node[anchor=north west] {$\mathbb{R}^n$};
+\draw (7.58,1.9) node[anchor=north west] {$\mathbb{R}^n$};
+\draw (2.92,0.72) node[anchor=north west] {$x$};
+\draw (7.26,1.04) node[anchor=north west] {$u$};
+\draw (3.34,0.22)-- (7.26,0.44);
+\draw [->] (5.020319692762799,0.3143036562264836) -- (5.360371071956821,0.3333881724057399);
+\draw (5.22,0.88) node[anchor=north west] {$\varphi$};
+\begin{scriptsize}
+\draw [fill=qqqqff] (3.34,0.22) circle (1.5pt);
+\draw [fill=qqqqff] (7.26,0.44) circle (1.5pt);
+\end{scriptsize}
+\end{tikzpicture} 
+
+$\omega=du_{1}du_{2}...du_{n}$ 
+\begin{align*}
+\varphi^{*}\omega & =d\varphi_{1}d\varphi_{2}...d\varphi_{n}=du_{1}du_{2}...du_{n}=\left({\displaystyle \sum_{i=1}^{n}\dfrac{\partial u_{1}}{\partial u_{i}}dx_{i}}\right)\left({\displaystyle \sum_{i=1}^{n}\dfrac{\partial u_{2}}{\partial u_{i}}dx_{i}}\right)...\left({\displaystyle \sum_{i=1}^{n}\dfrac{\partial u_{n}}{\partial u_{i}}dx_{i}}\right)\\
+= & det\left(\begin{array}{ccc}
+\dfrac{\partial\varphi_{1}}{\partial x_{1}} & ... & \dfrac{\partial\varphi_{1}}{\partial x_{n}}\\
+\dfrac{\partial\varphi_{2}}{\partial x_{1}} & ... & \dfrac{\partial\varphi_{2}}{\partial x_{n}}\\
+. & ... & .\\
+. & ... & .\\
+. & ... & .\\
+\dfrac{\partial\varphi_{n}}{\partial x_{1}} & ... & \dfrac{\partial\varphi_{n}}{\partial x_{n}}
+\end{array}\right)dx_{1}dx_{2}...dx_{n}=det(J\varphi)dx_{1}dx_{2}...dx_{n}.\\
+\end{align*}
+ Tóm lại: $\varphi:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}$, $x\mapsto u$,
+\[
+\varphi^{*}(du_{1}du_{2}...du_{n})=det(J\varphi)dx_{1}dx_{2}...dx_{n}.
+\]
+ Ta có công thức đổi biến tích phân: 
+\end{example}
+\begin{center}
+${\displaystyle \int\int...\int f(u)du_{1}du_{2}...du_{n}={\displaystyle \int\int...\int f(\varphi(x))det(J\varphi)dx_{1}dx_{2}...dx_{n}}}.$ 
+\par\end{center}
+
+Trong đó cận lấy tích phân tương ứng ở hai vế tuân theo qui luật đổi
+biến.
+\begin{thm}
+Ta có một số tính chất sau đây của dạng kéo lui 
+\begin{enumerate}
+\item $\varphi^{*}(a\omega_{1}+b\omega_{2})=a\varphi^{*}\omega_{1}+b\varphi^{*}\omega_{2}$.
+(Tính tuyến tính) 
+\item $\varphi^{*}(\omega_{1}.\omega_{2})=\varphi^{*}\omega_{1}.\varphi^{*}\omega_{2}$.
+(Kéo lui của tích bằng tích kéo lui) 
+\item $(\psi\circ\varphi)^{*}\omega=\varphi^{*}(\psi^{*}\omega)$. (Phép
+kéo lui thực hiện từng bước một)\\
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+		\clip(-0.58,0.88) rectangle (10.3,2.7);
+		\draw [rotate around={168.87964676637708:(1.0827950287934676,1.7247826824523533)}] (1.0827950287934676,1.7247826824523533) ellipse (1.2448106666071814cm and 0.4089141478761202cm);
+		\draw [rotate around={169.83333115421928:(5.21115768157666,1.6659689578175532)}] (5.21115768157666,1.6659689578175532) ellipse (1.1403299638718054cm and 0.4615241904518754cm);
+		\draw [rotate around={164.6123021629423:(8.964354985554843,1.720615043191245)}] (8.964354985554843,1.720615043191245) ellipse (1.1636884188726422cm and 0.5264082930489923cm);
+		\draw (2.22,1.68)-- (4.141097415533654,1.6807700328950097);
+		\draw (6.257882976398445,1.681592628237431)-- (7.993175754381506,1.6525428478712936);
+		\draw [->] (2.9000079073408465,1.680272567363469) -- (3.2599998329090027,1.6804168628179232);
+		\draw [->] (6.859523242633884,1.671520830662224) -- (7.20043213797054,1.6658138233721325);
+		\draw (3.04,2.38) node[anchor=north west] {$\varphi$};
+		\draw (7.02,2.42) node[anchor=north west] {$\psi$};
+		\end{tikzpicture} 
+\item $\varphi^{*}(d\omega)=d(\varphi^{*}\omega)$. (Đạo hàm của dạng kéo
+lui bằng dạng kéo lui của đạo hàm).
+\end{enumerate}
+\end{thm}
+Ta làm rõ tính chất 4: Ta có $\varphi^{*}\omega$ và $\omega$ là
+dạng bậc $k$, còn $\varphi^{*}d\omega$ và $d\omega$ là dạng bậc
+$k+1$.
+
+Kí hiệu: $\Omega^{k}(V)$ là tập hợp tất cả các dạng (trơn) bậc $k$
+trên $V$.
+
+\[
+\varphi:U\rightarrow V
+\]
+\[
+\varphi^{*}:\Omega^{k}(V)\rightarrow\Omega^{k}(U)
+\]
+\[
+d:\Omega^{k}(V)\rightarrow\Omega^{k+1}(V)
+\]
+\[
+\Omega^{k}(U)\rightarrow\Omega^{k+1}(U)
+\]
+ Ta có sơ đồ giao hoán: 
+\[
+\xymatrix{\Omega^{k}(V)\ar[r]^{d}\ar[d]_{\varphi^{*}} & \Omega^{k+1}(V)\ar[d]^{\varphi^{*}}\\
+\Omega^{k}(U)\ar[r]_{d} & \Omega^{k+1}(U)
+}
+\]
+\[
+d\circ\varphi^{*}=\varphi^{*}\circ d
+\]
+ Phần chứng minh giành cho bạn đọc. 
+
+
+\chapter{Tích phân của dạng}
+
+Trong chương này ta xây dựng khái niệm tích phân của dạng trên một
+tập con (một miền được tham số hóa - parametrized region) của $\mathbb{R}^{n}$,
+là sự tổng quát hóa của các khái niệm tích phân đường và tích phân
+mặt quen thuộc. Từ đó đưa ra phát biểu tổng quát hơn của định lý Stokes.
+
+Dưới đây để đơn giản, ta sẽ xét miền lấy tích phân là những miền đơn
+giản như hình hộp $R\subset\mathbb{R}^{k}$, có dạng $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$,
+rồi đến hình hộp suy biến (singular block, sẽ được định nghĩa sau).
+Nhắc lại rằng với hàm $f:R\rightarrow\mathbb{R}^{k}$ trơn trên $R$\footnote{Với $V$ là một tập không mở, nếu không nói gì thêm ta hiểu rằng nói
+$f$ trơn trên $V$ nghĩa là $f$ trơn trên một tập mở chứa $V$.} thì tích phân của $f$ trên $R$ tồn tại (theo cả nghĩa Riemann lẫn
+Lebesgue). Từ định lý Fubini, ta có:
+
+\begin{center}
+${\displaystyle \ensuremath{\int_{R}{f}}=\ensuremath{\int_{{{a}_{k}}}^{{{b}_{k}}}\left({\cdots\left(\int_{{{a}_{2}}}^{{{b}_{2}}}{\left(\int_{{{a}_{1}}}^{{{b}_{1}}}{f\left({{x}_{1}},{{x}_{2}},\ldots,{{x}_{k}}\right)d{{x}_{1}}}\right)}d{{x}_{2}}\right)\cdots}\right)d{{x}_{k}}}}$.
+\par\end{center}
+
+
+\section{Tích phân của dạng}
+\begin{defn}
+(Tích phân dạng bậc $k$ trên hình hộp $R\subset\mathbb{R}^{k}$).
+Cho $\omega$ là một dạng bậc $k$ xác định trên tập mở $U\subset\mathbb{R}^{k}$
+và $U\supset R$. Do $\omega$ là dạng bậc $k$ xác định trên một
+tập con của $R^{k}$ nên $\omega$ viết được thành $\omega=fdx_{1}dx_{2}\cdots dx_{k}$.
+Ta định nghĩa 
+\[
+{\displaystyle \ensuremath{\int_{R}{\omega}}}\coloneqq{\displaystyle \ensuremath{\int_{R}{f}}}.
+\]
+
+\end{defn}
+Từ định nghĩa trên ta có
+
+\begin{center}
+${\displaystyle \ensuremath{\int_{R}{-\omega}}}={\displaystyle \ensuremath{\int_{R}{-f}}}=-{\displaystyle \ensuremath{\int_{R}{f}}}=-{\displaystyle \ensuremath{\int_{R}{\omega}}}$.
+\par\end{center}
+\begin{rem}
+Chú ý rằng trong định nghĩa trên ta phải quy $\omega$ về dạng sao
+cho tích các $dx_{i}$ luôn là $dx_{1}dx_{2}\cdots dx_{k}$. Xét chẳng
+hạn tích phân của dạng $\omega=f\left(x,y\right)dxdy$ trên $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\subset\mathbb{R}^{2}$,
+với $f$ khả tích trên $R$. Do $f\left(x,y\right)dxdy=-f\left(x,y\right)dydx$,
+nên theo dịnh nghĩa trên, ta có:
+
+\begin{equation}
+{\displaystyle \ensuremath{\int_{R}{f\left(x,y\right)dxdy}}}={\displaystyle \ensuremath{\int_{R}{-f\left(x,y\right)dydx}}}=-{\displaystyle \ensuremath{\int_{R}{f\left(x,y\right)dydx}}}.
+\end{equation}
+Như vậy hai dạng bậc $k$ về hình thức có thể có cùng hàm hệ số $f$
+nhưng nếu thứ tự các $dx_{i}$ khác nhau thì tích phân của chúng trên
+$R\subset\mathbb{R}^{k}$ chưa chắc bằng nhau.
+
+Bên cạnh đó ta biết rằng việc thay đổi thứ tự lấy tích phân của $f$
+trên $R$ không ảnh hưởng gì, tức là:
+
+\begin{equation}
+{\displaystyle \ensuremath{\int_{a_{2}}^{b_{2}}\int_{a_{1}}^{b_{1}}{f\left(x,y\right)dxdy}}}={\displaystyle \ensuremath{\int_{a_{1}}^{b_{1}}\int_{a_{2}}^{b_{2}}{f\left(x,y\right)dydx}}}.
+\end{equation}
+Điều này không có gì mâu thuẫn với $\left(3.1.1\right)$, bạn đọc
+kiểm tra xem như bài tập (xem ví dụ 3.8).\end{rem}
+\begin{defn}
+Cho $U$ là tập mở trong $\mathbb{R}^{n}$ và $\omega$ là một dạng
+bậc $k$ xác định trên $U$. Cho hình hộp $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$
+trong $\mathbb{R}^{k}$ và $\varphi:R\rightarrow\mathbb{R}^{n}$ là
+ánh xạ trơn xác định trên $R\subset\mathbb{R}^{k}$ sao cho $\varphi\left(R\right)\subset U$.
+Khi đó nếu $n\geq k$ thì dạng kéo lui $\varphi^{*}\omega$ là một
+dạng bậc $k$ xác định trên $R$, nếu $n<k$ thì $\omega$ (do đó
+cả $\varphi^{*}\omega$) chỉ có thể bằng $0$. Ta định nghĩa tích
+phân của $\omega$ trên $\varphi$, ký hiệu $\intop_{\varphi}\omega$,
+là
+\[
+{\displaystyle \ensuremath{\int_{\varphi}{\omega}}}\coloneqq{\displaystyle \ensuremath{\int_{R}{\varphi^{*}\omega}}}.
+\]
+
+\end{defn}
+Ánh xạ $\varphi$ trên đươc gọi là một hình hộp suy biến $k$-chiều.
+Ảnh $\varphi\left(R\right)$ của nó có thể rất khác so với $R$ (do
+$\varphi$ chỉ yêu cầu trơn), chẳng hạn $\varphi$ có thể mang đoạn
+$\left[a,b\right]$ thành một đoạn cong, thậm chí trở thành một điểm. 
+\begin{example}
+(Tích phân đường). Cho $c:\left[a,b\right]\rightarrow\mathbb{R}^{3}$,
+$c\left(t\right)=\left(x\left(t\right),y\left(t\right),z\left(t\right)\right)$
+là một đường trơn và $\alpha=P\left(x,y,z\right)dx+Q\left(x,y,z\right)dy+R\left(x,y,z\right)dz$
+là dạng bậc $1$ xác định trên một tập mở $U$ chứa $c\left(\left[a,b\right]\right)$.
+Theo định nghĩa trên, ta có:
+\begin{alignat*}{1}
+{\displaystyle \ensuremath{\int_{c}{\alpha}}} & \coloneqq{\displaystyle \ensuremath{\int_{\left[a,b\right]}{c^{*}\alpha}}}\\
+ & =\int_{\left[a,b\right]}\left(\left(P\circ c\right)dx\left(t\right)+\left(Q\circ c\right)dy\left(t\right)+\left(R\circ c\right)dz\left(t\right)\right)\\
+ & =\int_{a}^{b}\left[\left(\left(P\circ c\right)x'\left(t\right)+\left(Q\circ c\right)y'\left(t\right)+\left(R\circ c\right)z'\left(t\right)\right)\right]dt.
+\end{alignat*}
+
+\end{example}
+
+\begin{example}
+(Tích phân mặt). Cho $D\subset\mathbb{R}^{2}$, $\varphi:D\rightarrow\mathbb{R}^{3}$,
+$\varphi\left(u,v\right)=\left(x\left(u,v\right),y\left(u,v\right),z\left(u,v\right)\right)$
+là một mặt trơn và $\alpha=P\left(x,y,z\right)dydz+Q\left(x,y,z\right)dzdx+R\left(x,y,z\right)dxdy$
+là dạng bậc $2$ xác định trên một tập mở $U$ chứa $\varphi\left(D\right)$.
+Theo định nghĩa 3.3, ta có:
+\begin{alignat*}{1}
+{\displaystyle \ensuremath{\int_{\varphi}{\alpha}}} & \coloneqq{\displaystyle \ensuremath{\int_{D}{\varphi^{*}\alpha}}}\\
+ & =\int_{D}\left(\left(P\circ\varphi\right)dydz+\left(Q\circ\varphi\right)dzdx+\left(R\circ\varphi\right)dxdy\right)\\
+ & =\int_{D}\left(\left(P,Q,R\right)\circ\varphi\right)\cdot\left(dydz,dzdx,dxdy\right).
+\end{alignat*}
+ Ta có:
+\begin{alignat*}{1}
+dydz & =\left(y_{u}du+y_{v}dv\right)\left(z_{u}du+z_{v}dv\right)\\
+ & =y_{u}z_{v}dudv+y_{v}z_{u}dvdu\\
+ & =\left(y_{u}z_{v}-y_{v}z_{u}\right)dudv,
+\end{alignat*}
+\begin{alignat*}{1}
+dzdx & =\left(z_{u}du+z_{v}dv\right)\left(x_{u}du+x_{v}dv\right)\\
+ & =z_{u}x_{v}dudv+z_{v}x_{u}dvdu\\
+ & =\left(z_{u}x_{v}-z_{v}x_{u}\right)dudv,
+\end{alignat*}
+\begin{alignat*}{1}
+dxdy & =\left(x_{u}du+x_{v}dv\right)\left(y_{u}du+y_{v}dv\right)\\
+ & =x_{u}y_{v}dudv+x_{v}y_{u}dvdu\\
+ & =\left(x_{u}y_{v}-x_{v}y_{u}\right)dudv,
+\end{alignat*}
+nên:
+\begin{alignat*}{1}
+ & \quad\;\left(dydz,dzdx,dxdy\right)\\
+ & =\left(\left(y_{u}z_{v}-y_{v}z_{u}\right),\left(z_{u}x_{v}-z_{v}x_{u}\right),\left(x_{u}y_{v}-x_{v}y_{u}\right)\right)dudv\\
+ & =\left|\begin{array}{ccc}
+x_{u} & y_{u} & z_{u}\\
+x_{v} & y_{v} & z_{v}
+\end{array}\right|dudv\\
+ & =\left(\varphi_{u}\times\varphi_{v}\right)dudv.
+\end{alignat*}
+Vậy
+\begin{alignat*}{1}
+{\displaystyle \ensuremath{\int_{\varphi}{\alpha}}} & ={\displaystyle \ensuremath{\int_{D}{\varphi^{*}\alpha}}}\\
+ & ={\displaystyle \ensuremath{\int_{D}\left(\left(P,Q,R\right)\circ\varphi\right)\cdot\left(\varphi_{u}\times\varphi_{v}\right)dudv,}}
+\end{alignat*}
+điều này khớp với khái niệm tích phân mặt đã biết.\end{example}
+\begin{defn}
+Cho hai hình hộp $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$
+và $R'=\left[a_{1}',b_{1}'\right]\times\left[a_{2}',b_{2}'\right]\cdots\left[a_{k}',b_{k}'\right]$
+trong $\mathbb{R}^{k}$. Ta gọi ánh xạ trơn $p:R'\rightarrow R$ là
+một phép tham số hóa lại (reparametrization) nếu $p$ là song ánh
+và ma trận Jacobi $J_{p}\left(s\right)$ của $p$ khả nghịch với mọi
+$s\in R'$. Do $J_{p}\left(s\right)$ là ma trận vuông nên điều này
+tương đương với $\text{det}J_{p}\left(s\right)\neq0$ với mọi $s\in R'$.
+Do $p$ trơn nên $\text{det}J_{p}:R'\rightarrow\mathbb{R}$, $S\mapsto\text{det}J_{p}\left(s\right)$
+là hàm liên tục, do đó hoặc $\text{det}J_{p}\left(s\right)>0$, hoặc
+$\text{det}J_{p}\left(s\right)<0$ với mọi $s\in R'$. Nếu $\text{det}J_{p}\left(s\right)>0$
+(tương ứng, $\text{det}J_{p}\left(s\right)<0$) ta nói $p$ bảo toàn
+(tương ứng, đảo ngược) định hướng của $\varphi:R\rightarrow U$.
+\end{defn}
+Do $\text{det}J_{p}\left(s\right)\neq0$ với mọi $s\in R'$, bằng
+định lý hàm ngược ta chứng minh được $p$ là một phép đổi biến, hay
+một phép vi đồng phôi (diffeomorphism), tức $p$ là một song ánh,
+khả vi liên tục và ánh xạ ngược $p^{-1}$ cũng khả vi liên tục. Từ
+đó ta có định lý sau: 
+\begin{thm}
+Cho $\alpha$ là dạng bậc $k$ xác định trên tập mở $U$ và $\varphi:R\rightarrow U$
+là hình hộp suy biến, $p:R'\rightarrow R$ là một phép tham số hóa
+lại. Khi đó 
+\[
+{\displaystyle \ensuremath{\int_{\varphi\circ p}{\alpha}}}=\begin{cases}
+\quad\int_{\varphi}\alpha & \text{nếu \ensuremath{p}bảo toàn định hướng,}\\
+-\int_{\varphi}\alpha & \text{nếu \ensuremath{p}đảo ngược định hướng.}
+\end{cases}
+\]
+\end{thm}
+\begin{proof}
+Ta có
+\[
+{\displaystyle \ensuremath{\int_{\varphi\circ p}{\alpha}}}={\displaystyle \ensuremath{\int_{R'}{\left(\varphi\circ p\right)^{*}\alpha}}}={\displaystyle \ensuremath{\int_{R'}{p^{*}\left(\varphi^{*}\alpha\right)}}}.
+\]
+Với $\varphi^{*}\alpha=gdx_{1}dx_{2}\cdots dx_{k}$ và $x=\left(x_{1},\ldots,x_{k}\right)=p\left(s\right)$,
+$s\in R'$, từ ví dụ 2.3, ta có:
+\begin{alignat*}{1}
+p^{*}\left(\varphi^{*}\alpha\right) & =p^{*}\left(gdx_{1}dx_{2}\cdots dx_{k}\right)\\
+ & =g\left(p\left(s\right)\right)\text{det}J_{p}\left(s\right)ds_{1}ds_{2}\cdots ds_{k},
+\end{alignat*}
+nên 
+\[
+{\displaystyle \ensuremath{\int_{\varphi\circ p}{\alpha}}}={\displaystyle \ensuremath{\int_{R'}g\left(p\left(s\right)\right)\text{det}J_{p}\left(s\right)ds_{1}ds_{2}\cdots ds_{k}}}.
+\]
+Do $p$ là một phép đổi biến, nên:
+\begin{alignat*}{1}
+ & \;\quad{\displaystyle \ensuremath{\int_{R'}g\left(p\left(s\right)\right)\text{det}J_{p}\left(s\right)ds_{1}ds_{2}\cdots ds_{k}}}\\
+= & \begin{cases}
+\quad\int_{R}g\left(x\right)dx_{1}dx_{2}\cdots dx_{k} & \text{nếu \ensuremath{\text{det}J_{p}\left(s\right)>0}},\\
+-\int_{R}g\left(x\right)dx_{1}dx_{2}\cdots dx_{k} & \text{nếu \ensuremath{\text{det}J_{p}\left(s\right)<0}}.
+\end{cases}
+\end{alignat*}
+Do $\int_{\varphi}\alpha$ chính là $\int_{R}g\left(x\right)dx_{1}dx_{2}\cdots dx_{k}$
+nên ta có đpcm.\end{proof}
+\begin{example}
+Trong $\mathbb{R}^{k}$ cho khối vuông đơn vị $k$-chiều $\left[0,1\right]^{k}$
+và một hình hộp $R=\left[a_{1},b_{1}\right]\times\left[a_{2},b_{2}\right]\cdots\left[a_{k},b_{k}\right]$.
+Xét $p=\left(p_{1},p_{2},\ldots,p_{k}\right):\left[0,1\right]^{k}\rightarrow R$
+với $p_{i,1\leq i\leq k}$ cho bởi $p_{i}\left(s\right)=\left(b_{i}-a_{i}\right)s_{i}+a_{i}$.
+Dễ thấy $p:\left[0,1\right]^{k}\rightarrow R$ là song ánh. Ta có:
+\[
+J_{p}\left(s\right)=\left(\begin{array}{c}
+\nabla p_{1}\\
+\nabla p_{2}\\
+\vdots\\
+\nabla p_{k}
+\end{array}\right)=\left(\begin{array}{cccc}
+b_{1}-a_{1} & 0 & \cdots & 0\\
+0 & b_{2}-a_{2} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & b_{k}-a_{k}
+\end{array}\right).
+\]
+Do đó $\text{det}J_{p}\left(s\right)=\prod_{i=1}^{k}\left(b_{i}-a_{i}\right)>0$,
+nên $p$ bảo toàn định hướng. Vậy với $\alpha$ là dạng bậc $k$ trên
+$U$ và $\varphi:R\rightarrow U$ thì $\int_{\varphi\circ p}\alpha=\int_{c}\alpha$.
+\end{example}
+
+
+Ví dụ 3.8 cho thấy rằng tích phân của dạng trên một hình hộp suy biến
+$k$-chiều bất kỳ có thể quy về thành tích phân trên khối vuông (cube)
+suy biến $\left[0,1\right]^{k}\rightarrow U$, ở phần tới ta chỉ xét
+tích phân trên các khối vuông suy biến như vậy (điều này giúp giảm
+đi sự rườm rà về ký hiệu).
+
+
+\section{Định lý Stokes}
+
+Định lý Stokes đã được giới thiệu trong các bài giảng về giải tích
+cổ điển, với các trường hợp riêng như định lý Newton - Leibniz, định
+lý Green... Nó nói rằng tích phân của một đối tượng $\alpha$ trên
+biên $\partial D$ của một miền $D$ thì bằng tích phân trên $D$
+của một đối tượng $d\alpha$ liên quan tới đạo hàm của $\alpha$,
+tức là:
+\[
+{\displaystyle \int_{\partial D}\alpha=\int_{D}d\alpha.}
+\]
+Ở đây ta sẽ phát biểu và chứng minh định lý Stokes ở dạng tổng quát
+hơn. Ở dạng đã biết, ta thấy $D$ và biên $\partial D$ không chỉ
+là tập hợp, mà chúng còn được cho một định hướng, sao cho các định
+hướng đó tương thích với nhau. Chẳng hạn ở định lý Newton - Leibniz:
+\[
+\int_{a}^{b}f'\left(x\right)dx=f\left(b\right)-f\left(a\right),
+\]
+với $\partial D=\left\{ a,b\right\} $ thì $\int_{\left\{ a,b\right\} }f=f\left(a\right)+f\left(b\right)$.
+Như vậy với $\partial D$ đơn thuần chỉ mang nghĩa tập hợp thì không
+đủ để phát biểu được định lý. Ở đây ta thấy vai trò của $a$ và $b$
+không như nhau. Có thể nói rằng $a$ trước, $b$ sau, hoặc $a$ ứng
+với dấu $-$, $b$ ứng với dấu $+$. Với sự phân biệt vai trò $a,b$
+như vậy, đoạn $\left[a,b\right]$ một cách tương ứng cũng được gọi
+là có định hướng từ $a$ đến $b$ (tích phân $\int_{a}^{b}f'\left(x\right)dx$
+thực sự có ngầm ý một định hướng như vậy cho miền $\left[a,b\right]$).
+Vậy tóm lại cần một định hướng cho biên, được cho bằng cách quy ước
+các dấu $+,-$ cho các phần của nó.
+\begin{defn}
+(Mặt của khối vuông suy biến). Cho khối vuông suy biến $k$-chiều
+$c:\left[0,1\right]^{k}\rightarrow U$, ta định nghĩa các mặt của
+$c$, ký hiệu là $c_{i,0}$, $c_{i,1}$, như sau. Cho $t=\left(t_{1},t_{2},\ldots,t_{k-1}\right)\in\left[0,1\right]^{k-1}$,
+với mọi $i=1,2,\ldots,k$, ta đặt
+\begin{alignat*}{1}
+c_{i,0}\left(t\right) & =c\left(t_{1},t_{2},\ldots,t_{i-1},0,t_{i},\ldots t_{k-1}\right),\\
+c_{i,1}\left(t\right) & =c\left(t_{1},t_{2},\ldots,t_{i-1},1,t_{i},\ldots t_{k-1}\right).
+\end{alignat*}
+Chúng chính là giới hạn của $c$ lên các mặt của khối vuông đơn vị
+$\left[0,1\right]^{k}$, là các khối vuông suy biến $\left(k-1\right)$-chiều.\end{defn}
+\begin{example}
+Cho $c:\left[0,1\right]\rightarrow U$ ($k=1$), $i$ chỉ bằng $1$,
+ta có:
+\begin{alignat*}{1}
+c_{1,0}\left(t\right) & =c\left(0\right),\\
+c_{1,1}\left(t\right) & =c\left(1\right).
+\end{alignat*}
+
+
+Cho $c:\left[0,1\right]^{2}\rightarrow U$ ($k=1$), $i=1,2$. Với
+$t\in\left[0,1\right]$, ta có:
+\begin{alignat*}{3}
+c_{1,0}\left(t\right) & =c\left(0,t\right), & \qquad & c_{2,0}\left(t\right) & =c\left(t,0\right),\\
+c_{1,1}\left(t\right) & =c\left(1,t\right), &  & c_{2,1}\left(t\right) & =c\left(t,1\right).
+\end{alignat*}
+\end{example}
+\begin{defn}
+(Biên của khối vuông suy biến). Cho khối vuông suy biến $c:\left[0,1\right]^{k}\rightarrow U$
+với các mặt $c_{i,0}$, $c_{i,1}$, $i=1,2,\ldots,k$. Quy ước rằng
+mặt $c_{i,0}$ mang dấu $\left(-1\right)^{i}$, mặt $c_{i,1}$ mang
+dấu $\left(-1\right)^{i+1}$. Ta định nghĩa biên của $c$, ký hiệu
+$\partial c$, là tổng hình thức (formal sum) của các mặt $c_{i,0}$,
+$c_{i,1}$ cùng với dấu tương ứng, nghĩa là:
+\[
+\partial c=\sum_{i=1}^{k}\left(\left(-1\right)^{i}c_{i,0}+\left(-1\right)^{i+1}c_{i,1}\right)=\sum_{i=1}^{k}\left(-1\right)^{i}\left(c_{i,0}-c_{i,1}\right).
+\]
+\end{defn}
+\begin{example}
+Cho $c:\left[0,1\right]\rightarrow U$, ta có:
+\begin{alignat*}{1}
+\partial c & =\left(-1\right)\left(c_{1,0}-c_{1,1}\right)\\
+ & =c_{1,1}-c_{1,0}.
+\end{alignat*}
+
+
+Cho $c:\left[0,1\right]^{2}\rightarrow U$, ta có:
+\begin{alignat*}{1}
+\partial c & =\sum_{i=1}^{2}\left(-1\right)^{i}\left(c_{i,0}-c_{i,1}\right)\\
+ & =c_{1,1}-c_{1,0}+c_{2,0}-c_{2,1}.
+\end{alignat*}
+
+\end{example}
+Các tổng hình thức trên, chẳng hạn $c_{1,1}-c_{1,0}+c_{2,0}-c_{2,1}$,
+và cả các khối vuông suy biến $c$, là trường hợp riêng của khái niệm
+xích dưới đây. 
+\begin{defn}
+(Xích). Cho $c_{1},c_{2},\ldots,c_{m}$ là một họ các khối vuông suy
+biến $k$-chiều. Ta định nghĩa xích (chain) $c$ $k$-chiều là tổ
+hợp tuyến tính (hình thức) của $c_{1},c_{2},\ldots,c_{m}$ với hệ
+số thực, nghĩa là:
+\[
+c=a_{1}c_{1}+a_{2}b_{2}+\cdots+a_{m}b_{m},
+\]
+với $a_{1},a_{2},\ldots,a_{m}\in\mathbb{R}$. 
+\end{defn}
+Như vậy một khối vuông suy biến $c$ $k$-chiều cũng là một xích $k$-chiều,
+biên $\partial c$ của nó là một xích $\left(k-1\right)$-chiều.
+\begin{defn}
+(Biên của xích). Biên của xích $c=a_{1}c_{1}+a_{2}b_{2}+\cdots+a_{m}b_{m}$,
+ký hiệu $\partial c$, được định nghĩa là tổ hợp tuyến tính (hình
+thức) của các biên $\partial c_{i}$ với hệ số $a_{i}$ tương ứng,
+nghĩa là:
+\[
+\partial c=a_{1}\partial c_{1}+a_{2}\partial b_{2}+\cdots+a_{m}\partial b_{m}.
+\]
+
+\end{defn}
+Với phép lấy tổ hợp (phép cộng) hình thức trên, dễ thấy rằng tập tất
+cả các xích $k$-chiều là một không gian vectơ trên trường $\mathbb{R}$,
+với cơ sở là tập tất cả các khối vuông suy biến $k$-chiều. Phép lấy
+biên của xích như vậy là một ánh xạ (tuyến tính) từ không gian vectơ
+các xích $k$-chiều đến không gian vectơ các xích $\left(k-1\right)$-chiều,
+nó là mở rộng tuyến tính của phép lấy biên các khối vuông suy biến
+$k$-chiều.
+
+Bằng cách mở rộng tuyến tính - tương tự phép lấy biên của xích $c$
+- khái niệm tích phân của dạng trên khối vuông suy biến lên cho xích,
+ta định nghĩa khái niệm tích phân của dạng bậc $k$ trên xích như
+sau.
+\begin{defn}
+(Tích phân của dạng trên xích). Cho $\alpha$ là dạng bậc $k$ xác
+định trên tập mở $U$. Cho $c_{1},c_{2},\ldots,c_{m}$ là họ các khối
+vuông suy biến $k$-chiều trong $U$ (tức $c_{i}\left(\left[0,1\right]^{k}\right)\subset U,$
+$\forall i=1,2,\ldots,m$), xích $c=a_{1}c_{1}+a_{2}c_{2}+\cdots+a_{m}c_{m}$
+được gọi là một xích $k$-chiều trong $U$. Tích phân của $\alpha$
+trên $c$, ký hiệu $\int_{c}\alpha$, được cho bởi:
+\[
+\int_{c}\alpha=\sum_{i=1}^{m}a_{i}\int_{c_{i}}\alpha.
+\]
+\end{defn}
+\begin{example}
+Cho $\alpha$ là dạng bậc $1$ xác định trên tập mở $U$ và $c:\left[0,1\right]^{2}\rightarrow U$.
+Từ ví dụ 3.13 ta có $\partial c=c_{1,1}-c_{1,0}+c_{2,0}-c_{2,1}$
+và nó là một xích trong $U$. Theo định nghĩa trên, ta có:
+\[
+\int_{c}\alpha=\int_{c_{1,1}}\alpha-\int_{c_{1,0}}\alpha+\int_{c_{2,0}}\alpha-\int_{c_{2,1}}\alpha.
+\]
+
+\end{example}
+Ta thấy rằng với các khái niệm trên, có thể phát biểu lại các dạng
+của định lý Stokes đã biết. Chẳng hạn với định lý Newton - Leibniz
+\[
+\int_{a}^{b}f'\left(t\right)dt=f\left(b\right)-f\left(a\right),
+\]
+ta có thể viết như sau. Với $\varphi:\left[a,b\right]\rightarrow\mathbb{R}$
+cho bởi $\varphi\left(t\right)=t$, ta có $\int_{a}^{b}f'\left(t\right)dt=\int_{\varphi}f'\left(x\right)dx$.
+Bằng phép tham số hóa lại (ví dụ 3.8) $p:\left[0,1\right]\rightarrow\mathbb{R}$
+cho bởi $p\left(s\right)=a+s\left(b-a\right)$, ta có $\int_{\varphi}f'\left(x\right)dx=\int_{c}f'\left(x\right)dx=\int_{c}df$,
+$c=\varphi\circ p$ là một khối vuông suy biến. Mặt khác ta thấy $f\left(b\right)=f\left(c\left(1\right)\right)=\int_{\left\{ c\left(1\right)\right\} }f$,
+tương tự $f\left(a\right)=\int_{\left\{ c\left(0\right)\right\} }f$,
+nên $f\left(b\right)-f\left(a\right)=\int_{\left\{ c\left(1\right)\right\} }f-\int_{\left\{ c\left(0\right)\right\} }f=\int_{\left\{ c\left(1\right)\right\} -\left\{ c\left(0\right)\right\} }f=\int_{\partial c}f$.
+Vậy $\int_{a}^{b}f'\left(t\right)dt=f\left(b\right)-f\left(a\right)$
+được viết lại dưới dạng
+\[
+\int_{c}df=\int_{\partial c}f.
+\]
+
+
+Bây giờ ta phát biểu định lý Stokes.
+\begin{thm}[Định lý Stokes]
+ Cho $\alpha$ là dạng bậc $k-1$ xác định trên tập mở $U$ của $\mathbb{R}^{n}$
+và $c$ là một xích $k$-chiều trong $U$. Khi đó:
+\[
+\boxed{\int_{c}d\alpha=\int_{\partial c}\alpha.}
+\]
+\end{thm}
+\begin{proof}
+Do phép lấy tích phân trên xích $c$ là mở rộng tuyến tính của phép
+lấy tích phân trên khối vuông suy biến, nên ta chỉ cần chứng minh
+định lý với $c$ là một khối vuông suy biến $\left[0,1\right]^{k}\rightarrow U$
+là đủ.
+
+Xét vế trái. Từ định nghĩa tích phân của dạng và định lý 2.4 (4),
+ta có:
+\[
+\int_{c}d\alpha=\int_{\left[0,1\right]^{k}}c^{*}d\alpha=\int_{\left[0,1\right]^{k}}d\left(c^{*}\alpha\right).
+\]
+Do $\alpha$ là dạng bậc $k-1$ nên $c^{*}\alpha$ là dạng bậc $k-1$
+trên $\left[0,1\right]^{k}$. Do đó ta có thể viết $c^{*}\alpha$
+dưới dạng 
+\[
+c^{*}\alpha=\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k},
+\]
+với $f_{i}$ là các hàm thực trơn xác định trên $\left[0,1\right]^{k}$,
+và $\widehat{dt_{i}}$ chỉ sự khuyết đi $dt_{i}$. Từ đó ta có: 
+\begin{alignat}{1}
+d\left(c^{*}\alpha\right) & =d\left(\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right)\nonumber \\
+ & =\sum_{i=1}^{k}d\left(f_{i}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\nonumber \\
+ & =\sum_{i=1}^{k}\left(\sum_{j=1}^{k}\frac{\partial f_{i}}{\partial t_{j}}dt_{j}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\end{alignat}
+Do với mọi $j\neq i$ thì $dt_{j}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}=0$
+nên số hạng thứ $i$ trong $\left(3.2.1\right)$ là
+\begin{alignat*}{1}
+\left(\sum_{j=1}^{k}\frac{\partial f_{i}}{\partial t_{j}}dt_{j}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k} & =\frac{\partial f_{i}}{\partial t_{i}}dt_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\\
+ & =\frac{\partial f_{i}}{\partial t_{i}}\left(-1\right)^{i+1}dt_{1}dt_{2}\cdots dt_{i}\cdots dt_{k}.
+\end{alignat*}
+Do đó
+\[
+d\left(c^{*}\alpha\right)=\left(\sum_{i=1}^{k}\left(-1\right)^{i+1}\frac{\partial f_{i}}{\partial t_{i}}\right)dt_{1}dt_{2}\cdots dt_{k}.
+\]
+Vậy vế trái bằng:
+\begin{alignat}{1}
+\int_{\left[0,1\right]^{k}}d\left(c^{*}\alpha\right) & =\int_{\left[0,1\right]^{k}}\left(\sum_{i=1}^{k}\left(-1\right)^{i+1}\frac{\partial f_{i}}{\partial t_{i}}\right)dt_{1}dt_{2}\cdots dt_{k}\nonumber \\
+ & =\sum_{i=1}^{k}\left(-1\right)^{i+1}\int_{\left[0,1\right]^{k}}\frac{\partial f_{i}}{\partial t_{i}}dt_{1}dt_{2}\cdots dt_{k}.
+\end{alignat}
+Lưu ý lại rằng các tích phân ở vế phải của $\left(3.2.2\right)$ là
+tích phân Riemann quen thuộc, nên áp dụng được định lý Fubini, và
+do $f_{i,1\leq i\leq k}$ là các hàm trơn nên bằng định lý Newton
+- Leibniz, ta có: 
+\begin{alignat*}{1}
+\int_{\left[0,1\right]^{k}}\frac{\partial f_{i}}{\partial t_{i}}dt_{1}dt_{2}\cdots dt_{k} & =\int_{\left[0,1\right]^{k-1}}\left(\int_{0}^{1}\frac{\partial f_{i}}{\partial t_{i}}dt_{i}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\\
+ & =\int_{\left[0,1\right]^{k-1}}\left(f_{i}\left(t_{1},\ldots,t_{i-1},1,t_{i+1},\ldots,t_{k}\right)-f_{i}\left(t_{1},\ldots,t_{i-1},0,t_{i+1},\ldots,t_{k}\right)\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\end{alignat*}
+
+
+Xét vế phải. Với $\partial c=\sum_{i=1}^{k}\left(-1\right)^{i}\left(c_{i,0}-c_{i,1}\right)$,
+ta có:
+\[
+\int_{\partial c}\alpha=\sum_{i=1}^{k}\left(-1\right)^{i}\left(\int_{c_{i,0}}\alpha-\int_{c_{i,1}}\alpha\right).
+\]
+Để so sánh với $\left(3.2.2\right)$ ta viết lại thành:
+\[
+\int_{\partial c}\alpha=\sum_{i=1}^{k}\left(-1\right)^{i+1}\left(\int_{c_{i,1}}\alpha-\int_{c_{i,0}}\alpha\right).
+\]
+Ta kiểm tra rằng 
+\[
+\int_{c_{i,0}}\alpha=\int_{\left[0,1\right]^{k-1}}\left(f_{i}\left(t_{1},\ldots,t_{i-1},0,t_{i+1},\ldots,t_{k}\right)\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\]
+Ta có:
+\[
+\int_{c_{i,0}}\alpha=\int_{\left[0,1\right]^{k-1}}c_{i,0}^{*}\alpha.
+\]
+Bằng cách viết $c_{i,0}:\left[0,1\right]^{k-1}\rightarrow U$, $\left(s_{1},s_{2},\ldots s_{k-1}\right)\mapsto c\left(s_{1},s_{2},\ldots,s_{i-1},0,s_{i},\ldots s_{k-1}\right)$
+thành $c_{i,0}=c\circ h$, với $h:\left(s_{1},s_{2},\ldots,s_{i},\ldots s_{k-1}\right)\mapsto\left(s_{1},s_{2},\ldots,s_{i-1},0,s_{i},\ldots s_{k-1}\right)$,
+ta có:
+\begin{alignat*}{1}
+c_{i,0}^{*}\alpha & =\left(c\circ h\right)^{*}\alpha\\
+ & =h^{*}\left(c^{*}\alpha\right)\\
+ & =h^{*}\left(\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right).
+\end{alignat*}
+Với $j\neq i$, không mất tính tổng quát, giả sử $j<i$, ta có:
+\begin{alignat*}{1}
+h^{*}\left(f_{j}dt_{1}dt_{2}\cdots\widehat{dt_{j}}\cdots dt_{k}\right) & =\left(f_{j}\circ h\right)ds_{1}ds_{2}\cdots\widehat{ds_{j}}\cdots ds_{i-1}0ds_{i}\cdots ds_{k-1}\\
+ & =0.
+\end{alignat*}
+Với $j=i$:
+\begin{alignat*}{1}
+h^{*}\left(f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right) & =\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{i-1}\widehat{0}ds_{i}\cdots dt_{k-1}\\
+ & =\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{k-1}.
+\end{alignat*}
+Vậy nên
+\begin{align*}
+c_{i,0}^{*}\alpha & =h^{*}\left(\sum_{i=1}^{k}f_{i}dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}\right)\\
+ & =\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{k-1}.
+\end{align*}
+Vậy ta có:
+\begin{align*}
+\int_{c_{i,0}}\alpha & =\int_{\left[0,1\right]^{k-1}}c_{i,0}^{*}\alpha\\
+ & =\int_{\left[0,1\right]^{k-1}}\left(f_{i}\circ h\right)ds_{1}ds_{2}\cdots ds_{k-1}\\
+ & =\int_{\left[0,1\right]^{k-1}}f\left(s_{1},s_{2},\ldots,s_{i-1},0,s_{i},\ldots s_{k-1}\right)ds_{1}ds_{2}\cdots ds_{k-1}\\
+ & =\int_{\left[0,1\right]^{k-1}}f_{i}\left(t_{1},\ldots,t_{i-1},0,t_{i+1},\ldots,t_{k}\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\end{align*}
+Hoàn toàn tương tự, ta có:
+\[
+\int_{c_{i,1}}\alpha=\int_{\left[0,1\right]^{k-1}}\left(f_{i}\left(t_{1},\ldots,t_{i-1},1,t_{i+1},\ldots,t_{k}\right)\right)dt_{1}dt_{2}\cdots\widehat{dt_{i}}\cdots dt_{k}.
+\]
+Vậy định lý đã được chứng minh.
+\end{proof}
+
+\chapter{Tích phân trên đa tạp }
+
+
+\subsection*{Bài tập }
+\begin{problem}
+Bài tập 5.6 trang 65 giáo trình.
+\end{problem}
+
+\begin{problem}
+Cho một $2$-hình hộp suy biến 
+\begin{eqnarray*}
+c:[0,1]^{2} & \to & \mathbb{R}^{4}\\
+(t_{1},t_{2}) & \mapsto & (t_{1}^{2},t_{2},t_{1}t_{2},t_{1}+1).
+\end{eqnarray*}
+ Cho dạng $\alpha=x_{1}dx_{3}+x_{1}x_{4}dx_{2}$.
+\begin{enumerate}
+\item Tính cụ thể để kiểm tra rằng $c^{*}(d\alpha)=d(c^{*}\alpha)$.
+\item Tính $\int_{c}d\alpha$. 
+\item Tính $\int_{\partial c}\alpha$.
+\item Kiểm tra $c$ là đơn ánh.
+\item Chứng tỏ $c$ mang tập mở thành tập mở. Từ đó suy ra $c$ là đồng
+phôi lên tập ảnh $c([0,1]^{2})$ của nó, tức ánh xạ ngược $c^{-1}$
+là liên tục. (Gợi ý: chú ý $[0,1]^{2}$ là compắc và xét tập đóng
+thay vì tập mở.) 
+\item Tính đạo hàm $Dc$ và kiểm tra rằng tại mọi điểm $(t_{1},t_{2})\in(0,1)^{2}$
+thì $Dc(t_{1},t_{2})$ là đơn ánh.
+\item Chứng tỏ tập ảnh $S=c((0,1)^{2})$ là một đa tạp 2 chiều trong $\mathbb{R}^{4}$. 
+\item Gọi $\mu$ là dạng thể tích trên $S$. Tính kéo lui $c^{*}\mu$.
+\item Thiết lập công thức tích phân bội để tính diện tích của $S$. Hãy
+ước lượng diện tích này.
+\end{enumerate}
+\end{problem}
+
+\begin{problem}
+Cho $\Omega$ là một tập con mở bị chặn của không gian Euclid $\mathbb{R}^{n}$.
+Chứng tỏ $\Omega$ là một đa tạp $n$-chiều trong $\mathbb{R}^{n}$.
+\end{problem}
+
+\begin{problem}
+Giả sử biên tôpô $\partial\Omega$ là một đa tạp $(n-1)$-chiều. Chứng
+tỏ $\overline{\Omega}$ là một đa tạp $n$-chiều có biên là $\partial\Omega$. 
+\end{problem}
+
+\begin{problem}
+Gọi $v$ là vectơ pháp tuyến đơn vị ngoài của $\partial\Omega$. Giả
+sử trường vectơ $F$ trơn trên $\overline{\Omega}$. Viết $dx=\mu_{\Omega}$
+và $dS=\mu_{\partial\Omega}$. Từ công thức Stokes hãy chứng tỏ:
+\begin{equation}
+\int_{\Omega}\text{div}F\ dx=\int_{\partial\Omega}F\cdot v\ dS.\label{thm:StokesPDE}
+\end{equation}
+
+\end{problem}
+
+\begin{problem}
+Viết $v=(v_{1},v_{2},\dotsc,v_{n})$. Giả sử hàm thực $f$ trơn trên
+$\overline{\Omega}$. Từ ( \ref{thm:StokesPDE}) hãy chứng tỏ: 
+\begin{equation}
+\int_{\Omega}\frac{\partial f}{\partial x_{i}}\ dx=\int_{\partial\Omega}fv_{i}\ dS.\label{Stokescomp}
+\end{equation}
+
+\end{problem}
+
+\begin{problem}
+Giả sử hàm thực $g$ trơn trên $\overline{\Omega}$. Từ (\ref{Stokescomp})
+hãy chứng minh \emph{công thức tích phân từng phần}: 
+\begin{equation}
+\int_{\Omega}\frac{\partial f}{\partial x_{i}}g\ dx=\int_{\partial\Omega}fgv_{i}\ dS-\int_{\Omega}f\frac{\partial g}{\partial x_{i}}\ dx.\label{eq:Green1}
+\end{equation}
+
+\end{problem}
+
+\begin{problem}
+Ta viết $\dfrac{\partial f}{\partial v}=\nabla f\cdot v$, đạo hàm
+của $f$ theo hướng $v$. Nhắc lại toán tử Laplace $\Delta$ được
+cho bởi $\Delta f=\sum_{i=1}^{n}\frac{\partial^{2}f}{\partial x_{i}^{2}}$.
+Từ (\ref{Stokescomp}) hãy chứng minh \emph{công thức Green}:
+\begin{equation}
+\int_{\Omega}\Delta f\ dx=\int_{\partial\Omega}\frac{\partial f}{\partial v}\ dS.\label{eq:Green2}
+\end{equation}
+
+\end{problem}
+
+\chapter{Bổ đề Poincaré }
+\begin{thm}[bổ đề Poincaré]
+ Mọi dạng trơn đóng trên đa tạp thắt được là khớp.
+\end{thm}
+
+\section{Chứng minh bổ đề Poincaré }
+
+Giả sử $M\subset R^{n}$ là đa tạp thắt được. Xét tích $M\times\left[0;1\right]$,
+gọi là mặt trụ với đáy $M$. Xét hai đồng luân $i_{0},i_{1}:M\rightarrow M\times\left[0,1\right]$
+xác định bởi 
+\[
+i_{0}(x)=(x,0),
+\]
+
+
+\[
+i_{1}(x)=(x,1).
+\]
+Phép đồng luân tương ứng từ $i_{0}$ tới $i_{1}$ là
+\[
+\begin{array}{cccc}
+i: & \left[0;1\right]\times M & \rightarrow & M\times\left[0;1\right]\\
+ & \left(t,x\right) & \rightarrow & \left(x;t\right).
+\end{array}
+\]
+Ta có $i(x;0)=i_{0}(x)$; $i(x;1)=i_{1}(x)$. 
+
+Tiếp theo ta xét toán tử:
+\[
+F:\:\Omega^{k+1}\left(M\times\left[0;1\right]\right)\rightarrow\Omega^{k}\left(M\right),\:k\in\left\{ 0;1;2;....;n\right\} ,
+\]
+với 
+\[
+\gamma=\underset{I}{\sum}f_{I}(x;t)dx_{I}+\underset{J}{\sum}g_{J}(x;t)dtdx_{J}\in\Omega^{k+1}
+\]
+ ($\gamma$ là dạng bậc $k+1$ , $I$ là bộ $k+1$ chỉ số, $J$ là
+bộ $k$ chỉ số) thì 
+\[
+F\gamma=\underset{I}{\sum}\left(\intop_{0}^{1}g_{J}(x;t)dt\right)dx_{J}\in\Omega^{k}(M).
+\]
+
+
+Bây giờ ta chứng minh bổ đề Poincaré theo các bước sau.
+
+
+\subsection*{Bước 1: }
+\begin{prop}
+$i_{1}^{*}\gamma-i_{0}^{*}\gamma=Fd\gamma+dF\gamma$ (hay $i_{1}^{*}-i_{0}^{*}=Fd+dF$).\end{prop}
+\begin{proof}
+Ta xét hai trường hợp.
+
+Trường hợp $\gamma=f(x;t)dx_{I}$: Khi đó $F\gamma=0$ (do $\gamma$
+không chứa $dt$) $\Rightarrow dF\gamma=0$. Trong khi đó
+\[
+d\gamma=\left(\dfrac{\partial f}{\partial t}dt\right)dx_{I}+\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial f}{\partial x_{i}}dx_{i}\right)dx_{I},
+\]
+ suy ra 
+\[
+Fd\gamma=\left(\underset{0}{\overset{1}{\intop}}\dfrac{\partial f}{\partial t}\left(x;t\right)dt\right)dx_{I}=\left[f\left(x;1\right)-f\left(x;0\right)\right]dx_{I}
+\]
+
+
+Ta lại có 
+\begin{align*}
+i_{1}^{*}\gamma-i_{0}^{*}\gamma & =i_{1}^{*}fdx_{I}+i_{0}^{*}fdx_{I}=\left[\left(f\circ i_{1}\right)-\left(f\circ i_{0}\right)\right]d\varphi_{I}\\
+ & =\left[f\left(x;1\right)-f\left(x;0\right)\right]d\varphi_{i_{1}}d\varphi_{i_{2}}...d\varphi_{i_{k+1}}.
+\end{align*}
+Nhắc lại ở đây $M\overset{i_{1},i_{0}}{\longrightarrow}M\times\left[0;1\right]\overset{f}{\longrightarrow}\mathbb{R}$,
+$x=\left(x_{1},x_{2},...,x_{n}\right)\in M$, $\left(x;t\right)=\left(x_{1},x_{2},...,x_{n},t\right)\in M\times\left[0;1\right]$,
+$\varphi_{i}\left(x\right)=x_{i},\:i=1,2,...,n$. Đặt $\varphi_{n+1}^{1}\left(x\right)=1,\:\varphi_{n+1}^{0}\left(x\right)=0$,
+ta có: 
+\[
+i_{1}\left(x\right)=\left(x;1\right)=\left(\varphi_{1}\left(x\right),\varphi_{2}\left(x\right),...,\varphi_{n}\left(x\right),\varphi_{n+1}^{1}\left(x\right)\right)
+\]
+
+
+\[
+i_{0}\left(x\right)=\left(x;0\right)=\left(\varphi_{1}\left(x\right),\varphi_{2}\left(x\right),...,\varphi_{n}\left(x\right),\varphi_{n+1}^{0}\left(x\right)\right)
+\]
+
+
+\begin{align*}
+d\varphi_{j_{1}}.d\varphi_{j_{2}}...d\varphi_{j_{k+1}} & =\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial\varphi_{j_{1}}}{\partial x_{i}}dx_{i}\right)\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial\varphi_{j_{2}}}{\partial x_{i}}dx_{i}\right)...\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial\varphi_{j_{k+1}}}{\partial x_{i}}dx_{i}\right)\\
+ & =dx_{j_{1}}.dx_{j_{2}}...dx_{j_{k+1}}=dx_{I}.
+\end{align*}
+Suy ra $i_{1}^{*}\gamma-i_{0}^{*}\gamma=\left[f\left(x;1\right)-f\left(x;0\right)\right]dx_{I}$.
+Vậy $i_{1}^{*}\gamma-i_{0}^{*}\gamma=Fd\gamma+dF\gamma$.
+
+Trường hợp $\gamma=g\left(x;t\right)dtdx_{J}$: Ta có $F\gamma=\left(\underset{\mathrm{h\grave{a}m\ theo\ }x}{\underbrace{\intop_{0}^{1}g(x;t)dt}}\right)dx_{J}$,
+suy ra 
+
+\begin{align*}
+dF\gamma & =\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial}{\partial x_{i}}\left(\intop_{0}^{1}g(x;t)dt\right)dx_{i}\right)dx_{J}=\left[\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}\right]dx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}.
+\end{align*}
+ Mặt khác:
+
+\begin{align*}
+d\gamma & =d\left(gdtdx_{J}\right)=\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial g}{\partial x_{i}}(x;t)dx_{i}\right)dtdx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}\\
+ & =\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial g}{\partial x_{i}}(x;t)dx_{i}dtdx_{J}\\
+ & =-\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial g}{\partial x_{i}}(x;t)dtdx_{i}dx_{J}.
+\end{align*}
+ Suy ra 
+\[
+Fd\gamma=-\left[\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}\right]dx_{J}=-\underset{i=1}{\overset{n}{\sum}}\left(\intop_{0}^{1}\dfrac{\partial g}{\partial x_{i}}(x;t)dt\right)dx_{i}dx_{J}.
+\]
+ Từ đó ta có $Fd\gamma+dF\gamma=0$. Mặt khác 
+
+\begin{align*}
+i_{1}^{*}\gamma-i_{0}^{*}\gamma & =i_{1}^{*}\left(gdtdx_{J}\right)-i_{0}^{*}\left(gdtdx_{J}\right)=\left(g\circ i_{1}\right)d\varphi_{n+1}^{1}d\varphi_{J}-\left(g\circ i_{0}\right)d\varphi_{n+1}^{0}d\varphi_{J}\\
+ & =g\left(x;1\right)\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial1}{\partial x_{i}}dx_{i}\right)d\varphi_{J}-g\left(x;0\right)\left(\underset{i=1}{\overset{n}{\sum}}\dfrac{\partial0}{\partial x_{i}}dx_{i}\right)d\varphi_{J}=0.
+\end{align*}
+ Vậy $i_{1}^{*}\gamma-i_{0}^{*}\gamma=Fd\gamma+dF\gamma$ trong trường
+hợp này.
+\end{proof}
+
+\subsection*{Bước 2:}
+\begin{prop}[công thức đồng luân]
+\index{công thức đồng luân} Cho các ánh xạ $\phi_{0},\phi_{1}:\,M\longrightarrow N$
+($N$ là đa tạp) và $\phi:\,M\times\left[0;1\right]\longrightarrow N$
+là phép đồng luân từ $\phi_{1}$ tới $\phi_{0}$. Khi đó với $\alpha$
+là dạng bậc $k+1$ trên $N$, ta có: 
+\[
+\phi_{0}^{*}\alpha-\phi_{1}^{*}\alpha=F\phi^{*}d\alpha+dF\phi^{*}\alpha.
+\]
+\end{prop}
+\begin{proof}
+Xét sơ đồ $M$$\overset{i_{0},i_{1}}{\longrightarrow}M\times\left[0;1\right]\overset{\phi}{\longrightarrow}N$.
+$\forall x\in M$ ta có:
+\end{proof}
+\[
+\left(\phi\circ i_{0}\right)\left(x\right)=\phi\left(i_{0}\left(x\right)\right)=\phi\left(x,0\right)=\phi_{0}\left(x\right)
+\]
+
+
+\[
+\left(\phi\circ i_{1}\right)\left(x\right)=\phi\left(i_{1}\left(x\right)\right)=\phi\left(x,1\right)=\phi_{1}\left(x\right).
+\]
+Suy ra $\phi_{0}=\phi\circ i_{0},\phi_{0}=\phi\circ i_{0},$ và 
+\[
+\begin{cases}
+\phi_{0}*\alpha=\left(\phi\circ i_{0}\right)*\alpha=i_{0}*\phi*\alpha\\
+\phi_{1}*\alpha=\left(\phi\circ i_{1}\right)*\alpha=i_{1}*\phi*\alpha.
+\end{cases}
+\]
+
+
+Đặt $\gamma=\phi^{*}\alpha$ là dạng bậc $k+1$ trên $M\times\left[0;1\right]$.
+Áp dụng kết quả ở bước 1, ta có:
+
+\begin{eqnarray*}
+\phi_{1}^{*}\alpha-\phi_{0}^{*}\alpha & = & i_{1}^{*}\gamma-i_{0}^{*}\gamma\\
+ & = & Fd\gamma-dF\gamma\\
+ & = & Fd\phi^{*}\alpha-dF\phi^{*}\alpha\\
+ & = & F\phi^{*}d\alpha-dF\phi^{*}\alpha.
+\end{eqnarray*}
+
+
+
+\subsection*{Bước 3:}
+\begin{prop}
+Xét $\phi_{0},\phi_{1}:\,M\longrightarrow M$ và $\phi:\,M\times\left[0;1\right]\longrightarrow M$
+là những phép đồng luân từ $\phi_{0}$ tới $\phi_{1}$. Đồng thời
+$\phi$ là phép co rút vào $x_{0}\in M$, nghĩa là $\phi$ trơn, $\phi\left(x;0\right)=x_{0},\forall x\in M$
+. Khi đó, với $\alpha$ là dạng bậc $k$ đóng trên $M$ với $k\geq1$
+thì $\alpha$ khớp trên $M$, có $\beta=F\phi^{*}\alpha$ là dạng
+bậc $k-1$ trên $M$ thoả mãn $d\beta=\alpha$. \end{prop}
+\begin{proof}
+Giả sử $\alpha=\underset{I}{\sum}f_{I}\left(x\right)d\varphi_{I}$,
+ta có 
+\begin{eqnarray*}
+\phi_{1}^{*}\alpha & = & \left(\phi\circ i_{1}\right)^{*}\alpha\\
+ & = & \underset{I}{\sum}\left[f_{I}\circ\left(\phi\circ i_{1}\right)\right]\left(x\right)d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left[\phi\circ i_{1}\left(x\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left[\phi\left(x;1\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left(x\right)d\varphi_{i_{1}}.d\varphi_{i_{2}}...d\varphi_{i_{k}}\\
+ & = & \underset{I}{\sum}\left[f_{I}\left(x\right)\overset{n}{.\underset{j=1}{\sum}}\dfrac{\partial\varphi_{i_{1}}}{\partial x_{j}}dx_{j}.\dfrac{\partial\varphi_{i_{2}}}{\partial x_{j}}dx_{j}...\dfrac{\partial\varphi_{i_{k}}}{\partial x_{j}}dx_{j}\right]\\
+ & = & \underset{I}{\sum}f_{I}\left(x\right)dx_{i_{1}}.dx_{i_{2}}...dx_{i_{k}}\\
+ & = & \underset{I}{\sum}f_{I}\left(x\right)d\varphi_{I}
+\end{eqnarray*}
+Vậy $\phi_{1}^{*}\alpha=\alpha$. Tương tự, ta có: 
+\begin{eqnarray*}
+\phi_{0}^{*}\alpha & = & \left(\phi\circ i_{0}\right)^{*}\alpha=\underset{I}{\sum}f_{I}\left[\phi\left(x;0\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}\left[f_{I}\circ\left(\phi\circ i_{0}\right)\right]\left(x\right)d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left[\phi\circ i_{0}\left(x\right)\right]d\varphi_{I}\\
+ & = & \underset{I}{\sum}f_{I}\left(x_{0}\right)d\varphi_{i_{1}}.d\varphi_{i_{2}}...d\varphi_{i_{k}}\\
+ & = & 0.
+\end{eqnarray*}
+Bây giờ, đặt $\beta=F\phi^{*}\alpha$ và áp dụng kết quả ở bước 2,
+ta có:
+\[
+\begin{array}{ccccc}
+ & \phi_{1}^{*}\alpha-\phi_{0}^{*}\alpha & = & F\phi^{*}d\alpha+dF\phi^{*}\alpha\\
+\Leftrightarrow & \alpha-0 & = & 0+d\beta\\
+\Leftrightarrow & \alpha & = & d\beta.
+\end{array}
+\]
+Vậy, với $\alpha$ là dạng bậc $k\geq1$, đóng thì $\alpha$ khớp.
+Do đó, nếu $\alpha$ là dạng đóng trên đa tạp co rút được thì $\alpha$
+khớp và bổ đề Poincaré được chứng minh xong.
+\end{proof}
+
+\section{Ví dụ }
+\begin{example}
+Trên $\mathbb{R}^{n}$, cho $\alpha=\underset{i=1}{\overset{n}{\sum}}f_{i}\left(x\right)dx_{i}$
+là dạng bậc một đóng. Xét toán tử $F:\Omega^{k+1}\left(\mathbb{R}^{n}\times\left[0;1\right]\right)\longrightarrow\Omega^{k}\left(\mathbb{R}^{n}\right)$
+xác định như sau: Với $\gamma=\underset{I}{\sum}f_{I}\left(x;t\right)dx_{I}+\underset{J}{\sum}g_{I}\left(x;t\right)dtdx_{J}\in\Omega$
+thì $F\gamma=\underset{J}{\sum}\left[\int_{0}^{1}g_{I}\left(x;t\right)dt\right]dx_{J}$
+
+Xét $\phi:R^{n}\times\left[0;1\right]\longrightarrow R^{n}$ xác định
+như sau: $\phi\left(x;t\right)=tx,$ ta có $\phi\left(x;0\right)=$$O_{R^{n}},$$\phi\left(x;1\right)=x$.
+Đặt $\beta=F\phi*\alpha$ thì theo bổ đề Poincare', ta có $\alpha=d\beta$
+, nghĩa là $\alpha$ khớp.
+
+Ta tìm hàm $\beta$ như sau. Ta có:
+\begin{eqnarray*}
+\phi*\alpha & = & \overset{n}{\underset{i=1}{\sum}}\left(f_{i}\circ\phi\right)d\varphi_{i}\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left[\phi\left(tx\right)\right]d\varphi_{i}\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)d\left(tx_{i}\right)\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)\left(x_{i}dt+tdx_{i}\right)\\
+ & = & \overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)x_{i}dt+\overset{n}{\underset{i=1}{\sum}}f_{i}\left(tx\right)tdx_{i}
+\end{eqnarray*}
+
+
+\begin{eqnarray*}
+\beta & = & F\phi*\alpha\\
+ & = & \overset{n}{\underset{i=1}{\sum}}\left[\int_{0}^{1}f_{i}\left(tx\right)x_{i}dt\right]\\
+ & = & \overset{n}{\underset{i=1}{\sum}}x_{i}\int_{0}^{1}f_{i}\left(tx\right)dt
+\end{eqnarray*}
+
+
+Bây giờ, áp dụng trên $R^{2}$, với $\alpha=ydx+xdy$ là dạng bậc
+một đóng. Khi đó: 
+\begin{eqnarray*}
+\phi\left(x,y,t\right) & = & t\left(x,y\right)=\left(tx,ty\right)\\
+\phi*\alpha & = & \left(ty.xdt+tx.ydt\right)+\left(ty.tdx+tx.tdy\right)\\
+ & = & 2xytdt+t^{2}ydx+t^{2}xdy\\
+\\
+\beta & = & F\phi*\alpha\\
+ & = & \int_{0}^{1}2xytdt\\
+ & = & xy
+\end{eqnarray*}
+
+
+Ta có ngay $d\beta=\alpha$ , nghĩa là $\alpha$ khớp.\end{example}
+\begin{thebibliography}{Sja06}
+\bibitem[Sja06]{Sjamaar06} Reyer Sjamaar, \textit{Manifolds and differential
+forms}, 2006, Cornell University. 
+
+\end{thebibliography}
+\printindex{}
+\end{document}
